@@ -36,6 +36,10 @@
 #define MISSILE_VELOCITY 50
 #define MISSILE_HEIGHT 100
 #define MISSILE_CONTACT 2
+#define MISSILE_STEP 5
+
+#define MAX_STATVEHS 16
+#define STATVEH_EX_ID_OFFSET 400001
 
 // PLAYERS INFO
 
@@ -44,6 +48,23 @@ enum EPlayerInfo {
 }
 
 new PlayerInfo[MAX_PLAYERS][EPlayerInfo];
+
+// VEHICLES INFO 
+
+enum EVehicleInfo {
+	vehid,
+	veh_modelid,
+	Float:vehX,
+	Float:vehY,
+	Float:vehZ,
+	Float:vehA,
+	veh_objectid,
+	Float:veh_oX,
+	Float:veh_oY,
+	Float:veh_oZ
+}
+
+new VehicleInfo[MAX_STATVEHS][EVehicleInfo];
 
 // WHOOPIE MISSILE INFO
 
@@ -65,6 +86,116 @@ public OnFilterScriptInit()
 		WMInfo[i][wm_targetid] = -1;
 		WMInfo[i][wm_playerid] = -1;
 		WMInfo[i][wm_faced_obstacle] = false;
+	}
+	
+	// VEHICLES
+	
+	VehicleInfo[0][veh_modelid] = 401;
+	VehicleInfo[0][vehX] = 1252.3234;
+	VehicleInfo[0][vehY] = 247.3649;
+	VehicleInfo[0][vehZ] = 19.5547;
+	VehicleInfo[0][vehA] = 68.4121;
+	
+	VehicleInfo[1][veh_modelid] = 404;
+	VehicleInfo[1][vehX] = 1204.5350;
+	VehicleInfo[1][vehY] = 267.3818;
+	VehicleInfo[1][vehZ] = 19.5547;
+	VehicleInfo[1][vehA] = 336.2913;
+	
+	VehicleInfo[2][veh_modelid] = 413;
+	VehicleInfo[2][vehX] = 1228.4899;
+	VehicleInfo[2][vehY] = 299.6678;
+	VehicleInfo[2][vehZ] = 19.5547;
+	VehicleInfo[2][vehA] = 157.2198;
+	
+	VehicleInfo[3][veh_modelid] = 415;
+	VehicleInfo[3][vehX] = 1221.7859;
+	VehicleInfo[3][vehY] = 301.9800;
+	VehicleInfo[3][vehZ] = 19.5547;
+	VehicleInfo[3][vehA] = 157.2198;
+	
+	VehicleInfo[4][veh_modelid] = 423;
+	VehicleInfo[4][vehX] = 1341.4185;
+	VehicleInfo[4][vehY] = 332.9185;
+	VehicleInfo[4][vehZ] = 20.0376;
+	VehicleInfo[4][vehA] = 66.1840;
+	
+	VehicleInfo[5][veh_modelid] = 429;
+	VehicleInfo[5][vehX] = 1355.1538;
+	VehicleInfo[5][vehY] = 364.0742;
+	VehicleInfo[5][vehZ] = 20.0255;
+	VehicleInfo[5][vehA] = 65.7257;
+	
+	VehicleInfo[6][veh_modelid] = 434;
+	VehicleInfo[6][vehX] = 1415.2637;
+	VehicleInfo[6][vehY] = 377.1012;
+	VehicleInfo[6][vehZ] = 19.3042;
+	VehicleInfo[6][vehA] = 76.3792;
+	
+	VehicleInfo[7][veh_modelid] = 442;
+	VehicleInfo[7][vehX] = 1420.0203;
+	VehicleInfo[7][vehY] = 367.5028;
+	VehicleInfo[7][vehZ] = 19.0526;
+	VehicleInfo[7][vehA] = 162.1000;
+	
+	VehicleInfo[8][veh_modelid] = 456;
+	VehicleInfo[8][vehX] = 1409.5997;
+	VehicleInfo[8][vehY] = 320.1427;
+	VehicleInfo[8][vehZ] = 18.9372;
+	VehicleInfo[8][vehA] = 226.8040;
+	
+	VehicleInfo[9][veh_modelid] = 462;
+	VehicleInfo[9][vehX] = 1425.1090;
+	VehicleInfo[9][vehY] = 275.1043;
+	VehicleInfo[9][vehZ] = 19.5547;
+	VehicleInfo[9][vehA] = 68.4127;
+	
+	VehicleInfo[10][veh_modelid] = 470;
+	VehicleInfo[10][vehX] = 1391.0519;
+	VehicleInfo[10][vehY] = 265.4253;
+	VehicleInfo[10][vehZ] = 19.5669;
+	VehicleInfo[10][vehA] = 157.7136;
+	
+	VehicleInfo[11][veh_modelid] = 477;
+	VehicleInfo[11][vehX] = 1337.6892;
+	VehicleInfo[11][vehY] = 285.5739;
+	VehicleInfo[11][vehZ] = 19.5615;
+	VehicleInfo[11][vehA] = 248.4245;
+	
+	VehicleInfo[12][veh_modelid] = 486;
+	VehicleInfo[12][vehX] = 1294.9200;
+	VehicleInfo[12][vehY] = 218.1724;
+	VehicleInfo[12][vehZ] = 19.5547;
+	VehicleInfo[12][vehA] = 69.1963;
+	
+	VehicleInfo[13][veh_modelid] = 503;
+	VehicleInfo[13][vehX] = 1288.4561;
+	VehicleInfo[13][vehY] = 188.6687;
+	VehicleInfo[13][vehZ] = 20.2564;
+	VehicleInfo[13][vehA] = 129.3569;
+	
+	VehicleInfo[14][veh_modelid] = 506;
+	VehicleInfo[14][vehX] = 1288.8064;
+	VehicleInfo[14][vehY] = 162.4481;
+	VehicleInfo[14][vehZ] = 20.4670;
+	VehicleInfo[14][vehA] = 11.0725;
+	
+	VehicleInfo[15][veh_modelid] = 535;
+	VehicleInfo[15][vehX] = 1239.2605;
+	VehicleInfo[15][vehY] = 181.1548;
+	VehicleInfo[15][vehZ] = 19.8765;
+	VehicleInfo[15][vehA] = 334.2556;
+	
+	for(new i = 0; i < MAX_STATVEHS; i++) {
+		VehicleInfo[i][vehid] = AddStaticVehicle(
+			VehicleInfo[i][veh_modelid],
+			VehicleInfo[i][vehX],
+			VehicleInfo[i][vehY],
+			VehicleInfo[i][vehZ],
+			VehicleInfo[i][vehA],
+			-1,
+			-1
+		);
 	}
 }
 
@@ -460,6 +591,7 @@ stock LaunchPlayerMissile(playerid, victimid, type) {
 	WMInfo[missileid][wm_playerid] = playerid;
 	WMInfo[missileid][wm_targetid] = victimid;
 	WMInfo[missileid][wm_objectid] = objectid;
+	WMInfo[missileid][wm_type] = type;
 
 	MoveDynamicObject(objectid, dX, dY, dZ, MISSILE_VELOCITY, 0, 0, 0);
 	SendClientMessage(playerid, PASTEL_DEEP_ORANGE, "Missile Launched!");
@@ -472,17 +604,60 @@ public OnDynamicObjectMoved(objectid)
 	new missileid = Streamer_GetIntData(STREAMER_TYPE_OBJECT, objectid, E_STREAMER_EXTRA_ID) - MISSILE_EX_ID_OFFSET;
 	SendClientMessage(WMInfo[missileid][wm_playerid], PASTEL_DEEP_ORANGE, "Missile Moved!");
 	if(PlayerInfo[WMInfo[missileid][wm_targetid]][player_aim]) {
-		new Float:oX, Float:oY, Float:oZ,
-			Float:dX, Float:dY, Float:dZ;
+		switch(WMInfo[missileid][wm_type]) {
+			case 1: MoveCheckpointMissile(missileid);
+			case 2: MoveStepMissile(missileid);
 			
-		GetDynamicObjectPos(objectid, oX, oY, oZ);
-		GetPlayerPos(WMInfo[missileid][wm_targetid], dX, dY, dZ);
-		if(floatsqroot(floatpower(dX - oX, 2) + floatpower(dY - oY, 2) + floatpower(dZ - oZ, 2)) < MISSILE_CONTACT) DestroyMissile(missileid);
-		MoveDynamicObject(objectid, dX, dY, dZ, MISSILE_VELOCITY, 0, 0, 0);
+		}
 	} else {
 		SendClientMessage(WMInfo[missileid][wm_playerid], PASTEL_DEEP_ORANGE, "Player is not aimed!");
 		DestroyMissile(missileid);
 	}
+}
+
+stock MoveCheckpointMissile(missileid)
+{
+	new Float:oX, Float:oY, Float:oZ,
+		Float:dX, Float:dY, Float:dZ;
+		
+	GetDynamicObjectPos(WMInfo[missileid][wm_objectid], oX, oY, oZ);
+	GetPlayerPos(WMInfo[missileid][wm_targetid], dX, dY, dZ);
+	if(floatsqroot(floatpower(dX - oX, 2) + floatpower(dY - oY, 2) + floatpower(dZ - oZ, 2)) < MISSILE_CONTACT)
+	{
+		DestroyMissile(missileid);
+		return 1;
+	}
+	MoveDynamicObject(WMInfo[missileid][wm_objectid], dX, dY, dZ, MISSILE_VELOCITY, 0, 0, 0);
+	return 0;
+}
+
+stock MoveStepMissile(missileid)
+{
+	new Float:oX, Float:oY, Float:oZ,
+		Float:dX, Float:dY, Float:dZ,
+		Float:sX, Float:sY, Float:sZ;
+		
+	GetDynamicObjectPos(WMInfo[missileid][wm_objectid], oX, oY, oZ);
+	GetPlayerPos(WMInfo[missileid][wm_targetid], dX, dY, dZ);
+	
+	new Float:length = floatsqroot(floatpower(dX - oX, 2) + floatpower(dY - oY, 2) + floatpower(dZ - oZ, 2));
+	
+	if(length < MISSILE_CONTACT) 
+	{
+		DestroyMissile(missileid);
+		return 1;
+	}
+	
+	sX = (dX - oX) / length * MISSILE_STEP;
+	sY = (dY - oY) / length * MISSILE_STEP;
+	sZ = (dZ - oZ) / length * MISSILE_STEP;
+	
+	dX = oX + sX;
+	dY = oY + sY;
+	dZ = oZ + sZ;
+	
+	MoveDynamicObject(WMInfo[missileid][wm_objectid], dX, dY, dZ, MISSILE_VELOCITY, 0, 0, 0);
+	return 0;
 }
 
 stock DestroyMissile(missileid)

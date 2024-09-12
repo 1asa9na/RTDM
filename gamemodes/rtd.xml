@@ -114,7 +114,7 @@
 			<member name="C:pickup_timer" value="7">
 			</member>
 		</member>
-		<member name="T:EPlayerInfo" value="9">
+		<member name="T:EPlayerInfo" value="10">
 			<tagname value="EPlayerInfo"/>
 			<member name="C:is_player_spawned" value="0">
 				<tagname value="bool"/>
@@ -136,8 +136,16 @@
 			<member name="C:player_change_team" value="7">
 				<tagname value="bool"/>
 			</member>
-			<member name="C:player_change_class" value="8">
+			<member name="C:is_player_drunk" value="8">
 				<tagname value="bool"/>
+			</member>
+			<member name="C:player_drunk_timer" value="9">
+			</member>
+		</member>
+		<member name="T:ESkillInfo" value="5">
+			<tagname value="ESkillInfo"/>
+			<member name="C:skill_king_charges" value="0">
+				<size value="5"/>
 			</member>
 		</member>
 		<member name="T:MAX_CARMODS" value="16">
@@ -1345,7 +1353,6 @@
 			<referrer name="CA_CreateObject_DC"/>
 			<referrer name="CA_DestroyObject_DC"/>
 			<referrer name="PawnCmd_OnGameModeInit"/>
-			<referrer name="pc_cmd_sc"/>
 			<referrer name="pc_cmd_st"/>
 			<referrer name="OnPlayerConnect"/>
 			<referrer name="OnPlayerRequestClass"/>
@@ -1356,13 +1363,15 @@
 			<referrer name="OnPlayerLeaveDynamicCP"/>
 			<referrer name="DestroyPickupBomb"/>
 			<referrer name="DefusePickupBomb"/>
+			<referrer name="OnPlayerTakeDamage"/>
+			<referrer name="OnPlayerWeaponShot"/>
+			<referrer name="RemovePlayerDrunk"/>
 		</member>
 		<member name="C:true" value="1">
 			<tagname value="bool"/>
 			<referrer name="fflush"/>
 			<referrer name="CA_CreateObject_DC"/>
 			<referrer name="PawnCmd_OnGameModeInit"/>
-			<referrer name="SwitchPlayerClass"/>
 			<referrer name="SwitchPlayerTeam"/>
 			<referrer name="OnPlayerConnect"/>
 			<referrer name="OnPlayerRequestClass"/>
@@ -1371,6 +1380,7 @@
 			<referrer name="ForcePerkSelection"/>
 			<referrer name="OnPlayerPickUpPickup"/>
 			<referrer name="OnPlayerEnterDynamicCP"/>
+			<referrer name="OnPlayerWeaponShot"/>
 		</member>
 		<member name="C:undefined" value="-1">
 			<tagname value="bool"/>
@@ -1411,10 +1421,10 @@
 		</member>
 		<member name="F:PlayerInfo">
 			<referrer name="pc_cmd_rustler"/>
-			<referrer name="SwitchPlayerClass"/>
 			<referrer name="SwitchPlayerTeam"/>
 			<referrer name="DestroyPlayerVehicle"/>
 			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerDisconnect"/>
 			<referrer name="OnPlayerRequestClass"/>
 			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerDeath"/>
@@ -1422,6 +1432,15 @@
 			<referrer name="OnPlayerPickUpPickup"/>
 			<referrer name="OnPlayerEnterDynamicCP"/>
 			<referrer name="DefusePickupBomb"/>
+			<referrer name="OnPlayerTakeDamage"/>
+			<referrer name="OnPlayerWeaponShot"/>
+			<referrer name="RemovePlayerDrunk"/>
+		</member>
+		<member name="F:SkillInfo">
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="OnPlayerTakeDamage"/>
 		</member>
 		<member name="F:Streamer_IncludeFileVersion">
 			<attribute name="public"/>
@@ -1435,6 +1454,8 @@
 			<remarks>  Version examples:  <ul>  <li><c>0.3.DL R1       - 03D010</c></li>  <li>                               </li>  <li><c>0.3.7 R3        - 037030</c></li>  <li><c>0.3.7 R2-2      - 037022</c></li>  <li><c>0.3.7 R1-2      - 037012</c></li>  <li><c>0.3.7           - 037000</c></li>  <li>                               </li>  <li><c>0.3z R4         - 030700</c></li>  <li><c>0.3z R3         - 030700</c></li>  <li><c>0.3z R2-1       - 030700</c></li>  <li><c>0.3z R1-2       - 030700</c></li>  <li><c>0.3z            - 030700</c></li>  <li><c>0.3x R2 patch 1 - 030621</c></li>  <li><c>0.3x R2         - 030620</c></li>  <li><c>0.3x R1-2       - 030612</c></li>  <li><c>0.3x            - 030600</c></li>  <li><c>0.3e            - 030500</c></li>  <li><c>0.3d            - 030400</c></li>  <li><c>0.3c            - 030300</c></li>  <li><c>0.3b            - 030200</c></li>  <li><c>0.3a            - 030100</c></li>  <li>                               </li>  <li><c>0.2X            - 02A000</c></li>  <li><c>0.2.2 R3        - 022300</c></li>  </ul>  Rough rules:  <p />  Uses (roughtly) BCD.  Special versions are denoted outside 0-9.  <code>  0.1.2c R4-5  | | ||  | |  0 1 23  4 5  =  0x012345  </code>  (assuming c is the third revision)  <p />  0.2X becomes 02A000 because it is basically 0.2.3, but not, while higher than  0.2.2 so can't be 020400 (for example).  Also, its a capital letter, so doesn't  use the revision method.  <p />  P.S.  Making a consistent scheme for SA:MP versions is REALLY hard.  <p />  open.mp releases can use `A` as the first digit.  </remarks> 
 		</member>
 		<member name="F:__date">
+		</member>
+		<member name="F:__file">
 		</member>
 		<member name="F:__file">
 		</member>
@@ -1688,6 +1709,7 @@
 			<stacksize value="4"/>
 			<referrer name="CA_IsPlayerNearWater"/>
 			<referrer name="OnPlayerRequestClass"/>
+			<referrer name="OnPlayerTakeDamage"/>
 			<dependency name="float"/>
 			<dependency name="floatmul"/>
 			<param name="__oper1">
@@ -1712,6 +1734,7 @@
 			<referrer name="CA_RayCastExplode"/>
 			<referrer name="CA_IsPlayerFacingWater"/>
 			<referrer name="CA_IsPlayerBlocked"/>
+			<referrer name="OnPlayerSpawn"/>
 			<dependency name="cellmin"/>
 			<param name="__oper">
 				<paraminfo>Float </paraminfo>
@@ -1739,6 +1762,7 @@
 			<referrer name="CA_GetRoomHeight"/>
 			<referrer name="CA_GetRoomCenter"/>
 			<referrer name="OnPlayerRequestClass"/>
+			<referrer name="OnPlayerTakeDamage"/>
 			<referrer name="OnPlayerWeaponShot"/>
 			<param name="oper1">
 				<paraminfo>Float </paraminfo>
@@ -1759,6 +1783,7 @@
 			<referrer name="CA_IsPlayerBlocked"/>
 			<referrer name="CA_GetRoomHeight"/>
 			<referrer name="CA_GetRoomCenter"/>
+			<referrer name="OnPlayerTakeDamage"/>
 			<referrer name="OnPlayerWeaponShot"/>
 			<param name="oper1">
 				<paraminfo>Float </paraminfo>
@@ -1773,6 +1798,7 @@
 			<attribute name="native"/>
 			<referrer name="CA_RayCastExplode"/>
 			<referrer name="CA_GetRoomCenter"/>
+			<referrer name="OnPlayerTakeDamage"/>
 			<referrer name="OnPlayerWeaponShot"/>
 			<param name="oper1">
 				<paraminfo>Float </paraminfo>
@@ -2087,11 +2113,13 @@
 			<tagname value="Float"/>
 			<attribute name="native"/>
 			<referrer name="PawnCmd_OnGameModeInit"/>
-			<referrer name="SwitchPlayerClass"/>
 			<referrer name="SwitchPlayerTeam"/>
 			<referrer name="OnPlayerConnect"/>
 			<referrer name="OnPlayerRequestClass"/>
+			<referrer name="OnPlayerSpawn"/>
 			<referrer name="DestroyPickupBomb"/>
+			<referrer name="OnPlayerTakeDamage"/>
+			<referrer name="DestroyKingCharge"/>
 			<referrer name="OnPlayerWeaponShot"/>
 			<referrer name="DestroyDeagleObject"/>
 			<param name="oper">
@@ -2324,36 +2352,6 @@
 			</param>
 			<library>omp_class</library>  <summary>This function is exactly the same as the <a href="#AddPlayerClass">AddPlayerClass</a> function,  with the addition of a team parameter.</summary>                          <returns>  <ul>  <li>The <b>ID of the class</b> which was just added.</li>  <li><b><c>319</c></b> if the class limit (<b><c>320</c></b>) was reached.  The highest possible  class ID is <b><c>319</c></b>.</li>  </ul>  </returns>  <remarks>The maximum class ID is <b><c>319</c></b> (starting from <b><c>0</c></b>, so a total of  <b><c>320</c></b> classes).  When this limit is reached, any more classes that are added will replace  ID <b><c>319</c></b>.</remarks>  <seealso name="AddPlayerClass" />  <seealso name="SetSpawnInfo" />  <seealso name="SetPlayerTeam" />  <seealso name="SetPlayerSkin" /> 
 		</member>
-		<member name="M:AddStaticVehicle" syntax="AddStaticVehicle(modelid, spawnX, spawnY, spawnZ, angle, colour1, colour2)">
-			<attribute name="native"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
-			<param name="modelid">
-				The <a href="https://www.open.mp/docs/scripting/resources/vehicleid">Model ID</a>  for the  vehicle
-			</param>
-			<param name="spawnX">
-				<paraminfo>Float </paraminfo>
-				The x coordinate of the spawnpoint of this vehicle
-			</param>
-			<param name="spawnY">
-				<paraminfo>Float </paraminfo>
-				The y coordinate of the spawnpoint of this vehicle
-			</param>
-			<param name="spawnZ">
-				<paraminfo>Float </paraminfo>
-				The z coordinate of the spawnpoint of this vehicle
-			</param>
-			<param name="angle">
-				<paraminfo>Float </paraminfo>
-				Direction of vehicle - angle
-			</param>
-			<param name="colour1">
-				The primary <a href="https://www.open.mp/docs/scripting/resources/vehiclecolorid">colour  ID</a>. <b><c>-1</c></b>  for random (random colour chosen by client)
-			</param>
-			<param name="colour2">
-				The secondary <a href="https://www.open.mp/docs/scripting/resources/vehiclecolorid">colour  ID</a>.  <b><c>-1</c></b> for random (random colour chosen by client)
-			</param>
-			<library>omp_vehicle</library>  <summary>Adds a 'static' vehicle (models are pre-loaded for players) to the gamemode.</summary>                <returns>  <ul>  <li>The vehicle ID of the vehicle created (between <b><c>1</c></b> and <b><c>MAX_VEHICLES</c></b>).</li>  <li><b><c>INVALID_VEHICLE_ID</c></b> (<b><c>65535</c></b>) if vehicle was not created (vehicle  limit reached or invalid vehicle model ID passed).</li>  </ul>  </returns>  <remarks>Can only be used when the server first starts (under <a href="#OnGameModeInit">OnGameModeInit</a>).</remarks>  <seealso name="AddStaticVehicleEx" />  <seealso name="CreateVehicle" />  <seealso name="DestroyVehicle" /> 
-		</member>
 		<member name="M:ApplyAnimation" syntax="ApplyAnimation(playerid, animationLibrary[], animationName[], delta, loop, lockX, lockY, freeze, time, forceSync)">
 			<tagname value="bool"/>
 			<attribute name="native"/>
@@ -2398,6 +2396,32 @@
 				Set to <b><c>1</c></b> to make server sync the animation with all other players  in streaming radius. <b><c>2</c></b> works same as <b><c>1</c></b>, but will ONLY apply the animation  to streamed-in players, but NOT the actual player being animated (useful for npc animations and persistent  animations when players are being streamed) (optional=<b><c>0</c></b>)
 			</param>
 			<library>omp_player</library>  <summary>Apply an animation to a player.</summary>                      <seealso name="ClearAnimations" />  <seealso name="SetPlayerSpecialAction" />  <remarks>The <paramref name="forceSync" /> optional parameter, which defaults to <b><c>0</c></b>,  in most cases is not needed since players sync animations themselves.  The <paramref name="forceSync"  /> parameter can force all players who can see <paramref name="playerid" /> to play the animation  regardless of whether the player is performing that animation.  This is useful in circumstances where  the player can't sync the animation themselves.  For example, they may be paused.</remarks>  <remarks>An invalid animation library will crash the player's game.</remarks>  <returns>This function always returns <b><c>1</c></b>, even if the player specified does not exist,  or any of the parameters are invalid (e.g.  invalid library).</returns> 
+		</member>
+		<member name="M:AttachDynamicObjectToPlayer" syntax="AttachDynamicObjectToPlayer(objectid, playerid, offsetx, offsety, offsetz, rx, ry, rz)">
+			<attribute name="native"/>
+			<referrer name="OnPlayerSpawn"/>
+			<param name="objectid">
+			</param>
+			<param name="playerid">
+			</param>
+			<param name="offsetx">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="offsety">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="offsetz">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="rx">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="ry">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="rz">
+				<paraminfo>Float </paraminfo>
+			</param>
 		</member>
 		<member name="M:CA_CreateObject" syntax="CA_CreateObject(modelid, x, y, z, rx, ry, rz, add)">
 			<attribute name="native"/>
@@ -2946,9 +2970,51 @@
 			<param name="priority">
 			</param>
 		</member>
+		<member name="M:CreateDynamicObject" syntax="CreateDynamicObject(modelid, x, y, z, rx, ry, rz, worldid, interiorid, playerid, streamdistance, drawdistance, areaid, priority)">
+			<attribute name="native"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerTakeDamage"/>
+			<param name="modelid">
+			</param>
+			<param name="x">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="z">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="rx">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="ry">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="rz">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="worldid">
+			</param>
+			<param name="interiorid">
+			</param>
+			<param name="playerid">
+			</param>
+			<param name="streamdistance">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="drawdistance">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="areaid">
+			</param>
+			<param name="priority">
+			</param>
+		</member>
 		<member name="M:CreateExplosion" syntax="CreateExplosion(x, y, z, type, radius)">
 			<attribute name="native"/>
 			<referrer name="DestroyPickupBomb"/>
+			<referrer name="DestroyKingCharge"/>
 			<referrer name="OnPlayerWeaponShot"/>
 			<referrer name="DestroyDeagleObject"/>
 			<param name="x">
@@ -3124,12 +3190,27 @@
 			</param>
 		</member>
 		<member name="M:DestroyDeagleObject" syntax="DestroyDeagleObject(objectid)">
-			<attribute name="public"/>
 			<stacksize value="10"/>
 			<dependency name="Float:operator=(_:)"/>
 			<dependency name="CreateExplosion"/>
 			<dependency name="DestroyObject"/>
 			<dependency name="GetObjectPos"/>
+			<param name="objectid">
+			</param>
+		</member>
+		<member name="M:DestroyDynamicObject" syntax="DestroyDynamicObject(objectid)">
+			<attribute name="native"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="OnPlayerTakeDamage"/>
+			<param name="objectid">
+			</param>
+		</member>
+		<member name="M:DestroyKingCharge" syntax="DestroyKingCharge(objectid)">
+			<stacksize value="10"/>
+			<dependency name="Float:operator=(_:)"/>
+			<dependency name="CreateExplosion"/>
+			<dependency name="GetDynamicObjectPos"/>
 			<param name="objectid">
 			</param>
 		</member>
@@ -3199,15 +3280,14 @@
 		<member name="M:ForceClassSelection" syntax="ForceClassSelection(playerid)">
 			<tagname value="bool"/>
 			<attribute name="native"/>
-			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerDeath"/>
 			<param name="playerid">
 				The player to send back to class selection
 			</param>
 			<library>omp_class</library>  <summary>Forces a player to go back to class selection.</summary>    <seealso name="AddPlayerClass" />  <seealso name="SetPlayerSkin" />  <seealso name="GetPlayerSkin" />  <seealso name="OnPlayerRequestClass" />  <remarks>The player will not return to class selection until they re-spawn.  This can be achieved  with <a href="#TogglePlayerSpectating">TogglePlayerSpectating</a>, as seen in the below example.</remarks> 
 		</member>
 		<member name="M:ForcePerkSelection" syntax="ForcePerkSelection(playerid)">
-			<stacksize value="41"/>
-			<referrer name="OnPlayerSpawn"/>
+			<stacksize value="52"/>
 			<referrer name="OnPlayerRequestSpawn"/>
 			<referrer name="OnDialogResponse"/>
 			<dependency name="InterpolateCameraLookAt"/>
@@ -3215,6 +3295,7 @@
 			<dependency name="PerkInfo"/>
 			<dependency name="PerkInfo"/>
 			<dependency name="ShowPlayerDialog"/>
+			<dependency name="SpawnPlayer"/>
 			<dependency name="TogglePlayerSpectating"/>
 			<dependency name="perk_title"/>
 			<dependency name="strcat"/>
@@ -3226,6 +3307,22 @@
 		<member name="M:GetActorPoolSize" syntax="GetActorPoolSize()">
 			<stacksize value="1"/>
 			<library>omp_core</library>  <summary>Gets the highest actorid created on the server.</summary>  <seealso name="CreateActor" />  <seealso name="IsValidActor" />  <seealso name="SetActorHealth" />  <returns>The highest actorid created on the server or <b><c>0</c></b> if there are no created actors.</returns> 
+		</member>
+		<member name="M:GetDynamicObjectPos" syntax="GetDynamicObjectPos(objectid, &amp;x, &amp;y, &amp;z)">
+			<attribute name="native"/>
+			<referrer name="OnPlayerTakeDamage"/>
+			<referrer name="DestroyKingCharge"/>
+			<param name="objectid">
+			</param>
+			<param name="x">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+			<param name="z">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
 		</member>
 		<member name="M:GetObjectPos" syntax="GetObjectPos(objectid, &amp;x, &amp;y, &amp;z)">
 			<tagname value="bool"/>
@@ -3288,6 +3385,7 @@
 			<referrer name="CA_IsPlayerFacingWater"/>
 			<referrer name="CA_IsPlayerBlocked"/>
 			<referrer name="pc_cmd_rustler"/>
+			<referrer name="OnPlayerTakeDamage"/>
 			<referrer name="OnPlayerWeaponShot"/>
 			<param name="playerid">
 				The ID of the player to get the position of
@@ -3490,6 +3588,12 @@
 			</param>
 			<library>omp_player</library>  <summary>Move a player's camera from one position to another, within the set time.  Useful for scripted  cut scenes.</summary>                    <seealso name="InterpolateCameraLookAt" />  <seealso name="SetPlayerCameraPos" />  <seealso name="SetPlayerCameraLookAt" />  <remarks>Use <b><c>TogglePlayerSpectating</c></b> to make objects stream in for the player while  the camera is moving.  You can reset the camera behind the player with <b><c>SetCameraBehindPlayer</c></b>.</remarks> 
 		</member>
+		<member name="M:IsValidDynamicObject" syntax="IsValidDynamicObject(objectid)">
+			<attribute name="native"/>
+			<referrer name="OnPlayerTakeDamage"/>
+			<param name="objectid">
+			</param>
+		</member>
 		<member name="M:IsVehicleHidden" syntax="IsVehicleHidden(vehicleid)">
 			<tagname value="bool"/>
 			<stacksize value="1"/>
@@ -3510,6 +3614,7 @@
 			<referrer name="OnPlayerLeaveDynamicCP"/>
 			<referrer name="DestroyPickupBomb"/>
 			<referrer name="DefusePickupBomb"/>
+			<referrer name="RemovePlayerDrunk"/>
 			<param name="timerid">
 				The ID of the timer to kill (returned by <a href="#SetTimer">SetTimer</a> or  <a href="#SetTimerEx">SetTimerEx</a>)
 			</param>
@@ -3523,6 +3628,33 @@
 				The radius that markers will show at
 			</param>
 			<library>omp_core</library>  <summary>Set the player marker radius.</summary>    <seealso name="ShowPlayerMarkers" />  <seealso name="SetPlayerMarkerForPlayer" />  <seealso name="LimitGlobalChatRadius" /> 
+		</member>
+		<member name="M:MoveDynamicObject" syntax="MoveDynamicObject(objectid, x, y, z, speed, rx, ry, rz)">
+			<attribute name="native"/>
+			<referrer name="OnPlayerTakeDamage"/>
+			<param name="objectid">
+			</param>
+			<param name="x">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="z">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="speed">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="rx">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="ry">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="rz">
+				<paraminfo>Float </paraminfo>
+			</param>
 		</member>
 		<member name="M:OnActorStreamIn" syntax="OnActorStreamIn(actorid, forplayerid)">
 			<attribute name="public"/>
@@ -3571,7 +3703,6 @@
 			<dependency name="PlayerInfo"/>
 			<dependency name="TogglePlayerSpectating"/>
 			<dependency name="false"/>
-			<dependency name="player_change_class"/>
 			<dependency name="player_change_team"/>
 			<dependency name="player_perk"/>
 			<param name="playerid">
@@ -3635,8 +3766,7 @@
 		</member>
 		<member name="M:OnFilterScriptInit" syntax="OnFilterScriptInit()">
 			<attribute name="public"/>
-			<stacksize value="3"/>
-			<dependency name="__printf"/>
+			<stacksize value="1"/>
 			<summary>This callback is called when a filterscript is initialized (loaded).  It is only called  inside the filterscript which is starting.</summary>  <seealso name="OnFilterScriptExit" />  <seealso name="OnGameModeInit" />  <seealso name="OnGameModeExit" />  <returns>This callback does not handle returns.</returns> 
 		</member>
 		<member name="M:OnGameModeExit" syntax="OnGameModeExit()">
@@ -3806,7 +3936,6 @@
 			<dependency name="is_carrying_bomb"/>
 			<dependency name="is_player_spawned"/>
 			<dependency name="kills"/>
-			<dependency name="player_change_class"/>
 			<dependency name="player_change_team"/>
 			<dependency name="true"/>
 			<param name="playerid">
@@ -3817,12 +3946,16 @@
 		<member name="M:OnPlayerDeath" syntax="OnPlayerDeath(playerid, killerid, reason)">
 			<attribute name="public"/>
 			<stacksize value="5"/>
+			<dependency name="DestroyDynamicObject"/>
+			<dependency name="ForceClassSelection"/>
 			<dependency name="PickupInfo"/>
 			<dependency name="PickupInfo"/>
 			<dependency name="PlayerInfo"/>
 			<dependency name="PlayerInfo"/>
 			<dependency name="SendClientMessage"/>
 			<dependency name="SetPlayerColor"/>
+			<dependency name="SkillInfo"/>
+			<dependency name="SkillInfo"/>
 			<dependency name="deaths"/>
 			<dependency name="false"/>
 			<dependency name="is_carrying_bomb"/>
@@ -3830,8 +3963,9 @@
 			<dependency name="is_player_spawned"/>
 			<dependency name="kills"/>
 			<dependency name="picked_up_by_team"/>
-			<dependency name="player_change_class"/>
 			<dependency name="player_change_team"/>
+			<dependency name="player_perk"/>
+			<dependency name="skill_king_charges"/>
 			<dependency name="true"/>
 			<param name="playerid">
 				The ID of the player that died
@@ -3847,7 +3981,13 @@
 		</member>
 		<member name="M:OnPlayerDisconnect" syntax="OnPlayerDisconnect(playerid, reason)">
 			<attribute name="public"/>
-			<stacksize value="1"/>
+			<stacksize value="3"/>
+			<dependency name="DestroyDynamicObject"/>
+			<dependency name="PlayerInfo"/>
+			<dependency name="SkillInfo"/>
+			<dependency name="SkillInfo"/>
+			<dependency name="player_perk"/>
+			<dependency name="skill_king_charges"/>
 			<param name="playerid">
 				The ID of the player that disconnected
 			</param>
@@ -4465,11 +4605,13 @@
 		</member>
 		<member name="M:OnPlayerSpawn" syntax="OnPlayerSpawn(playerid)">
 			<attribute name="public"/>
-			<stacksize value="8"/>
+			<stacksize value="22"/>
+			<dependency name="operator-(Float:)"/>
+			<dependency name="Float:operator=(_:)"/>
+			<dependency name="AttachDynamicObjectToPlayer"/>
 			<dependency name="ClassInfo"/>
 			<dependency name="ClassInfo"/>
-			<dependency name="ForceClassSelection"/>
-			<dependency name="ForcePerkSelection"/>
+			<dependency name="CreateDynamicObject"/>
 			<dependency name="GetPlayerTeam"/>
 			<dependency name="GivePlayerWeapon"/>
 			<dependency name="PerkInfo"/>
@@ -4480,14 +4622,15 @@
 			<dependency name="SetPlayerColor"/>
 			<dependency name="SetPlayerInterior"/>
 			<dependency name="SetPlayerWorldBounds"/>
+			<dependency name="SkillInfo"/>
+			<dependency name="SkillInfo"/>
 			<dependency name="color"/>
 			<dependency name="current_textdraw"/>
 			<dependency name="is_player_spawned"/>
 			<dependency name="perk_weapon_ammo"/>
 			<dependency name="perk_weapons"/>
-			<dependency name="player_change_class"/>
-			<dependency name="player_change_team"/>
 			<dependency name="player_perk"/>
+			<dependency name="skill_king_charges"/>
 			<dependency name="true"/>
 			<param name="playerid">
 				The ID of the player that spawned
@@ -4534,7 +4677,31 @@
 		</member>
 		<member name="M:OnPlayerTakeDamage" syntax="OnPlayerTakeDamage(playerid, issuerid, amount, weaponid, bodypart)">
 			<attribute name="public"/>
-			<stacksize value="1"/>
+			<stacksize value="45"/>
+			<dependency name="operator*(Float:,_:)"/>
+			<dependency name="operator-(Float:,Float:)"/>
+			<dependency name="operator+(Float:,Float:)"/>
+			<dependency name="operator/(Float:,Float:)"/>
+			<dependency name="Float:operator=(_:)"/>
+			<dependency name="CreateDynamicObject"/>
+			<dependency name="DestroyDynamicObject"/>
+			<dependency name="GetDynamicObjectPos"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="IsValidDynamicObject"/>
+			<dependency name="MoveDynamicObject"/>
+			<dependency name="PlayerInfo"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerHealth"/>
+			<dependency name="SetTimerEx"/>
+			<dependency name="SkillInfo"/>
+			<dependency name="SkillInfo"/>
+			<dependency name="false"/>
+			<dependency name="floatpower"/>
+			<dependency name="floatround"/>
+			<dependency name="floatsqroot"/>
+			<dependency name="format"/>
+			<dependency name="player_perk"/>
+			<dependency name="skill_king_charges"/>
 			<param name="playerid">
 				The ID of the player that took damage
 			</param>
@@ -4587,12 +4754,20 @@
 			<dependency name="GetPlayerPos"/>
 			<dependency name="GetVehiclePos"/>
 			<dependency name="IsVehicleOccupied"/>
+			<dependency name="PlayerInfo"/>
+			<dependency name="PlayerInfo"/>
+			<dependency name="SetPlayerDrunkLevel"/>
 			<dependency name="SetPlayerVelocity"/>
+			<dependency name="SetTimerEx"/>
 			<dependency name="SetVehicleAngularVelocity"/>
 			<dependency name="SetVehicleVelocity"/>
+			<dependency name="false"/>
 			<dependency name="floatabs"/>
 			<dependency name="floatpower"/>
 			<dependency name="floatsqroot"/>
+			<dependency name="is_player_drunk"/>
+			<dependency name="player_drunk_timer"/>
+			<dependency name="true"/>
 			<param name="playerid">
 				The ID of the player that shot a weapon
 			</param>
@@ -4829,7 +5004,6 @@
 			<stacksize value="15"/>
 			<dependency name="Float:operator=(_:)"/>
 			<dependency name="AddPlayerClassEx"/>
-			<dependency name="AddStaticVehicle"/>
 			<dependency name="CA_CreateObject"/>
 			<dependency name="CA_Init"/>
 			<dependency name="CPInfo"/>
@@ -4955,6 +5129,18 @@
 			</param>
 			<library>omp_player</library>  <summary>Puts a player in a vehicle.</summary>        <seealso name="RemovePlayerFromVehicle" />  <seealso name="GetPlayerVehicleid" />  <seealso name="GetPlayerVehicleSeat" />  <seealso name="OnPlayerEnterVehicle" />  <remarks>If this function is used on a player that is already in a vehicle, other players will still  see them in their previous vehicle.  To fix this, first remove the player from the vehicle.</remarks>  <remarks>If the seat is invalid or is taken, will cause a crash when they EXIT the vehicle.</remarks>  <remarks>You can use <a href="#GetPlayerVehicleSeat">GetPlayerVehicleSeat</a> in a loop to check  if a seat is occupied by any players.</remarks>  <remarks>  <b>Seats:</b><br />  <ul>  <li><b><c>0</c></b> - driver.</li>  <li><b><c>1</c></b> - front passenger.</li>  <li><b><c>2</c></b> - back-left passenger.</li>  <li><b><c>3</c></b> - back-right passenger.</li>  <li><b><c>4+</c></b> - passenger seats (coach etc.).</li>  </ul>  </remarks>  <returns>  <b><c>1</c></b>: The function executed successfully.<br />  <b><c>0</c></b>: The function failed to execute.  The player or vehicle don't exist.  </returns> 
 		</member>
+		<member name="M:RemovePlayerDrunk" syntax="RemovePlayerDrunk(hitid)">
+			<stacksize value="4"/>
+			<dependency name="KillTimer"/>
+			<dependency name="PlayerInfo"/>
+			<dependency name="PlayerInfo"/>
+			<dependency name="SetPlayerDrunkLevel"/>
+			<dependency name="false"/>
+			<dependency name="is_player_drunk"/>
+			<dependency name="player_drunk_timer"/>
+			<param name="hitid">
+			</param>
+		</member>
 		<member name="M:RemovePlayerMapIcon" syntax="RemovePlayerMapIcon(playerid, iconid)">
 			<tagname value="bool"/>
 			<attribute name="native"/>
@@ -4970,12 +5156,12 @@
 		<member name="M:SendClientMessage" syntax="SendClientMessage(playerid, colour, format[], ...)">
 			<tagname value="bool"/>
 			<attribute name="native"/>
-			<referrer name="pc_cmd_sc"/>
 			<referrer name="pc_cmd_st"/>
 			<referrer name="OnPlayerDeath"/>
 			<referrer name="OnPlayerPickUpPickup"/>
 			<referrer name="OnPlayerEnterDynamicCP"/>
 			<referrer name="OnPlayerLeaveDynamicCP"/>
+			<referrer name="OnPlayerTakeDamage"/>
 			<param name="playerid">
 				The ID of the player to display the message to
 			</param>
@@ -5155,6 +5341,19 @@
 			</param>
 			<library>omp_player</library>  <summary>Set the colour of a player's nametag and marker (radar blip).</summary>      <seealso name="SetPlayerMarkerForPlayer" />  <seealso name="GetPlayerColor" />  <seealso name="ChangeVehicleColor" />  <remarks>This function will change player's colour for everyone, even if player's colour was changed  with <a href="#SetPlayerMarkerForPlayer">SetPlayerMarkerForPlayer</a> for any other player. </remarks>  <remarks>If used under <a href="#OnPlayerConnect">OnPlayerConnect</a>, the affecting player will  not see the colour in the TAB menu. </remarks> 
 		</member>
+		<member name="M:SetPlayerDrunkLevel" syntax="SetPlayerDrunkLevel(playerid, level)">
+			<tagname value="bool"/>
+			<attribute name="native"/>
+			<referrer name="OnPlayerWeaponShot"/>
+			<referrer name="RemovePlayerDrunk"/>
+			<param name="playerid">
+				The ID of the player to set the drunkenness of
+			</param>
+			<param name="level">
+				The level of drunkenness to set
+			</param>
+			<library>omp_player</library>  <summary>Sets the drunk level of a player which makes the player's camera sway and vehicles hard  to control.</summary>      <seealso name="GetPlayerDrunkLevel" />  <remarks>  Players' drunk level will automatically decrease over time, based on their FPS (players with <b><c>50</c></b>  FPS will lose <b><c>50</c></b> 'levels' per second.  This is useful for determining a player's FPS!).<br  />  In <b>0.3a</b> the drunk level will decrement and stop at <b><c>2000</c></b>.  In <b>0.3b+</b>  the drunk level decrements to <b><c>0</c></b>)<br />  Levels over <b><c>2000</c></b> make the player drunk (camera swaying and vehicles difficult to  control).<br />  Max drunk level is <b><c>50000</c></b>.<br />  While the drunk level is above <b><c>5000</c></b>, the player's HUD (radar etc.) will be hidden.  </remarks>  <returns>  <b><c>1</c></b>: The function executed successfully.<br />  <b><c>0</c></b>: The function failed to execute.  This means the player is not connected.  </returns> 
+		</member>
 		<member name="M:SetPlayerFacingAngle" syntax="SetPlayerFacingAngle(playerid, ang)">
 			<tagname value="bool"/>
 			<attribute name="native"/>
@@ -5171,8 +5370,8 @@
 		<member name="M:SetPlayerHealth" syntax="SetPlayerHealth(playerid, health)">
 			<tagname value="bool"/>
 			<attribute name="native"/>
-			<referrer name="SwitchPlayerClass"/>
 			<referrer name="SwitchPlayerTeam"/>
+			<referrer name="OnPlayerTakeDamage"/>
 			<param name="playerid">
 				The ID of the player to set the health of
 			</param>
@@ -5295,9 +5494,10 @@
 		</member>
 		<member name="M:SetTimerEx" syntax="SetTimerEx(functionName[], interval, repeating, specifiers[], ...)">
 			<attribute name="native"/>
-			<referrer name="pc_cmd_sc"/>
 			<referrer name="pc_cmd_st"/>
 			<referrer name="OnPlayerEnterDynamicCP"/>
+			<referrer name="OnPlayerTakeDamage"/>
+			<referrer name="OnPlayerWeaponShot"/>
 			<param name="functionName">
 				<paraminfo> [] </paraminfo>
 				The name of a public function to call when the timer expires
@@ -5441,6 +5641,15 @@
 			</param>
 			<library>omp_vehicle</library> 
 		</member>
+		<member name="M:SpawnPlayer" syntax="SpawnPlayer(playerid)">
+			<tagname value="bool"/>
+			<attribute name="native"/>
+			<referrer name="ForcePerkSelection"/>
+			<param name="playerid">
+				The ID of the player to spawn
+			</param>
+			<library>omp_class</library>  <summary>(Re)Spawns a player.</summary>    <seealso name="SetSpawnInfo" />  <seealso name="AddPlayerClass" />  <seealso name="OnPlayerSpawn" />  <remarks>Kills the player if they are in a vehicle and then they spawn with a bottle in their hand.</remarks>  <returns>  <b><c>1</c></b>: The function executed successfully.<br />  <b><c>0</c></b>: The function failed to execute.  This means the player is not connected.  </returns> 
+		</member>
 		<member name="M:Streamer_OnItemStreamIn" syntax="Streamer_OnItemStreamIn(type, id, forplayerid)">
 			<stacksize value="1"/>
 			<param name="type">
@@ -5465,18 +5674,6 @@
 			<stacksize value="1"/>
 			<param name="error">
 				<paraminfo> [] </paraminfo>
-			</param>
-		</member>
-		<member name="M:SwitchPlayerClass" syntax="SwitchPlayerClass(playerid)">
-			<attribute name="public"/>
-			<stacksize value="4"/>
-			<dependency name="Float:operator=(_:)"/>
-			<dependency name="PlayerInfo"/>
-			<dependency name="PlayerInfo"/>
-			<dependency name="SetPlayerHealth"/>
-			<dependency name="player_change_class"/>
-			<dependency name="true"/>
-			<param name="playerid">
 			</param>
 		</member>
 		<member name="M:SwitchPlayerTeam" syntax="SwitchPlayerTeam(playerid)">
@@ -5772,19 +5969,6 @@
 			</param>
 			<library>console</library> 
 		</member>
-		<member name="M:__printf" syntax="__printf(format[], ...)">
-			<attribute name="native"/>
-			<referrer name="OnFilterScriptInit"/>
-			<param name="format">
-				<paraminfo> [] </paraminfo>
-				The format string
-			</param>
-			<param name="...">
-				<paraminfo> {LANDING_GEAR_STATE,Bit,Bitmap,XML,XMLEntry,Group,INI,Language,Style,DB,DBResult,Menu,Text,PlayerText,Text3D,PlayerText3D,File,Float,CUSTOM_TAG_TYPES,_} </paraminfo>
-				Indefinite number of arguments of any tag
-			</param>
-			<library>omp_core</library>  <summary>Outputs a formatted string on the console (the server window, not the in-game chat).</summary>      <seealso name="print" />  <seealso name="format" />  <remarks>The format string or its output should not exceed 1024 characters.  Anything beyond that  length can lead to a server to crash.</remarks>  <remarks>This function doesn't support <a href="#strpack">packed</a> strings.</remarks>  <remarks>  <b>Format Specifiers:</b><br />  <ul>  <li><b><c>%i</c></b> - integer (whole number)</li>  <li><b><c>%d</c></b> - integer (whole number).</li>  <li><b><c>%s</c></b> - string</li>  <li><b><c>%f</c></b> - floating-point number (Float: tag)</li>  <li><b><c>%c</c></b> - ASCII character</li>  <li><b><c>%x</c></b> - hexadecimal number</li>  <li><b><c>%b</c></b> - binary number</li>  <li><b><c>%%</c></b> - literal <b><c>%</c></b></li>  <li><b><c>%q</c></b> - escape a text for SQLite. (Added in <b>0.3.7 R2</b>)</li>  </ul>  </remarks>  <remarks>The values for the placeholders follow in the exact same order as parameters in the call.  For example, <b><c>"I am %i years old"</c></b> - the <b><c>%i</c></b> will be replaced with an Integer  variable, which is the person's age.</remarks>  <remarks>You may optionally put a number between the <b><c>%</c></b> and the letter of the placeholder  code.  This number indicates the field width; if the size of the parameter to print at the position  of the placeholder is smaller than the field width, the field is expanded with spaces.  To cut the  number of decimal places beeing shown of a float, you can add <b><c>.&lt;max number&gt;</c></b> between  the <b><c>%</c></b> and the <b><c>f</c></b>. (example: <b><c>%.2f</c></b>)</remarks> 
-		</member>
 		<member name="M:__settimer" syntax="__settimer(callback[], milliseconds, multishot)">
 			<attribute name="native"/>
 			<referrer name="settimer"/>
@@ -6015,6 +6199,7 @@
 		<member name="M:floatpower" syntax="floatpower(value, exponent)">
 			<tagname value="Float"/>
 			<attribute name="native"/>
+			<referrer name="OnPlayerTakeDamage"/>
 			<referrer name="OnPlayerWeaponShot"/>
 			<param name="value">
 				<paraminfo>Float </paraminfo>
@@ -6029,6 +6214,7 @@
 		<member name="M:floatround" syntax="floatround(value, method)">
 			<attribute name="native"/>
 			<referrer name="CA_RayCastExplode"/>
+			<referrer name="OnPlayerTakeDamage"/>
 			<param name="value">
 				<paraminfo>Float </paraminfo>
 				The value to round
@@ -6062,6 +6248,7 @@
 			<tagname value="Float"/>
 			<attribute name="native"/>
 			<referrer name="CA_GetRoomHeight"/>
+			<referrer name="OnPlayerTakeDamage"/>
 			<referrer name="OnPlayerWeaponShot"/>
 			<param name="value">
 				<paraminfo>Float </paraminfo>
@@ -6087,6 +6274,7 @@
 		<member name="M:format" syntax="format(output[], len, format[], ...)">
 			<attribute name="native"/>
 			<referrer name="OnPlayerEnterDynamicCP"/>
+			<referrer name="OnPlayerTakeDamage"/>
 			<param name="output">
 				<paraminfo> [] </paraminfo>
 				The string to output the result to
@@ -6190,18 +6378,6 @@
 			<dependency name="PutPlayerInVehicle"/>
 			<dependency name="player_vehicle"/>
 			<dependency name="random"/>
-			<param name="playerid">
-			</param>
-			<param name="params">
-				<paraminfo> [] </paraminfo>
-			</param>
-		</member>
-		<member name="M:pc_cmd_sc" syntax="pc_cmd_sc(playerid, params[])">
-			<attribute name="public"/>
-			<stacksize value="7"/>
-			<dependency name="SendClientMessage"/>
-			<dependency name="SetTimerEx"/>
-			<dependency name="false"/>
 			<param name="playerid">
 			</param>
 			<param name="params">

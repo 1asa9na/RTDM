@@ -2,6 +2,7 @@
 #include <Pawn.CMD>
 #include <ColAndreas>
 #include <streamer>
+#include <YSF>
 
 /*
      ___      _
@@ -9,6 +10,13 @@
     \__ \/ -_)  _| || | '_ \
     |___/\___|\__|\_,_| .__/
                       |_|
+*/
+
+/* OFFSETS
+
+MISSILE_EX_ID_OFFSET							300001 - 300050
+SKILL_KING_CHARGES_EX_ID_OFFSET					400001 - 500000
+
 */
 
 // COLORS
@@ -41,8 +49,10 @@
 #define N_CLASSES 2
 #define N_PICKUPS 1
 #define N_CPS 3
-#define N_PERKS 3
+#define N_PERKS 4
 #define MAX_PERK_NAME 10
+
+#define SKILL_KING_CHARGES_EX_ID_OFFSET 400001
 
 // CLASS INFO
 
@@ -69,10 +79,19 @@ enum EPlayerInfo {
 	player_vehicle,
 	player_perk,
 	bool:player_change_team,
-	bool:player_change_class
+	bool:is_player_drunk,
+	player_drunk_timer
 };
 
 new PlayerInfo[MAX_PLAYERS][EPlayerInfo];
+
+// SKILLS INFO
+
+enum ESkillInfo {
+	skill_king_charges[5]
+}
+
+new SkillInfo[MAX_PLAYERS][ESkillInfo];
 
 // PERK INFO
 
@@ -180,6 +199,12 @@ public OnGameModeInit()
 	PerkInfo[2][perk_weapon_ammo] = { 1, 500, 100 };
 	strcopy(PerkInfo[2][perk_title], "Rook");
 	
+	PerkInfo[3][perk_health] = 1;
+	PerkInfo[3][perk_armour] = 100;
+	PerkInfo[3][perk_weapons] = { WEAPON_RIFLE, WEAPON_SPRAYCAN, WEAPON_GOLFCLUB };
+	PerkInfo[3][perk_weapon_ammo] = { 50, 500, 1 };
+	strcopy(PerkInfo[3][perk_title], "King");
+	
 	// OBJECTS
 	CreateObject(3279,	1228.10315, 353.25989,	18.44100,	0.00000,	0.00000,	157.00000);
 	CreateObject(13638, 1361.86523, 401.67441,	20.85201,	0.00000,	0.00000,	246.53470);
@@ -232,25 +257,6 @@ public OnGameModeInit()
 		CreateDynamicMapIcon(CPInfo[i][cp_x], CPInfo[i][cp_y], CPInfo[i][cp_z], CPInfo[i][cp_mapicon], 0);
 	}
 	
-	// VEHICLES
-	
-	AddStaticVehicle(401, 1252.3234,247.3649,19.5547,68.4121, -1, -1);
-	AddStaticVehicle(404, 1204.5350,267.3818,19.5547,336.2913, -1, -1);
-	AddStaticVehicle(413, 1228.4899,299.6678,19.5547,157.2198, -1, -1);
-	AddStaticVehicle(415, 1221.7859,301.9800,19.5547,157.2198, -1, -1);
-	AddStaticVehicle(423, 1341.4185,332.9185,20.0376,66.1840, -1, -1);
-	AddStaticVehicle(429, 1355.1538,364.0742,20.0255,65.7257, -1, -1);
-	AddStaticVehicle(434, 1415.2637,377.1012,19.3042,76.3792, -1, -1);
-	AddStaticVehicle(442, 1420.0203,367.5028,19.0526,162.1000, -1, -1);
-	AddStaticVehicle(456, 1409.5997,320.1427,18.9372,226.8040, -1, -1);
-	AddStaticVehicle(462, 1425.1090,275.1043,19.5547,68.4127, -1, -1);
-	AddStaticVehicle(470, 1391.0519,265.4253,19.5669,157.7136, -1, -1);
-	AddStaticVehicle(477, 1337.6892,285.5739,19.5615,248.4245, -1, -1);
-	AddStaticVehicle(486, 1294.9200,218.1724,19.5547,69.1963, -1, -1);
-	AddStaticVehicle(503, 1288.4561,188.6687,20.2564,129.3569, -1, -1);
-	AddStaticVehicle(506, 1288.8064,162.4481,20.4670,11.0725, -1, -1);
-	AddStaticVehicle(535, 1239.2605,181.1548,19.8765,334.2556, -1, -1);
-	
 	return 1;
 }
 
@@ -279,20 +285,6 @@ CMD:rustler(playerid, params[])
 	PutPlayerInVehicle(playerid, PlayerInfo[playerid][player_vehicle], 0);
 }
 
-CMD:sc(playerid, params[])
-{
-	SendClientMessage(playerid, PASTEL_DEEP_GRAY, "Sending to class selection in 5 seconds!");
-	SetTimerEx("SwitchPlayerClass", 5000, false, "i", playerid);
-}
-
-forward SwitchPlayerClass(playerid);
-public SwitchPlayerClass(playerid)
-{
-	PlayerInfo[playerid][player_change_class] = true;
-	SetPlayerHealth(playerid, 0);
-
-}
-
 CMD:st(playerid, params[])
 {
 	SendClientMessage(playerid, PASTEL_DEEP_GRAY, "Sending to team selection in 5 seconds!");
@@ -318,7 +310,6 @@ public OnPlayerConnect(playerid)
 	PlayerInfo[playerid][is_player_spawned] = false;
 	PlayerInfo[playerid][is_carrying_bomb] = false;
 	PlayerInfo[playerid][player_change_team] = true;
-	PlayerInfo[playerid][player_change_class] = true;
 	PlayerInfo[playerid][current_textdraw] = CreatePlayerTextDraw(playerid, 0, 0, "initial textdraw");
 	SetPlayerColor(playerid, 0xFF808080);
 	
@@ -328,6 +319,15 @@ public OnPlayerConnect(playerid)
 
 public OnPlayerDisconnect(playerid, reason)
 {
+	switch(PlayerInfo[playerid][player_perk]) {
+		case 3: {
+			DestroyDynamicObject(SkillInfo[playerid][skill_king_charges][0]);
+			DestroyDynamicObject(SkillInfo[playerid][skill_king_charges][1]);
+			DestroyDynamicObject(SkillInfo[playerid][skill_king_charges][2]);
+			DestroyDynamicObject(SkillInfo[playerid][skill_king_charges][3]);
+			DestroyDynamicObject(SkillInfo[playerid][skill_king_charges][4]);
+		}
+	}
 	return 1;
 }
 
@@ -381,15 +381,21 @@ public OnPlayerSpawn(playerid)
 	new classid = GetPlayerTeam(playerid);
 	SetPlayerColor(playerid, ClassInfo[classid][color]);
 	PlayerTextDrawDestroy(playerid, PlayerInfo[playerid][current_textdraw]);
-	if(PlayerInfo[playerid][player_change_team] || PlayerInfo[playerid][player_change_class])
-	{
-		if(PlayerInfo[playerid][player_change_team]) {
-			ForceClassSelection(playerid);
-			return 0;
-		}
-		if(PlayerInfo[playerid][player_change_class]) {
-			ForcePerkSelection(playerid);
-			return 0;
+	
+	switch(PlayerInfo[playerid][player_perk]) {
+		case 3: {
+			new Float:pX, Float:pY, Float:pZ, Float:pA;
+			new Float:offset = 1.5;
+			SkillInfo[playerid][skill_king_charges][0] = CreateDynamicObject(18693, pX, pY, pZ, 0.0, 0.0, pA);
+			AttachDynamicObjectToPlayer(SkillInfo[playerid][skill_king_charges][0], playerid, offset, 0, 1, 0, 0, 0);
+			SkillInfo[playerid][skill_king_charges][1] = CreateDynamicObject(18693, pX, pY, pZ, 0.0, 0.0, pA);
+			AttachDynamicObjectToPlayer(SkillInfo[playerid][skill_king_charges][1], playerid, offset, 0, 1.5, 0, 0, 0);
+			SkillInfo[playerid][skill_king_charges][2] = CreateDynamicObject(18693, pX, pY, pZ, 0.0, 0.0, pA);
+			AttachDynamicObjectToPlayer(SkillInfo[playerid][skill_king_charges][2], playerid, 0, 0, 2, 0, 0, 0);
+			SkillInfo[playerid][skill_king_charges][3] = CreateDynamicObject(18693, pX, pY, pZ, 0.0, 0.0, pA);
+			AttachDynamicObjectToPlayer(SkillInfo[playerid][skill_king_charges][3], playerid, -offset, 0, 1.5, 0, 0, 0);
+			SkillInfo[playerid][skill_king_charges][4] = CreateDynamicObject(18693, pX, pY, pZ, 0.0, 0.0, pA);
+			AttachDynamicObjectToPlayer(SkillInfo[playerid][skill_king_charges][4], playerid, -offset, 0, 1, 0, 0, 0);
 		}
 	}
 	
@@ -413,7 +419,19 @@ public OnPlayerDeath(playerid, killerid, WEAPON:reason)
 		SendClientMessage(playerid, 0xFFFF0000, "You have lost the bomb!");
 	}
 	
-	if(PlayerInfo[playerid][player_change_team] == false && PlayerInfo[playerid][player_change_class] == false) PlayerInfo[playerid][deaths] ++;
+	switch(PlayerInfo[playerid][player_perk]) {
+		case 3: {
+			DestroyDynamicObject(SkillInfo[playerid][skill_king_charges][0]);
+			DestroyDynamicObject(SkillInfo[playerid][skill_king_charges][1]);
+			DestroyDynamicObject(SkillInfo[playerid][skill_king_charges][2]);
+			DestroyDynamicObject(SkillInfo[playerid][skill_king_charges][3]);
+			DestroyDynamicObject(SkillInfo[playerid][skill_king_charges][4]);
+		}
+	}
+	
+	if(PlayerInfo[playerid][player_change_team]) {
+		ForceClassSelection(playerid);
+	} else PlayerInfo[playerid][deaths] ++;
 	
 	if (killerid != INVALID_PLAYER_ID)
     {
@@ -424,6 +442,7 @@ public OnPlayerDeath(playerid, killerid, WEAPON:reason)
 
 stock ForcePerkSelection(playerid)
 {
+	SpawnPlayer(playerid);
 	TogglePlayerSpectating(playerid, true);
 	InterpolateCameraPos(playerid, 366.1500, 1762.8300, 158.9100, 366.1500, 1762.8300, 158.9100, 1000);
 	InterpolateCameraLookAt(playerid, 365.3100, 1763.3800, 158.0600, 365.3100, 1763.3800, 158.0600, 1000);
@@ -466,11 +485,6 @@ public OnVehicleDeath(vehicleid, killerid)
 
 public OnFilterScriptInit()
 {
-	printf(" ");
-	printf("  -----------------------------------------");
-	printf("  |  Error: Script was loaded incorrectly |");
-	printf("  -----------------------------------------");
-	printf(" ");
 	return 1;
 }
 
@@ -481,6 +495,8 @@ public OnFilterScriptExit()
 
 public OnPlayerRequestSpawn(playerid)
 {
+	ForcePerkSelection(playerid);
+	
 	return 1;
 }
 
@@ -550,9 +566,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		case 1001: {
 			if(response == 1) {
 				PlayerInfo[playerid][player_perk] = listitem;
-				TogglePlayerSpectating(playerid, false);
 				PlayerInfo[playerid][player_change_team] = false;
-				PlayerInfo[playerid][player_change_class] = false;
+				TogglePlayerSpectating(playerid, false);
 			} else {
 				ForcePerkSelection(playerid);
 			}
@@ -792,7 +807,41 @@ public OnPlayerStreamOut(playerid, forplayerid)
 
 public OnPlayerTakeDamage(playerid, issuerid, Float:amount, WEAPON:weaponid, bodypart)
 {
+	if(PlayerInfo[issuerid][player_perk] == 1 && bodypart == 9) SetPlayerHealth(playerid, 0);
+	
+	if(PlayerInfo[playerid][player_perk] == 3 && issuerid != INVALID_PLAYER_ID) {
+		for(new i = 0; i < 5; i++) {
+			if(IsValidDynamicObject(SkillInfo[playerid][skill_king_charges][i])) {
+				new Float:iX, Float:iY, Float:iZ,
+					Float:oX, Float:oY, Float:oZ;
+				new string[20];
+				format(string, sizeof(string), "King Charge Shot! %d", i);
+				SendClientMessage(playerid, PASTEL_DEEP_GREEN, string);
+				new Float:charge_velocity = 70.0;
+				GetPlayerPos(issuerid, iX, iY, iZ);
+				GetDynamicObjectPos(SkillInfo[playerid][skill_king_charges][i], oX, oY, oZ);
+				DestroyDynamicObject(SkillInfo[playerid][skill_king_charges][i]);
+				new temp_object = CreateDynamicObject(18693, oX, oY, oZ, 0, 0, 0);
+				MoveDynamicObject(temp_object, iX, iY, iZ, charge_velocity, 0, 0, 0);
+				SetTimerEx(
+					"DestroyKingCharge",
+					floatround(floatsqroot(floatpower(iX - oX, 2) + floatpower(iY - oY, 2) + floatpower(iZ - oZ, 2)) / charge_velocity * 1000),
+					false,
+					"i",
+					temp_object
+				);
+			}
+		}
+	}
+	
 	return 1;
+}
+
+stock DestroyKingCharge(objectid)
+{
+	new Float:oX, Float:oY, Float:oZ;
+	GetDynamicObjectPos(objectid, oX, oY, oZ);
+	CreateExplosion(oX, oY, oZ, 6, 10);
 }
 
 public OnPlayerGiveDamage(playerid, damagedid, Float:amount, WEAPON:weaponid, bodypart)
@@ -846,12 +895,27 @@ public OnPlayerWeaponShot(playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hi
 			}
 			return 0;
 		}
+		case WEAPON_RIFLE: {
+			if(hittype == BULLET_HIT_TYPE_PLAYER) {
+				PlayerInfo[hitid][is_player_drunk] = true;
+				PlayerInfo[hitid][player_drunk_timer] = SetTimerEx("RemovePlayerDrunk", 5000, false, "i", hitid);
+				SetPlayerDrunkLevel(hitid, 50000);
+				return 0;
+			}
+		}
 	}
 	return 1;
 }
 
-forward DestroyDeagleObject(objectid);
-public DestroyDeagleObject(objectid) {
+stock RemovePlayerDrunk(hitid)
+{
+	KillTimer(PlayerInfo[hitid][player_drunk_timer]);
+	PlayerInfo[hitid][is_player_drunk] = false;
+	SetPlayerDrunkLevel(hitid, 0);
+}
+
+stock DestroyDeagleObject(objectid)
+{
 	new
     Float:fX, Float:fY, Float:fZ;
 	GetObjectPos(objectid, fX, fY, fZ);

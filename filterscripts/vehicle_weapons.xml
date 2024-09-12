@@ -31,13 +31,48 @@
 				<tagname value="bool"/>
 			</member>
 		</member>
-		<member name="T:EWMInfo" value="3">
+		<member name="T:EVehicleInfo" value="10">
+			<tagname value="EVehicleInfo"/>
+			<member name="C:vehid" value="0">
+			</member>
+			<member name="C:veh_modelid" value="1">
+			</member>
+			<member name="C:vehX" value="2">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:vehY" value="3">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:vehZ" value="4">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:vehA" value="5">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:veh_objectid" value="6">
+			</member>
+			<member name="C:veh_oX" value="7">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:veh_oY" value="8">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:veh_oZ" value="9">
+				<tagname value="Float"/>
+			</member>
+		</member>
+		<member name="T:EWMInfo" value="5">
 			<tagname value="EWMInfo"/>
-			<member name="C:wm_targetid" value="0">
+			<member name="C:wm_type" value="0">
 			</member>
-			<member name="C:wm_playerid" value="1">
+			<member name="C:wm_targetid" value="1">
 			</member>
-			<member name="C:wm_objectid" value="2">
+			<member name="C:wm_playerid" value="2">
+			</member>
+			<member name="C:wm_objectid" value="3">
+			</member>
+			<member name="C:wm_faced_obstacle" value="4">
+				<tagname value="bool"/>
 			</member>
 		</member>
 		<member name="T:MAX_CARMODS" value="16">
@@ -1248,6 +1283,7 @@
 			<referrer name="strequal"/>
 			<referrer name="CA_CreateObject_DC"/>
 			<referrer name="CA_DestroyObject_DC"/>
+			<referrer name="OnFilterScriptInit"/>
 			<referrer name="OnPlayerConnect"/>
 			<referrer name="OnPlayerDisconnect"/>
 			<referrer name="OnPlayerExitVehicle"/>
@@ -1282,10 +1318,15 @@
 		<member name="F:Streamer_IncludeFileVersion">
 			<attribute name="public"/>
 		</member>
+		<member name="F:VehicleInfo">
+			<referrer name="OnFilterScriptInit"/>
+		</member>
 		<member name="F:WMInfo">
 			<referrer name="OnFilterScriptInit"/>
 			<referrer name="LaunchPlayerMissile"/>
 			<referrer name="OnDynamicObjectMoved"/>
+			<referrer name="MoveCheckpointMissile"/>
+			<referrer name="MoveStepMissile"/>
 			<referrer name="DestroyMissile"/>
 			<referrer name="FindEmptyMissileSlot"/>
 		</member>
@@ -1542,6 +1583,7 @@
 			<stacksize value="4"/>
 			<referrer name="CA_IsPlayerNearWater"/>
 			<referrer name="OnPlayerKeyStateChange"/>
+			<referrer name="MoveStepMissile"/>
 			<dependency name="float"/>
 			<dependency name="floatmul"/>
 			<param name="__oper1">
@@ -1593,7 +1635,8 @@
 			<referrer name="CA_GetRoomHeight"/>
 			<referrer name="CA_GetRoomCenter"/>
 			<referrer name="OnPlayerKeyStateChange"/>
-			<referrer name="OnDynamicObjectMoved"/>
+			<referrer name="MoveCheckpointMissile"/>
+			<referrer name="MoveStepMissile"/>
 			<param name="oper1">
 				<paraminfo>Float </paraminfo>
 			</param>
@@ -1614,7 +1657,8 @@
 			<referrer name="CA_GetRoomHeight"/>
 			<referrer name="CA_GetRoomCenter"/>
 			<referrer name="OnPlayerKeyStateChange"/>
-			<referrer name="OnDynamicObjectMoved"/>
+			<referrer name="MoveCheckpointMissile"/>
+			<referrer name="MoveStepMissile"/>
 			<param name="oper1">
 				<paraminfo>Float </paraminfo>
 			</param>
@@ -1628,6 +1672,7 @@
 			<attribute name="native"/>
 			<referrer name="CA_RayCastExplode"/>
 			<referrer name="CA_GetRoomCenter"/>
+			<referrer name="MoveStepMissile"/>
 			<param name="oper1">
 				<paraminfo>Float </paraminfo>
 			</param>
@@ -1942,7 +1987,8 @@
 			<attribute name="native"/>
 			<referrer name="OnPlayerKeyStateChange"/>
 			<referrer name="LaunchPlayerMissile"/>
-			<referrer name="OnDynamicObjectMoved"/>
+			<referrer name="MoveCheckpointMissile"/>
+			<referrer name="MoveStepMissile"/>
 			<referrer name="DestroyMissile"/>
 			<param name="oper">
 			</param>
@@ -2063,7 +2109,8 @@
 		<member name="M:operator&lt;(Float:,_:)" syntax="operator&lt;(Float:,_:)(__oper1, __oper2)">
 			<tagname value="bool"/>
 			<stacksize value="4"/>
-			<referrer name="OnDynamicObjectMoved"/>
+			<referrer name="MoveCheckpointMissile"/>
+			<referrer name="MoveStepMissile"/>
 			<dependency name="float"/>
 			<dependency name="floatcmp"/>
 			<param name="__oper1">
@@ -2126,6 +2173,36 @@
 			<attribute name="public"/>
 			<stacksize value="1"/>
 			<library>time</library>  <summary>A timer event occurred.</summary>  <remarks>  This function executes after the configured delay or interval expires.  See <c>settimer</c> to  set the delay or interval.  Depending on the timing precision of the host, the call may occur  later than the delay that was set.  <p/>  If the timer was set as a "single-shot", it must be ex plicitly set again for a next execution  for the <c>@timer</c>function.  If the timer is set to be repetitive, <c>@timer</c> will continue  to be called with the set interval until it is disabled with another call to <c>settimer</c>.  </remarks>  <returns>The return value of this function is currently ignored.</returns> 
+		</member>
+		<member name="M:AddStaticVehicle" syntax="AddStaticVehicle(modelid, spawnX, spawnY, spawnZ, angle, colour1, colour2)">
+			<attribute name="native"/>
+			<referrer name="OnFilterScriptInit"/>
+			<param name="modelid">
+				The <a href="https://www.open.mp/docs/scripting/resources/vehicleid">Model ID</a>  for the  vehicle
+			</param>
+			<param name="spawnX">
+				<paraminfo>Float </paraminfo>
+				The x coordinate of the spawnpoint of this vehicle
+			</param>
+			<param name="spawnY">
+				<paraminfo>Float </paraminfo>
+				The y coordinate of the spawnpoint of this vehicle
+			</param>
+			<param name="spawnZ">
+				<paraminfo>Float </paraminfo>
+				The z coordinate of the spawnpoint of this vehicle
+			</param>
+			<param name="angle">
+				<paraminfo>Float </paraminfo>
+				Direction of vehicle - angle
+			</param>
+			<param name="colour1">
+				The primary <a href="https://www.open.mp/docs/scripting/resources/vehiclecolorid">colour  ID</a>. <b><c>-1</c></b>  for random (random colour chosen by client)
+			</param>
+			<param name="colour2">
+				The secondary <a href="https://www.open.mp/docs/scripting/resources/vehiclecolorid">colour  ID</a>.  <b><c>-1</c></b> for random (random colour chosen by client)
+			</param>
+			<library>omp_vehicle</library>  <summary>Adds a 'static' vehicle (models are pre-loaded for players) to the gamemode.</summary>                <returns>  <ul>  <li>The vehicle ID of the vehicle created (between <b><c>1</c></b> and <b><c>MAX_VEHICLES</c></b>).</li>  <li><b><c>INVALID_VEHICLE_ID</c></b> (<b><c>65535</c></b>) if vehicle was not created (vehicle  limit reached or invalid vehicle model ID passed).</li>  </ul>  </returns>  <remarks>Can only be used when the server first starts (under <a href="#OnGameModeInit">OnGameModeInit</a>).</remarks>  <seealso name="AddStaticVehicleEx" />  <seealso name="CreateVehicle" />  <seealso name="DestroyVehicle" /> 
 		</member>
 		<member name="M:CA_CreateObject" syntax="CA_CreateObject(modelid, x, y, z, rx, ry, rz, add)">
 			<attribute name="native"/>
@@ -2720,6 +2797,8 @@
 		<member name="M:DestroyMissile" syntax="DestroyMissile(missileid)">
 			<stacksize value="10"/>
 			<referrer name="OnDynamicObjectMoved"/>
+			<referrer name="MoveCheckpointMissile"/>
+			<referrer name="MoveStepMissile"/>
 			<dependency name="Float:operator=(_:)"/>
 			<dependency name="CreateExplosion"/>
 			<dependency name="DestroyDynamicObject"/>
@@ -2768,7 +2847,8 @@
 		</member>
 		<member name="M:GetDynamicObjectPos" syntax="GetDynamicObjectPos(objectid, &amp;x, &amp;y, &amp;z)">
 			<attribute name="native"/>
-			<referrer name="OnDynamicObjectMoved"/>
+			<referrer name="MoveCheckpointMissile"/>
+			<referrer name="MoveStepMissile"/>
 			<referrer name="DestroyMissile"/>
 			<param name="objectid">
 			</param>
@@ -2829,7 +2909,8 @@
 			<referrer name="CA_IsPlayerFacingWater"/>
 			<referrer name="CA_IsPlayerBlocked"/>
 			<referrer name="LaunchPlayerMissile"/>
-			<referrer name="OnDynamicObjectMoved"/>
+			<referrer name="MoveCheckpointMissile"/>
+			<referrer name="MoveStepMissile"/>
 			<param name="playerid">
 				The ID of the player to get the position of
 			</param>
@@ -2967,7 +3048,7 @@
 			</param>
 			<library>omp_vehicle</library> 
 		</member>
-		<member name="M:LaunchPlayerMissile" syntax="LaunchPlayerMissile(playerid, victimid)">
+		<member name="M:LaunchPlayerMissile" syntax="LaunchPlayerMissile(playerid, victimid, type)">
 			<stacksize value="28"/>
 			<referrer name="OnPlayerClickPlayer"/>
 			<dependency name="operator+(Float:,_:)"/>
@@ -2989,15 +3070,39 @@
 			<dependency name="wm_objectid"/>
 			<dependency name="wm_playerid"/>
 			<dependency name="wm_targetid"/>
+			<dependency name="wm_type"/>
 			<param name="playerid">
 			</param>
 			<param name="victimid">
+			</param>
+			<param name="type">
+			</param>
+		</member>
+		<member name="M:MoveCheckpointMissile" syntax="MoveCheckpointMissile(missileid)">
+			<stacksize value="16"/>
+			<referrer name="OnDynamicObjectMoved"/>
+			<dependency name="operator-(Float:,Float:)"/>
+			<dependency name="operator+(Float:,Float:)"/>
+			<dependency name="Float:operator=(_:)"/>
+			<dependency name="operator&lt;(Float:,_:)"/>
+			<dependency name="DestroyMissile"/>
+			<dependency name="GetDynamicObjectPos"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="MoveDynamicObject"/>
+			<dependency name="WMInfo"/>
+			<dependency name="WMInfo"/>
+			<dependency name="floatpower"/>
+			<dependency name="floatsqroot"/>
+			<dependency name="wm_objectid"/>
+			<dependency name="wm_targetid"/>
+			<param name="missileid">
 			</param>
 		</member>
 		<member name="M:MoveDynamicObject" syntax="MoveDynamicObject(objectid, x, y, z, speed, rx, ry, rz)">
 			<attribute name="native"/>
 			<referrer name="LaunchPlayerMissile"/>
-			<referrer name="OnDynamicObjectMoved"/>
+			<referrer name="MoveCheckpointMissile"/>
+			<referrer name="MoveStepMissile"/>
 			<param name="objectid">
 			</param>
 			<param name="x">
@@ -3058,6 +3163,28 @@
 				The FINAL z rotation (optional=<b><c>-1000.0</c></b>)
 			</param>
 			<library>omp_object</library>  <summary>Move an object to a new position with a set speed.  Players/vehicles will 'surf' the object  as it moves.</summary>                  <seealso name="OnObjectMoved" />  <seealso name="IsObjectMoving" />  <seealso name="StopObject" />  <seealso name="MovePlayerObject" />  <seealso name="SetObjectPos" />  <seealso name="SetObjectRot" />  <seealso name="CreateObject" />  <remarks>This function can be used to make objects rotate smoothly.  In order to achieve this however,  the object must also be <b>moved</b>.  The specified rotation is the rotation the object will have  after the movement.  Hence the object will not rotate when no movement is applied.</remarks>  <remarks>To fully understand the above note, you can (but not limited to) increase the z position  by <b><c>(+0.001</c></b>) and then (<b><c>-0.001</c></b>) after moving it again, as not changing  the x, y or z will not rotate the object. </remarks>  <returns>The time it will take for the object to move in milliseconds.</returns> 
+		</member>
+		<member name="M:MoveStepMissile" syntax="MoveStepMissile(missileid)">
+			<stacksize value="20"/>
+			<referrer name="OnDynamicObjectMoved"/>
+			<dependency name="operator*(Float:,_:)"/>
+			<dependency name="operator-(Float:,Float:)"/>
+			<dependency name="operator+(Float:,Float:)"/>
+			<dependency name="operator/(Float:,Float:)"/>
+			<dependency name="Float:operator=(_:)"/>
+			<dependency name="operator&lt;(Float:,_:)"/>
+			<dependency name="DestroyMissile"/>
+			<dependency name="GetDynamicObjectPos"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="MoveDynamicObject"/>
+			<dependency name="WMInfo"/>
+			<dependency name="WMInfo"/>
+			<dependency name="floatpower"/>
+			<dependency name="floatsqroot"/>
+			<dependency name="wm_objectid"/>
+			<dependency name="wm_targetid"/>
+			<param name="missileid">
+			</param>
 		</member>
 		<member name="M:OnActorStreamIn" syntax="OnActorStreamIn(actorid, forplayerid)">
 			<attribute name="public"/>
@@ -3135,26 +3262,20 @@
 		</member>
 		<member name="M:OnDynamicObjectMoved" syntax="OnDynamicObjectMoved(objectid)">
 			<attribute name="public"/>
-			<stacksize value="17"/>
-			<dependency name="operator-(Float:,Float:)"/>
-			<dependency name="operator+(Float:,Float:)"/>
-			<dependency name="Float:operator=(_:)"/>
-			<dependency name="operator&lt;(Float:,_:)"/>
+			<stacksize value="6"/>
 			<dependency name="DestroyMissile"/>
 			<dependency name="E_STREAMER_EXTRA_ID"/>
-			<dependency name="GetDynamicObjectPos"/>
-			<dependency name="GetPlayerPos"/>
-			<dependency name="MoveDynamicObject"/>
+			<dependency name="MoveCheckpointMissile"/>
+			<dependency name="MoveStepMissile"/>
 			<dependency name="PlayerInfo"/>
 			<dependency name="SendClientMessage"/>
 			<dependency name="Streamer_GetIntData"/>
 			<dependency name="WMInfo"/>
 			<dependency name="WMInfo"/>
-			<dependency name="floatpower"/>
-			<dependency name="floatsqroot"/>
 			<dependency name="player_aim"/>
 			<dependency name="wm_playerid"/>
 			<dependency name="wm_targetid"/>
+			<dependency name="wm_type"/>
 			<param name="objectid">
 			</param>
 		</member>
@@ -3182,9 +3303,20 @@
 		</member>
 		<member name="M:OnFilterScriptInit" syntax="OnFilterScriptInit()">
 			<attribute name="public"/>
-			<stacksize value="2"/>
+			<stacksize value="10"/>
+			<dependency name="AddStaticVehicle"/>
+			<dependency name="VehicleInfo"/>
+			<dependency name="VehicleInfo"/>
 			<dependency name="WMInfo"/>
 			<dependency name="WMInfo"/>
+			<dependency name="false"/>
+			<dependency name="vehA"/>
+			<dependency name="vehX"/>
+			<dependency name="vehY"/>
+			<dependency name="vehZ"/>
+			<dependency name="veh_modelid"/>
+			<dependency name="vehid"/>
+			<dependency name="wm_faced_obstacle"/>
 			<dependency name="wm_objectid"/>
 			<dependency name="wm_playerid"/>
 			<dependency name="wm_targetid"/>
@@ -3281,7 +3413,7 @@
 		</member>
 		<member name="M:OnPlayerClickPlayer" syntax="OnPlayerClickPlayer(playerid, clickedplayerid, source)">
 			<attribute name="public"/>
-			<stacksize value="6"/>
+			<stacksize value="7"/>
 			<dependency name="GetPlayerVehicleID"/>
 			<dependency name="GetVehicleModel"/>
 			<dependency name="LaunchPlayerMissile"/>
@@ -4993,7 +5125,8 @@
 			<tagname value="Float"/>
 			<attribute name="native"/>
 			<referrer name="OnPlayerKeyStateChange"/>
-			<referrer name="OnDynamicObjectMoved"/>
+			<referrer name="MoveCheckpointMissile"/>
+			<referrer name="MoveStepMissile"/>
 			<param name="value">
 				<paraminfo>Float </paraminfo>
 				The value to raise to a power, as a floating-point number
@@ -5041,7 +5174,8 @@
 			<attribute name="native"/>
 			<referrer name="CA_GetRoomHeight"/>
 			<referrer name="OnPlayerKeyStateChange"/>
-			<referrer name="OnDynamicObjectMoved"/>
+			<referrer name="MoveCheckpointMissile"/>
+			<referrer name="MoveStepMissile"/>
 			<param name="value">
 				<paraminfo>Float </paraminfo>
 				The value to calculate the square root of
