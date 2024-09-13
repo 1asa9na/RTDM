@@ -96,8 +96,7 @@
         "legacy_plugins": [
             "ColAndreas",
             "streamer",
-            "timerfix",
-            "YSF"
+            "timerfix"
         ],
         "main_scripts": [
             "rtd"

@@ -7,7 +7,7 @@
 
 	<!-- general -->
 	<general>
-		<library name="open.mp" summary="open.mp includes entry point.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="args" summary="Script arguments support functions.">  <license>  (c) Copyright 2005, ITB CompuPhase  This file is provided as is (no warranties).  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="console" summary="Console output.">  <license>  (c) Copyright 1998-2011, ITB CompuPhase  This file is provided as is (no warranties).  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="core" summary="Core functions.">  <license>  (c) Copyright 1998-2005, ITB CompuPhase  This file is provided as is (no warranties).  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="file" summary="File input/output functions.">  <license>  (c) Copyright 2004-2005, ITB CompuPhase  This file is provided as is (no warranties).  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <library name="time" summary="Float arithmetic.">  <license>  (c) Copyright 1999, Artran, Inc.  Written by Greg Garner (gmg@artran.com)  Modified in March 2001 to include user defined  operators for the floating point functions.  This file is provided as is (no warranties).  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <library name="string" summary="String functions.">  <license>  (c) Copyright 2005, ITB CompuPhase  This file is provided as is (no warranties).  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="time" summary="Date/time functions.">  <license>  (c) Copyright 2001-2005, ITB CompuPhase  This file is provided as is (no warranties).  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <library name="omp_core" summary="open.mp core functions and defines.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <library name="omp_player" summary="open.mp player functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <library name="omp_actor" summary="open.mp actor functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="omp_checkpoint" summary="open.mp checkpoint functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <library name="omp_class" summary="open.mp class functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="omp_database" summary="open.mp SQLite functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <library name="omp_dialog" summary="open.mp dialog functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <library name="omp_gangzone" summary="open.mp text draw functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="omp_http" summary="open.mp legacy HTTP include.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p /><p/> <p/><p/> <library name="omp_menu" summary="open.mp menu functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="omp_network" summary="open.mp core functions and defines.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <library name="omp_object" summary="open.mp object functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <library name="omp_pickup" summary="open.mp pickup functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="omp_textdraw" summary="open.mp text draw functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <library name="omp_variable" summary="open.mp global data functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <library name="omp_vehicle" summary="open.mp vehicle functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <library name="omp_textlabel" summary="open.mp 3D text label functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/>
+		<library name="open.mp" summary="open.mp includes entry point.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="args" summary="Script arguments support functions.">  <license>  (c) Copyright 2005, ITB CompuPhase  This file is provided as is (no warranties).  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="console" summary="Console output.">  <license>  (c) Copyright 1998-2011, ITB CompuPhase  This file is provided as is (no warranties).  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="core" summary="Core functions.">  <license>  (c) Copyright 1998-2005, ITB CompuPhase  This file is provided as is (no warranties).  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="file" summary="File input/output functions.">  <license>  (c) Copyright 2004-2005, ITB CompuPhase  This file is provided as is (no warranties).  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <library name="time" summary="Float arithmetic.">  <license>  (c) Copyright 1999, Artran, Inc.  Written by Greg Garner (gmg@artran.com)  Modified in March 2001 to include user defined  operators for the floating point functions.  This file is provided as is (no warranties).  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <library name="string" summary="String functions.">  <license>  (c) Copyright 2005, ITB CompuPhase  This file is provided as is (no warranties).  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="time" summary="Date/time functions.">  <license>  (c) Copyright 2001-2005, ITB CompuPhase  This file is provided as is (no warranties).  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <library name="omp_core" summary="open.mp core functions and defines.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <library name="omp_player" summary="open.mp player functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <library name="omp_actor" summary="open.mp actor functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="omp_checkpoint" summary="open.mp checkpoint functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <library name="omp_class" summary="open.mp class functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="omp_database" summary="open.mp SQLite functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <library name="omp_dialog" summary="open.mp dialog functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <library name="omp_gangzone" summary="open.mp text draw functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="omp_http" summary="open.mp legacy HTTP include.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p /><p/> <p/><p/> <library name="omp_menu" summary="open.mp menu functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="omp_network" summary="open.mp core functions and defines.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <library name="omp_object" summary="open.mp object functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <library name="omp_pickup" summary="open.mp pickup functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library name="omp_textdraw" summary="open.mp text draw functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <library name="omp_variable" summary="open.mp global data functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <library name="omp_vehicle" summary="open.mp vehicle functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <p/><p/> <library name="omp_textlabel" summary="open.mp 3D text label functions.">  <license>  This Source Code Form is subject to the terms of the Mozilla Public License,  v. 2.0. If a copy of the MPL was not distributed with this file, You can  obtain one at http://mozilla.org/MPL/2.0/.  The original code is copyright (c) 2023, open.mp team and contributors.  </license>  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  </library> <p/> <p/><p/> <library  name="sscanf"  summary="Extracts structured information from strings."  license="Copyright (c) 2022 Alex &quot;Y_Less&quot; Cole.  Licensed under MPL 1.1"  >  <summary pawndoc="true">  This library uses the enhanced <em>pawndoc.xsl</em> from  <a href="https://github.com/pawn-lang/pawndoc">pawn-lang/pawndoc</a>.  This XSL has features such as library and markdown support, and will not  render this message when used.  </summary>  <remarks>  This is the <em>sscanf</em> plugin, which provides the <c>sscanf</c>  function to extract basic structured data from strings.  This is slightly  different to regular expressions, but both have their place.  A regular  expression gives you total control over the exact structure of data down  to the character level; however, extracting structured data like numbers  using it is tricky.  Conversely this gives slightly higher-level  <em>specifiers</em> which can easily extract data types, at the expense  of fine-grained control.  To convert a string in to two numbers would  look like:  <code>  new num1, num2;                                                          <br />  sscanf("45 100", "ii", num1, num2);  </code>  <c>ii</c> is the specifier string, which here means "integer integer";  stating that the input string should be two whole numbers in a row (which  is - <c>"45 100"</c>).  <c>num1</c> and <c>num2</c> are the destination  variables to store the found numbers in (after conversion from strings).  You can check if the conversion failed by looking for a non-naught return  value:  <code>  new num1, num2;                                                          <br />  if (sscanf("hello 100", "ii", num1, num2))                               <br />  {                                                                        <br /><indent />  printf("The input was not two numbers.");                            <br />  }  </code>  This will fail because <c>"hello"</c> is not a whole number (or indeed  any type of number at all).  For more information on using the function  refer to the tutorials or the reference documentation in  <a href="https://github.com/Y-Less/sscanf/blob/master/README.md">the  attached readme</a>.  </remarks>  </library> <p/> <p/>
 	</general>
 
 	<members>
@@ -1323,7 +1323,13 @@
 		<member name="C:EOS" value="0">
 			<referrer name="strcopy"/>
 		</member>
+		<member name="C:SSCANF_VERSION" value="135944">
+			<library>sscanf</library>  <remarks>  The sscanf version in BCD as a proper constant.  Example:  <code>  2.10.3  <br />  => 02 10 03 <br />  => 0x021003  </code>  </remarks> 
+		</member>
 		<member name="C:__PawnBuild" value="11">
+		</member>
+		<member name="C:__line" value="1028">
+			<referrer name="pc_cmd_cjump"/>
 		</member>
 		<member name="C:__namemax" value="63">
 			<summary>  The maximum length of symbol names, excluding any NULLs.  </summary> 
@@ -1339,6 +1345,10 @@
 		</member>
 		<member name="C:cellmin" value="-2147483648">
 			<referrer name="operator-(Float:)"/>
+			<referrer name="SSCANF_GetSimilarString"/>
+			<referrer name="SSCANF_GetSimilarValue"/>
+			<referrer name="SSCANF_GetClosestString"/>
+			<referrer name="SSCANF_GetClosestValue"/>
 		</member>
 		<member name="C:charbits" value="8">
 			<referrer name="__findpubvar"/>
@@ -1352,9 +1362,9 @@
 			<referrer name="strequal"/>
 			<referrer name="CA_CreateObject_DC"/>
 			<referrer name="CA_DestroyObject_DC"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="pc_cmd_st"/>
-			<referrer name="OnPlayerConnect"/>
+			<referrer name="SSCANF_OnPlayerConnect"/>
 			<referrer name="OnPlayerRequestClass"/>
 			<referrer name="OnPlayerDeath"/>
 			<referrer name="OnDialogResponse"/>
@@ -1371,9 +1381,9 @@
 			<tagname value="bool"/>
 			<referrer name="fflush"/>
 			<referrer name="CA_CreateObject_DC"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="SwitchPlayerTeam"/>
-			<referrer name="OnPlayerConnect"/>
+			<referrer name="SSCANF_OnPlayerConnect"/>
 			<referrer name="OnPlayerRequestClass"/>
 			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerDeath"/>
@@ -1395,25 +1405,46 @@
 			<referrer name="CA_SetObjectRot_DC"/>
 			<referrer name="CA_DestroyAllObjects_DC"/>
 		</member>
+		<member name="F:CELLMIN_ON_MATCHES">
+			<library>sscanf</library>  <remarks>  The <c>CELLMIN_ON_MATCHES</c> option as a constant string so you can get  compile-time spell checking on the name.  Whatever the value of  <c>MATCH_NAME_PARTIAL</c>, the first found player will always be returned,  so if you do a search for <c>_</c> on an RP server, you could get almost  anyone.  To detect this case, if more than one player will match the  specified string then <em>sscanf</em> will return an ID of <c>cellmin</c>  instead.  This can be combined with <c>U</c> for a lot more power:  <code>  sscanf(params, "?&lt;CELLMIN_ON_MATCHES=1&gt;U(-1)", id);                <br />  if (id == -1)                                                            <br />  {                                                                        <br /><indent />  // No player was entered.                                            <br />  }                                                                        <br />  else if (id == cellmin)                                                  <br />  {                                                                        <br /><indent />  // Multiple matches found                                            <br />  }                                                                        <br />  else if (id == INVALID_PLAYER_ID)                                        <br />  {                                                                        <br /><indent />  // Entered player is not connected.                                  <br />  }                                                                        <br />  else                                                                     <br />  {                                                                        <br /><indent />  // Found just one player.                                            <br />  }  </code>  </remarks> 
+		</member>
 		<member name="F:CPInfo">
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="OnPlayerEnterDynamicCP"/>
 			<referrer name="OnPlayerLeaveDynamicCP"/>
 			<referrer name="DestroyPickupBomb"/>
 			<referrer name="DefusePickupBomb"/>
 		</member>
 		<member name="F:ClassInfo">
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="OnPlayerRequestClass"/>
 			<referrer name="OnPlayerSpawn"/>
 		</member>
+		<member name="F:MATCH_NAME_FIRST">
+			<library>sscanf</library>  <remarks>  The <c>MATCH_NAME_FIRST</c> option as a constant string so you can get compile-  time spell checking on the name.  Specify whether <c>u</c> etc keep searching  for better matching player names after finding one:  <code>  SSCANF_Option(MATCH_NAME_FIRST, 0); // Enable scanning for the best name match not the first (default).  <br />  SSCANF_Option(MATCH_NAME_FIRST, 1); // Enable scanning for the first name match not the best (old behaviour).  </code>  </remarks> 
+		</member>
+		<member name="F:MATCH_NAME_PARTIAL">
+			<library>sscanf</library>  <remarks>  The <c>MATCH_NAME_PARTIAL</c> option as a constant string so you can get  compile-time spell checking on the name.  Currently sscanf will search for  players by name, and will <em>always</em> search for player whose name  <em>starts</em> with the specified string.  If someone types <c>Y_Less</c>,  sscanf will not find say <c>[CLAN]Y_Less</c> because there name doesn't start  with the specified text.  This option, when set to <c>1</c>, will search  <em>anywhere</em> in the player's name for the given string.  </remarks> 
+		</member>
+		<member name="F:MATCH_NAME_SIMILARITY">
+			<library>sscanf</library>  <remarks>  The <c>MATCH_NAME_SIMILARITY</c> option as a constant string so you can get  compile-time spell checking on the name.  Specify whether <c>u</c> etc should  use the ngrams-based similarity algorithm when searching for players matching  a given name.  I.e. enable or disable fuzzy name matching.  It will return  the best match found, but depending on the threshold that may still be very  different to what was typed.  <code>  SSCANF_Option(MATCH_NAME_SIMILARITY, 0.0); // Will find all names, regardless of input. <br />  SSCANF_Option(MATCH_NAME_SIMILARITY, 1.0); // Will find exact matches only. <br />  SSCANF_Option(MATCH_NAME_SIMILARITY, 0.5); // Will find names somewhat similar to the input. <br />  SSCANF_Option(MATCH_NAME_SIMILARITY, -1.0); // Disable fuzzy name matching.  </code>  </remarks> 
+		</member>
+		<member name="F:OLD_DEFAULT_CUSTOM">
+			<library>sscanf</library>  <remarks>  The <c>OLD_DEFAULT_CUSTOM</c> option as a constant string so you can get  compile-time spell checking on the name.  This is the same as  <c>OLD_DEFAULT_KUSTOM</c>, but with an alternate spelling.  </remarks> 
+		</member>
+		<member name="F:OLD_DEFAULT_KUSTOM">
+			<library>sscanf</library>  <remarks>  The <c>OLD_DEFAULT_KUSTOM</c> option as a constant string so you can get  compile-time spell checking on the name.  As with <c>U</c>, <c>K</c> used to  require a valid identifier as the default and would parse it using the  specified callback, so this would <em>not</em> work:  <code>  K&lt;vehicle&gt;(Veyron)  </code>  Because that is not a valid vehicle name in GTA.  The new version now just  takes a number and returns that regardless:  <code>  K&lt;vehicle&gt;(999)  </code>  This setting reverts to the old behaviour.  </remarks> 
+		</member>
+		<member name="F:OLD_DEFAULT_NAME">
+			<library>sscanf</library>  <remarks>  The <c>OLD_DEFAULT_NAME</c> option as a constant string so you can get  compile-time spell checking on the name.  The behaviour of <c>U</c>, <c>Q</c>  and <c>R</c> have been changed to take any number as a default, instead of a  connected player.  Setting <c>OLD_DEFAULT_NAME</c> to <c>1</c> will revert to  the old version.  </remarks> 
+		</member>
 		<member name="F:PerkInfo">
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="OnPlayerSpawn"/>
 			<referrer name="ForcePerkSelection"/>
 		</member>
 		<member name="F:PickupInfo">
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="OnPlayerDeath"/>
 			<referrer name="OnPlayerPickUpPickup"/>
 			<referrer name="DestroyPickupBomb"/>
@@ -1423,8 +1454,8 @@
 			<referrer name="pc_cmd_rustler"/>
 			<referrer name="SwitchPlayerTeam"/>
 			<referrer name="DestroyPlayerVehicle"/>
-			<referrer name="OnPlayerConnect"/>
-			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="SSCANF_OnPlayerConnect"/>
+			<referrer name="SSCANF_OnPlayerDisconnect"/>
 			<referrer name="OnPlayerRequestClass"/>
 			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerDeath"/>
@@ -1436,10 +1467,64 @@
 			<referrer name="OnPlayerWeaponShot"/>
 			<referrer name="RemovePlayerDrunk"/>
 		</member>
-		<member name="F:SkillInfo">
+		<member name="F:SSCANF_ALPHA">
+			<library>sscanf</library>  <remarks>  The <c>SSCANF_ALPHA</c> option as a constant string so you can get compile-  time spell checking on the name.  Specify the default alpha value for colours  (<c>m</c>) which don't manually specify an alpha channel.  The alpha values  are specified as a <em>decimal</em> number, <em>not</em> a <em>hex</em>  number, so setting an alpha of <c>0x80</c> would be:  <code>  SSCANF_Option(SSCANF_ALPHA, 128);  </code>  </remarks> 
+		</member>
+		<member name="F:SSCANF_ARGB">
+			<library>sscanf</library>  <remarks>  The <c>SSCANF_ARGB</c> option as a constant string so you can get compile-  time spell checking on the name.  Specify whether the returned colour is  <c>ARGB</c> or <c>RGBA</c>:  <code>  SSCANF_Option(SSCANF_ARGB, 1); // Set 3- and 6-digit colour outputs to `AARRGGBB`. <br />  SSCANF_Option(SSCANF_ARGB, 0); // Set 3- and 6-digit colour outputs to `RRGGBBAA` (default).  </code>  </remarks> 
+		</member>
+		<member name="F:SSCANF_COLOUR_FORMS">
+			<library>sscanf</library>  <remarks>  The <c>SSCANF_COLOUR_FORMS</c> option as a constant string so you can get  compile-time spell checking on the name.  There are multiple valid colour  input formats, which you can enable or disable here.  The parameter is a  bit map (flags) for all the following values:  <ul>  <li><c>1</c> - <c>#RGB</c></li>  <li><c>2</c> - <c>#RRGGBB</c></li>  <li><c>4</c> - <c>0xRRGGBB</c></li>  <li><c>8</c> - <c>RRGGBB</c></li>  <li><c>16</c> - <c>{RRGGBB}</c></li>  <li><c>32</c> - <c>0xRRGGBBAA</c></li>  <li><c>64</c> - <c>RRGGBBAA</c></li>  </ul>  So to ONLY accept SA:MP `SendClientMessage` colours use:  <code>  SSCANF_Option(SSCANF_COLOUR_FORMS, 16);  </code>  To only accept 8-digit values use:  <code>  SSCANF_Option(SSCANF_COLOUR_FORMS, 96);  </code>  Default values (those specified between <c>()</c>s for <c>M</c>) ignore this  setting - they can always use any form.  </remarks> 
+		</member>
+		<member name="F:SSCANF_EXT_">
+			<library>sscanf</library>  <remarks>  The fallback for the filename in <c>extract</c> on the old compiler, which  doesn't have the inbuilt <c>__file</c> macro.  This is the "feature" enabled  by <c>SSCANF_NO_NICE_FEATURES</c>.  Appends <c>"unknown file"</c> in the  plugin when line number <c>&lt; 0</c>.  </remarks> 
+		</member>
+		<member name="F:SSCANF_FOM_">
+			<library>sscanf</library>  <remarks>  The fallback for the filename in <c>unformat</c> on the old compiler, which  doesn't have the inbuilt <c>__file</c> macro.  This is the "feature" enabled  by <c>SSCANF_NO_NICE_FEATURES</c>.  Appends <c>"unknown file"</c> in the  plugin when line number <c>&lt; 0</c>.  </remarks> 
+		</member>
+		<member name="F:SSCANF_NPC">
+			<library>sscanf</library>  <remarks>  Was sscanf built for an NPC mode or a normal mode?  </remarks> 
+		</member>
+		<member name="F:SSCANF_QUIET">
+			<library>sscanf</library>  <remarks>  The <c>SSCANF_QUIET</c> option as a constant string so you can get compile-  time spell checking on the name.  Don't print any errors to the console.  <em>Really</em> not recommended unless you <em>know</em> your code is stable  and in production.  </remarks> 
+		</member>
+		<member name="F:SSCANF_UNK_">
+			<library>sscanf</library>  <remarks>  The fallback for the filename in <c>sscanf</c> on the old compiler, which  doesn't have the inbuilt <c>__file</c> macro.  This is the "feature" enabled  by <c>SSCANF_NO_NICE_FEATURES</c>.  Appends <c>"unknown file"</c> in the  plugin when line number <c>&lt; 0</c>.  </remarks> 
+		</member>
+		<member name="F:SSCANF_VERSION_BCD">
+			<referrer name="SSCANF_Version"/>
+			<library>sscanf</library>  <remarks>  The sscanf version in BCD.  Example:  <code>  2.10.3  <br />  => 02 10 03 <br />  => 0x021003  </code>  </remarks> 
+		</member>
+		<member name="F:SSCANF_VERSION_BUILD">
+			<library>sscanf</library>  <remarks>  The sscanf build number.  </remarks> 
+		</member>
+		<member name="F:SSCANF_VERSION_MAJOR">
+			<library>sscanf</library>  <remarks>  The sscanf major version number.  </remarks> 
+		</member>
+		<member name="F:SSCANF_VERSION_MINOR">
+			<library>sscanf</library>  <remarks>  The sscanf minor version number.  </remarks> 
+		</member>
+		<member name="F:SSCANF_VERSION_STRING">
+			<library>sscanf</library>  <remarks>  The sscanf version as a string.  E.g. <c>"2.8.1"</c>.  </remarks> 
+		</member>
+		<member name="F:SSCANF_gInit">
+			<referrer name="SSCANF_RunInit"/>
+			<referrer name="OnScriptInit"/>
+			<referrer name="OnFilterScriptInit"/>
+			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="OnPlayerConnect"/>
 			<referrer name="OnPlayerDisconnect"/>
+			<library>sscanf</library>  <remarks>  Has sscanf been initialised at least once already in this script?  Avoids the  need to define <c>FILTERSCRIPT</c> by including <c>OnFilterScriptInit</c>  and <c>OnGameModeInit</c> (plus <c>OnNPCModeInit</c>) and seeing which one  gets called first.  </remarks> 
+		</member>
+		<member name="F:SkillInfo">
+			<referrer name="SSCANF_OnPlayerDisconnect"/>
 			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerDeath"/>
+			<referrer name="OnPlayerTakeDamage"/>
+		</member>
+		<member name="F:Skill_KingCharges">
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerTakeDamage"/>
 		</member>
 		<member name="F:Streamer_IncludeFileVersion">
@@ -1568,6 +1653,7 @@
 		<member name="F:__file">
 		</member>
 		<member name="F:__file">
+			<referrer name="pc_cmd_cjump"/>
 		</member>
 		<member name="F:__time">
 		</member>
@@ -1658,6 +1744,7 @@
 			<tagname value="Float"/>
 			<stacksize value="4"/>
 			<referrer name="CA_RayCastExplode"/>
+			<referrer name="pc_cmd_cjump"/>
 			<dependency name="float"/>
 			<dependency name="floatsub"/>
 			<param name="__oper1">
@@ -1670,7 +1757,9 @@
 		<member name="M:operator+(Float:,_:)" syntax="operator+(Float:,_:)(__oper1, __oper2)">
 			<tagname value="Float"/>
 			<stacksize value="4"/>
+			<referrer name="pc_cmd_cjump"/>
 			<referrer name="OnPlayerRequestClass"/>
+			<referrer name="OnPlayerTakeDamage"/>
 			<dependency name="float"/>
 			<dependency name="floatadd"/>
 			<param name="__oper1">
@@ -1734,7 +1823,6 @@
 			<referrer name="CA_RayCastExplode"/>
 			<referrer name="CA_IsPlayerFacingWater"/>
 			<referrer name="CA_IsPlayerBlocked"/>
-			<referrer name="OnPlayerSpawn"/>
 			<dependency name="cellmin"/>
 			<param name="__oper">
 				<paraminfo>Float </paraminfo>
@@ -1783,6 +1871,7 @@
 			<referrer name="CA_IsPlayerBlocked"/>
 			<referrer name="CA_GetRoomHeight"/>
 			<referrer name="CA_GetRoomCenter"/>
+			<referrer name="pc_cmd_cjump"/>
 			<referrer name="OnPlayerTakeDamage"/>
 			<referrer name="OnPlayerWeaponShot"/>
 			<param name="oper1">
@@ -1817,6 +1906,7 @@
 			<referrer name="CA_IsPlayerBlocked"/>
 			<referrer name="CA_GetRoomHeight"/>
 			<referrer name="CA_GetRoomCenter"/>
+			<referrer name="pc_cmd_cjump"/>
 			<referrer name="OnPlayerWeaponShot"/>
 			<param name="oper1">
 				<paraminfo>Float </paraminfo>
@@ -2112,16 +2202,16 @@
 		<member name="M:Float:operator=(_:)" syntax="Float:operator=(_:)(oper)">
 			<tagname value="Float"/>
 			<attribute name="native"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="SwitchPlayerTeam"/>
-			<referrer name="OnPlayerConnect"/>
+			<referrer name="pc_cmd_cjump"/>
+			<referrer name="SSCANF_OnPlayerConnect"/>
 			<referrer name="OnPlayerRequestClass"/>
 			<referrer name="OnPlayerSpawn"/>
 			<referrer name="DestroyPickupBomb"/>
 			<referrer name="OnPlayerTakeDamage"/>
 			<referrer name="DestroyKingCharge"/>
 			<referrer name="OnPlayerWeaponShot"/>
-			<referrer name="DestroyDeagleObject"/>
 			<param name="oper">
 			</param>
 			<library>float</library> 
@@ -2191,6 +2281,7 @@
 		<member name="M:operator&gt;=(Float:,Float:)" syntax="operator&gt;=(Float:,Float:)(__oper1, __oper2)">
 			<tagname value="bool"/>
 			<stacksize value="4"/>
+			<referrer name="SSCANF_GetSimilarString"/>
 			<dependency name="floatcmp"/>
 			<param name="__oper1">
 				<paraminfo>Float </paraminfo>
@@ -2299,6 +2390,10 @@
 			</param>
 			<library>float</library> 
 		</member>
+		<member name="M:@CO_SSCANF" syntax="@CO_SSCANF()">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+		</member>
 		<member name="M:@timer" syntax="@timer()">
 			<attribute name="public"/>
 			<stacksize value="1"/>
@@ -2306,7 +2401,7 @@
 		</member>
 		<member name="M:AddPlayerClassEx" syntax="AddPlayerClassEx(team, skin, spawnX, spawnY, spawnZ, angle, weapon1, ammo1, weapon2, ammo2, weapon3, ammo3)">
 			<attribute name="native"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<param name="team">
 				The team you want the player to spawn in
 			</param>
@@ -2423,10 +2518,16 @@
 				<paraminfo>Float </paraminfo>
 			</param>
 		</member>
+		<member name="M:BCD" syntax="BCD(number)">
+			<stacksize value="1"/>
+			<param name="number">
+			</param>
+			<library>sscanf</library>  <remarks>  Converts a version string to  <a href="https://en.wikipedia.org/wiki/Binary-coded_decimal">BCD</a>.  For example:  <code>  BCD(5.6.17);  </code>  Returns:  <code>  0x050617  </code>  Each section (between dots) is assigned a single byte and the last section is  always in the lowest byte.  This implies a maximum of four sections and two  digits per section.  </remarks> 
+		</member>
 		<member name="M:CA_CreateObject" syntax="CA_CreateObject(modelid, x, y, z, rx, ry, rz, add)">
 			<attribute name="native"/>
 			<referrer name="CA_CreateObject_DC"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<param name="modelid">
 			</param>
 			<param name="x">
@@ -2580,7 +2681,7 @@
 		</member>
 		<member name="M:CA_Init" syntax="CA_Init()">
 			<attribute name="native"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 		</member>
 		<member name="M:CA_IsPlayerBlocked" syntax="CA_IsPlayerBlocked(playerid, dist, height)">
 			<stacksize value="17"/>
@@ -2911,7 +3012,7 @@
 		</member>
 		<member name="M:CreateDynamicCP" syntax="CreateDynamicCP(x, y, z, size, worldid, interiorid, playerid, streamdistance, areaid, priority)">
 			<attribute name="native"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<param name="x">
 				<paraminfo>Float </paraminfo>
 			</param>
@@ -2940,7 +3041,7 @@
 		</member>
 		<member name="M:CreateDynamicMapIcon" syntax="CreateDynamicMapIcon(x, y, z, type, color, worldid, interiorid, playerid, streamdistance, style, areaid, priority)">
 			<attribute name="native"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<param name="x">
 				<paraminfo>Float </paraminfo>
 			</param>
@@ -3016,7 +3117,6 @@
 			<referrer name="DestroyPickupBomb"/>
 			<referrer name="DestroyKingCharge"/>
 			<referrer name="OnPlayerWeaponShot"/>
-			<referrer name="DestroyDeagleObject"/>
 			<param name="x">
 				<paraminfo>Float </paraminfo>
 				The x coordinate of the explosion
@@ -3041,7 +3141,7 @@
 		<member name="M:CreateObject" syntax="CreateObject(modelid, x, y, z, rotationX, rotationY, rotationZ, drawDistance)">
 			<attribute name="native"/>
 			<referrer name="CA_CreateObject_DC"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<param name="modelid">
 				The model to create
 			</param>
@@ -3077,7 +3177,7 @@
 		</member>
 		<member name="M:CreatePickup" syntax="CreatePickup(model, type, x, y, z, virtualWorld)">
 			<attribute name="native"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<param name="model">
 				The <a href="https://open.mp/docs/scripting/resources/pickupids">model</a> of the  pickup
 			</param>
@@ -3104,7 +3204,7 @@
 		<member name="M:CreatePlayerTextDraw" syntax="CreatePlayerTextDraw(playerid, x, y, format[], ...)">
 			<tagname value="PlayerText"/>
 			<attribute name="native"/>
-			<referrer name="OnPlayerConnect"/>
+			<referrer name="SSCANF_OnPlayerConnect"/>
 			<referrer name="OnPlayerRequestClass"/>
 			<param name="playerid">
 				The ID of the player to create the textdraw for
@@ -3189,27 +3289,21 @@
 			<param name="playerid">
 			</param>
 		</member>
-		<member name="M:DestroyDeagleObject" syntax="DestroyDeagleObject(objectid)">
-			<stacksize value="10"/>
-			<dependency name="Float:operator=(_:)"/>
-			<dependency name="CreateExplosion"/>
-			<dependency name="DestroyObject"/>
-			<dependency name="GetObjectPos"/>
-			<param name="objectid">
-			</param>
-		</member>
 		<member name="M:DestroyDynamicObject" syntax="DestroyDynamicObject(objectid)">
 			<attribute name="native"/>
-			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="SSCANF_OnPlayerDisconnect"/>
 			<referrer name="OnPlayerDeath"/>
 			<referrer name="OnPlayerTakeDamage"/>
+			<referrer name="DestroyKingCharge"/>
 			<param name="objectid">
 			</param>
 		</member>
 		<member name="M:DestroyKingCharge" syntax="DestroyKingCharge(objectid)">
+			<attribute name="public"/>
 			<stacksize value="10"/>
 			<dependency name="Float:operator=(_:)"/>
 			<dependency name="CreateExplosion"/>
+			<dependency name="DestroyDynamicObject"/>
 			<dependency name="GetDynamicObjectPos"/>
 			<param name="objectid">
 			</param>
@@ -3218,7 +3312,6 @@
 			<tagname value="bool"/>
 			<attribute name="native"/>
 			<referrer name="CA_DestroyObject_DC"/>
-			<referrer name="DestroyDeagleObject"/>
 			<param name="objectid">
 				The ID of the object to destroy.  Returned by <a href="#CreateObject">CreateObject</a>
 			</param>
@@ -3274,7 +3367,7 @@
 		</member>
 		<member name="M:DisableInteriorEnterExits" syntax="DisableInteriorEnterExits()">
 			<attribute name="native"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<library>omp_core</library>  <summary>Disable all the interior entrances and exits in the game (the yellow arrows at doors).</summary>  <seealso name="AllowInteriorWeapons" />  <remarks>If the gamemode is changed after this function has been used, and the new gamemode doesn't  disable markers, the markers will NOT reappear for already-connected players (but will for newly  connected players).</remarks>  <remarks>This function will only work if it has been used BEFORE a player connects (it is recommended  to use it in OnGameModeInit).  It will not remove a connected player's markers.</remarks>  <returns>This function always returns <b><c>1</c></b>.</returns> 
 		</member>
 		<member name="M:ForceClassSelection" syntax="ForceClassSelection(playerid)">
@@ -3310,7 +3403,6 @@
 		</member>
 		<member name="M:GetDynamicObjectPos" syntax="GetDynamicObjectPos(objectid, &amp;x, &amp;y, &amp;z)">
 			<attribute name="native"/>
-			<referrer name="OnPlayerTakeDamage"/>
 			<referrer name="DestroyKingCharge"/>
 			<param name="objectid">
 			</param>
@@ -3324,26 +3416,18 @@
 				<paraminfo>Float &amp; </paraminfo>
 			</param>
 		</member>
-		<member name="M:GetObjectPos" syntax="GetObjectPos(objectid, &amp;x, &amp;y, &amp;z)">
-			<tagname value="bool"/>
+		<member name="M:GetMaxPlayers" syntax="GetMaxPlayers()">
 			<attribute name="native"/>
-			<referrer name="DestroyDeagleObject"/>
-			<param name="objectid">
-				The ID of the object to get the position of.
+			<referrer name="SSCANF_RunInit"/>
+			<library>omp_core</library>  <summary>Returns the maximum number of players that can join the server, as set by the server variable  'maxplayers' in server.cfg.</summary>  <seealso name="GetPlayerPoolSize" />  <seealso name="IsPlayerConnected" />  <remarks>This function can not be used in place of <b><c>MAX_PLAYERS</c></b>.  It can not be used  at compile time (e.g.  for array sizes). <b><c>MAX_PLAYERS</c></b> should always be re-defined to  what the 'maxplayers' var will be, or higher.</remarks>  <returns>The maximum number of players that can join the server.</returns> 
+		</member>
+		<member name="M:GetPlayerDrunkLevel" syntax="GetPlayerDrunkLevel(playerid)">
+			<attribute name="native"/>
+			<referrer name="OnPlayerWeaponShot"/>
+			<param name="playerid">
+				The player you want to check the drunkenness level of
 			</param>
-			<param name="x">
-				<paraminfo>Float &amp; </paraminfo>
-				A variable in which to store the x coordinate, passed by reference
-			</param>
-			<param name="y">
-				<paraminfo>Float &amp; </paraminfo>
-				A variable in which to store the y coordinate, passed by reference
-			</param>
-			<param name="z">
-				<paraminfo>Float &amp; </paraminfo>
-				A variable in which to store the z coordinate, passed by reference
-			</param>
-			<library>omp_object</library>  <summary>Get the position of an object.</summary>          <seealso name="SetObjectPos" />  <seealso name="GetObjectRot" />  <seealso name="SetPlayerObjectPos" />  <seealso name="CreateObject" />  <returns>  <b><c>1</c></b>: The function executed successfully.<br />  <b><c>0</c></b>: The function failed to execute.  The specified object does not exist.  </returns> 
+			<library>omp_player</library>  <summary>  Checks the player's level of drunkenness.  If the level is less than <b><c>2000</c></b>, the player  is sober.  The player's level of drunkness goes down slowly automatically (1 level per frame) but  will always reach <b><c>2000</c></b> at the end (in <b>0.3b</b> it will stop at <b><c>0</c></b>).  The higher drunkenness levels affect the player's camera, and the car driving handling.  The level  of drunkenness increases when the player drinks from a bottle (You can use <a href="#SetPlayerSpecialAction">SetPlayerSpecialAction</a>  to give them bottles).  </summary>    <seealso name="SetPlayerDrunkLevel" />  <returns>An integer with the level of drunkenness of the player.</returns> 
 		</member>
 		<member name="M:GetPlayerFacingAngle" syntax="GetPlayerFacingAngle(playerid, &amp;ang)">
 			<tagname value="bool"/>
@@ -3360,6 +3444,39 @@
 			</param>
 			<library>omp_player</library>  <summary>Gets the angle a player is facing.</summary>      <seealso name="GetVehicleZAngle" />  <seealso name="SetPlayerFacingAngle" />  <remarks>Angles are reversed in GTA:SA; 90 degrees would be East in the real world, but in GTA:SA  90 degrees is in fact West.  North and South are still 0/360 and 180.  To convert this, simply do  <b>360 - angle</b>.</remarks>  <remarks>Angles returned when inside a vehicle is rarely correct.  To get the correct facing angle  while inside a vehicle, use <a href="#GetVehicleZAngle">GetVehicleZAngle</a>.</remarks> 
 		</member>
+		<member name="M:GetPlayerLastShotVectors" syntax="GetPlayerLastShotVectors(playerid, &amp;originX, &amp;originY, &amp;originZ, &amp;hitPosX, &amp;hitPosY, &amp;hitPosZ)">
+			<tagname value="bool"/>
+			<attribute name="native"/>
+			<referrer name="OnPlayerWeaponShot"/>
+			<param name="playerid">
+				The ID of the player to get the last bullet shot information of
+			</param>
+			<param name="originX">
+				<paraminfo>Float &amp; </paraminfo>
+				A float variable in which to save the x coordinate of where the bullet originated  from
+			</param>
+			<param name="originY">
+				<paraminfo>Float &amp; </paraminfo>
+				A float variable in which to save the y coordinate of where the bullet originated  from
+			</param>
+			<param name="originZ">
+				<paraminfo>Float &amp; </paraminfo>
+				A float variable in which to save the z coordinate of where the bullet originated  from
+			</param>
+			<param name="hitPosX">
+				<paraminfo>Float &amp; </paraminfo>
+				A float variable in which to save the x coordinate of where the bullet hit
+			</param>
+			<param name="hitPosY">
+				<paraminfo>Float &amp; </paraminfo>
+				A float variable in which to save the y coordinate of where the bullet hit
+			</param>
+			<param name="hitPosZ">
+				<paraminfo>Float &amp; </paraminfo>
+				A float variable in which to save the z coordinate of where the bullet hit
+			</param>
+			<library>omp_player</library>  <summary>Retrieves the start and end (hit) position of the last bullet a player fired.</summary>                <seealso name="GetPlayerWeaponData" />  <seealso name="GetPlayerWeapon" />  <seealso name="VectorSize" />  <seealso name="OnPlayerWeaponShot" />  <remarks>This function will only work when <a href="https://www.open.mp/docs/server/LagCompensation">lag  compensation</a> is <b>enabled</b>. </remarks>  <remarks>If the player hit nothing, the hit positions will be <b><c>0</c></b>.  This means you can't  currently calculate how far a bullet travels through open air. </remarks>  <returns>  <b><c>1</c></b>: The function executed successfully.<br />  <b><c>0</c></b>: The function failed to execute.  The player specified does not exist.<br />  </returns> 
+		</member>
 		<member name="M:GetPlayerLastSyncedTrailerID" syntax="GetPlayerLastSyncedTrailerID(playerid)">
 			<stacksize value="1"/>
 			<param name="playerid">
@@ -3371,6 +3488,23 @@
 			<param name="playerid">
 			</param>
 			<library>omp_vehicle</library> 
+		</member>
+		<member name="M:GetPlayerName" syntax="GetPlayerName(playerid, name[], len)">
+			<tagname value="bool"/>
+			<attribute name="native"/>
+			<referrer name="SSCANF_RunInit"/>
+			<referrer name="OnPlayerConnect"/>
+			<param name="playerid">
+				The ID of the player to get the name of
+			</param>
+			<param name="name">
+				<paraminfo> [] </paraminfo>
+				An array into which to store the name, passed by reference
+			</param>
+			<param name="len">
+				The length of the string that should be stored.  Recommended to be <b><c>MAX_PLAYER_NAME</c></b>
+			</param>
+			<library>omp_player</library>  <summary>Get a player's name.</summary>        <seealso name="SetPlayerName" />  <seealso name="GetPlayerIp" />  <seealso name="GetPlayerPing" />  <seealso name="GetPlayerScore" />  <seealso name="GetPlayerVersion" />  <remarks>A player's name can be up to 24 characters long (as of <b>0.3d R2</b>) by using <a href="#SetPlayerName">SetPlayerName</a>.  This is defined as <b><c>24</c></b> by default.  However, the client can  only join with a nickname between 3 and 20 characters, otherwise the connection will be rejected  and the player has to quit to choose a valid name.</remarks>  <returns>The length of the player's name. <b><c>0</c></b> if player specified doesn't exist.</returns> 
 		</member>
 		<member name="M:GetPlayerPoolSize" syntax="GetPlayerPoolSize()">
 			<stacksize value="1"/>
@@ -3422,6 +3556,35 @@
 			</param>
 			<library>omp_player</library>  <summary>Get the ID of the team the player is on.</summary>    <seealso name="SetPlayerTeam" />  <seealso name="SetTeamCount" />  <returns>  <b><c>0-254</c></b>: The player's team. (<b><c>0</c></b> is a valid team).<br />  <b><c>255</c></b>: Defined as <b><c>NO_TEAM</c></b>.  The player is not on any team.<br />  <b><c>-1</c></b>: The function failed to execute.  Player is not connected.  </returns> 
 		</member>
+		<member name="M:GetPlayerVehicleID" syntax="GetPlayerVehicleID(playerid)">
+			<attribute name="native"/>
+			<referrer name="pc_cmd_cjump"/>
+			<param name="playerid">
+				The ID of the player in the vehicle that you want to get the ID of
+			</param>
+			<library>omp_player</library>  <summary>This function gets the ID of the vehicle the player is currently in.  Note: <b>NOT</b> the  model ID of the vehicle.  See <a href="#GetVehicleModel">GetVehicleModel</a> for that.</summary>    <seealso name="IsPlayerInVehicle" />  <seealso name="IsPlayerInAnyVehicle" />  <seealso name="GetPlayerVehicleSeat" />  <seealso name="GetVehicleModel" />  <returns>ID of the vehicle or <b><c>0</c></b> if not in a vehicle.</returns> 
+		</member>
+		<member name="M:GetPlayerVelocity" syntax="GetPlayerVelocity(playerid, &amp;x, &amp;y, &amp;z)">
+			<tagname value="bool"/>
+			<attribute name="native"/>
+			<referrer name="OnPlayerWeaponShot"/>
+			<param name="playerid">
+				The player to get the speed from
+			</param>
+			<param name="x">
+				<paraminfo>Float &amp; </paraminfo>
+				A float variable in which to store the velocity on the x axis, passed by reference
+			</param>
+			<param name="y">
+				<paraminfo>Float &amp; </paraminfo>
+				A float variable in which to store the velocity on the y axis, passed by reference
+			</param>
+			<param name="z">
+				<paraminfo>Float &amp; </paraminfo>
+				A float variable in which to store the velocity on the z axis, passed by reference
+			</param>
+			<library>omp_player</library>  <summary>Get the velocity (speed) of a player on the x, y and z axes.</summary>          <seealso name="SetPlayerVelocity" />  <seealso name="SetVehicleVelocity" />  <seealso name="GetVehicleVelocity" /> 
+		</member>
 		<member name="M:GetServerRuleFlags" syntax="GetServerRuleFlags(rule[])">
 			<tagname value="E_SERVER_RULE_FLAGS"/>
 			<stacksize value="1"/>
@@ -3429,6 +3592,14 @@
 				<paraminfo> [] </paraminfo>
 			</param>
 			<library>omp_core</library> 
+		</member>
+		<member name="M:GetVehicleModel" syntax="GetVehicleModel(vehicleid)">
+			<attribute name="native"/>
+			<referrer name="pc_cmd_cjump"/>
+			<param name="vehicleid">
+				The ID of the vehicle to get the model of
+			</param>
+			<library>omp_vehicle</library>  <summary>Gets the <a href="https://www.open.mp/docs/scripting/resources/vehicleid">model ID</a> of a  vehicle.</summary>    <seealso name="GetPlayerVehicleid" />  <seealso name="GetVehiclePos" />  <seealso name="GetVehicleZAngle" />  <seealso name="GetPlayerVehicleSeat" />  <returns>The vehicle's <a href="https://www.open.mp/docs/scripting/resources/vehicleid">model ID</a>,  or <b><c>0</c></b>  if the vehicle doesn't exist.</returns> 
 		</member>
 		<member name="M:GetVehiclePoolSize" syntax="GetVehiclePoolSize()">
 			<stacksize value="1"/>
@@ -3455,9 +3626,44 @@
 			</param>
 			<library>omp_vehicle</library>  <summary>Gets the position of a vehicle.</summary>          <seealso name="GetVehicleDistanceFromPoint" />  <seealso name="SetVehiclePos" />  <seealso name="GetVehicleZAngle" />  <returns>  <b><c>1</c></b>: The function executed successfully.<br />  <b><c>0</c></b>: The function failed to execute.  The vehicle specified does not exist.  </returns> 
 		</member>
+		<member name="M:GetVehicleVelocity" syntax="GetVehicleVelocity(vehicleid, &amp;x, &amp;y, &amp;z)">
+			<tagname value="bool"/>
+			<attribute name="native"/>
+			<referrer name="pc_cmd_cjump"/>
+			<referrer name="OnPlayerWeaponShot"/>
+			<param name="vehicleid">
+				The ID of the vehicle to get the velocity of
+			</param>
+			<param name="x">
+				<paraminfo>Float &amp; </paraminfo>
+				A float variable in to which to store the vehicle's x velocity, passed by reference
+			</param>
+			<param name="y">
+				<paraminfo>Float &amp; </paraminfo>
+				A float variable in to which to store the vehicle's y velocity, passed by reference
+			</param>
+			<param name="z">
+				<paraminfo>Float &amp; </paraminfo>
+				A float variable in to which to store the vehicle's z velocity, passed by reference
+			</param>
+			<library>omp_vehicle</library>  <summary>Get the velocity of a vehicle on the x, y and z axes.</summary>          <seealso name="GetPlayerVelocity" />  <seealso name="SetVehicleVelocity" />  <seealso name="SetPlayerVelocity" />  <remarks>Multiply vector with <b><c>250.66667</c></b> for kmph or <b><c>199.416667</c></b> for mph  or something...</remarks>  <returns>  <b><c>1</c></b>: The function executed successfully.<br />  <b><c>0</c></b>: The function failed to execute.  This means the vehicle specified does not exist.<br  />  </returns> 
+		</member>
+		<member name="M:GetVehicleZAngle" syntax="GetVehicleZAngle(vehicleid, &amp;angle)">
+			<tagname value="bool"/>
+			<attribute name="native"/>
+			<referrer name="pc_cmd_cjump"/>
+			<param name="vehicleid">
+				The ID of the vehicle to get the z angle of
+			</param>
+			<param name="angle">
+				<paraminfo>Float &amp; </paraminfo>
+				A float variable in which to store the z rotation, passed by reference
+			</param>
+			<library>omp_vehicle</library>  <summary>Get the rotation of a vehicle on the z axis (yaw).</summary>      <seealso name="GetVehicleRotationQuat" />  <seealso name="GetVehicleRotation" />  <seealso name="SetVehicleZAngle" />  <seealso name="GetVehiclePos" />  <seealso name="GetPlayerFacingAngle" />  <returns>  <b><c>1</c></b>: The function executed successfully.<br />  <b><c>0</c></b>: The function failed to execute.  This means the vehicle does not exist.  </returns> 
+		</member>
 		<member name="M:GivePlayerMoney" syntax="GivePlayerMoney(playerid, money)">
 			<attribute name="native"/>
-			<referrer name="OnPlayerConnect"/>
+			<referrer name="SSCANF_OnPlayerConnect"/>
 			<param name="playerid">
 				The ID of the player to give money to or take money from
 			</param>
@@ -3588,11 +3794,24 @@
 			</param>
 			<library>omp_player</library>  <summary>Move a player's camera from one position to another, within the set time.  Useful for scripted  cut scenes.</summary>                    <seealso name="InterpolateCameraLookAt" />  <seealso name="SetPlayerCameraPos" />  <seealso name="SetPlayerCameraLookAt" />  <remarks>Use <b><c>TogglePlayerSpectating</c></b> to make objects stream in for the player while  the camera is moving.  You can reset the camera behind the player with <b><c>SetCameraBehindPlayer</c></b>.</remarks> 
 		</member>
-		<member name="M:IsValidDynamicObject" syntax="IsValidDynamicObject(objectid)">
+		<member name="M:IsPlayerConnected" syntax="IsPlayerConnected(playerid)">
+			<tagname value="bool"/>
 			<attribute name="native"/>
-			<referrer name="OnPlayerTakeDamage"/>
-			<param name="objectid">
+			<referrer name="SSCANF_RunInit"/>
+			<param name="playerid">
+				The ID of the player to check
 			</param>
+			<library>omp_player</library>  <summary>Checks if a player is connected (if an ID is taken by a connected player).</summary>    <seealso name="IsPlayerAdmin" />  <seealso name="OnPlayerConnect" />  <seealso name="OnPlayerDisconnect" />  <remarks>This function can be omitted in a lot of cases.  Many other functions already have some  sort of connection check built in.</remarks>  <returns><b><c>1</c></b> if the player is connected, <b><c>0</c></b> if not.</returns> 
+		</member>
+		<member name="M:IsPlayerNPC" syntax="IsPlayerNPC(playerid)">
+			<tagname value="bool"/>
+			<attribute name="native"/>
+			<referrer name="SSCANF_RunInit"/>
+			<referrer name="OnPlayerConnect"/>
+			<param name="playerid">
+				The ID of the player to check
+			</param>
+			<library>omp_player</library>  <summary>Check if a player is an actual player or an NPC.</summary>    <seealso name="ConnectNPC" />  <seealso name="IsPlayerAdmin" />  <returns><b><c>1</c></b> if the player is an NPC, <b><c>0</c></b> if not.</returns> 
 		</member>
 		<member name="M:IsVehicleHidden" syntax="IsVehicleHidden(vehicleid)">
 			<tagname value="bool"/>
@@ -3614,7 +3833,6 @@
 			<referrer name="OnPlayerLeaveDynamicCP"/>
 			<referrer name="DestroyPickupBomb"/>
 			<referrer name="DefusePickupBomb"/>
-			<referrer name="RemovePlayerDrunk"/>
 			<param name="timerid">
 				The ID of the timer to kill (returned by <a href="#SetTimer">SetTimer</a> or  <a href="#SetTimerEx">SetTimerEx</a>)
 			</param>
@@ -3622,7 +3840,7 @@
 		</member>
 		<member name="M:LimitPlayerMarkerRadius" syntax="LimitPlayerMarkerRadius(markerRadius)">
 			<attribute name="native"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<param name="markerRadius">
 				<paraminfo>Float </paraminfo>
 				The radius that markers will show at
@@ -3677,6 +3895,13 @@
 				The ID of the player that streamed the actor out
 			</param>
 			<summary>This callback is called when an actor is streamed out by a player's client.</summary>      <seealso name="OnActorStreamIn" />  <seealso name="OnPlayerStreamOut" />  <remarks>This callback can also be called by NPC.</remarks>  <remarks>It is always called first in filterscripts.</remarks>  <returns>This callback does not handle returns.</returns> 
+		</member>
+		<member name="M:OnCachedInit" syntax="OnCachedInit()">
+			<attribute name="public"/>
+			<stacksize value="3"/>
+			<dependency name="SSCANF_OnCachedInit"/>
+			<dependency name="SSCANF_RunInit"/>
+			<library>sscanf</library>  <remarks>  Called when the script starts if it is (legacy) YSI cached mode.  </remarks> 
 		</member>
 		<member name="M:OnClientCheckResponse" syntax="OnClientCheckResponse(playerid, actionid, memaddr, retndata)">
 			<attribute name="public"/>
@@ -3766,8 +3991,11 @@
 		</member>
 		<member name="M:OnFilterScriptInit" syntax="OnFilterScriptInit()">
 			<attribute name="public"/>
-			<stacksize value="1"/>
-			<summary>This callback is called when a filterscript is initialized (loaded).  It is only called  inside the filterscript which is starting.</summary>  <seealso name="OnFilterScriptExit" />  <seealso name="OnGameModeInit" />  <seealso name="OnGameModeExit" />  <returns>This callback does not handle returns.</returns> 
+			<stacksize value="3"/>
+			<dependency name="SSCANF_OnFilterScriptInit"/>
+			<dependency name="SSCANF_RunInit"/>
+			<dependency name="SSCANF_gInit"/>
+			<summary>This callback is called when a filterscript is initialized (loaded).  It is only called  inside the filterscript which is starting.</summary>  <seealso name="OnFilterScriptExit" />  <seealso name="OnGameModeInit" />  <seealso name="OnGameModeExit" />  <returns>This callback does not handle returns.</returns> <p/> <library>sscanf</library>  <remarks>  Called when the script starts if it is a filterscript, sets up the system,  then calls the "real" OnFilterScriptInit (using the new ALS 2 hook method).  </remarks> 
 		</member>
 		<member name="M:OnGameModeExit" syntax="OnGameModeExit()">
 			<attribute name="public"/>
@@ -3923,25 +4151,16 @@
 		</member>
 		<member name="M:OnPlayerConnect" syntax="OnPlayerConnect(playerid)">
 			<attribute name="public"/>
-			<stacksize value="6"/>
-			<dependency name="Float:operator=(_:)"/>
-			<dependency name="CreatePlayerTextDraw"/>
-			<dependency name="GivePlayerMoney"/>
-			<dependency name="PlayerInfo"/>
-			<dependency name="PlayerInfo"/>
-			<dependency name="SetPlayerColor"/>
-			<dependency name="current_textdraw"/>
-			<dependency name="deaths"/>
-			<dependency name="false"/>
-			<dependency name="is_carrying_bomb"/>
-			<dependency name="is_player_spawned"/>
-			<dependency name="kills"/>
-			<dependency name="player_change_team"/>
-			<dependency name="true"/>
+			<stacksize value="30"/>
+			<dependency name="GetPlayerName"/>
+			<dependency name="IsPlayerNPC"/>
+			<dependency name="SSCANF_Join"/>
+			<dependency name="SSCANF_OnPlayerConnect"/>
+			<dependency name="SSCANF_gInit"/>
 			<param name="playerid">
 				The ID of the player that connected
 			</param>
-			<summary>This callback is called when a player connects to the server.</summary>    <seealso name="OnPlayerDisconnect" />  <seealso name="OnIncomingConnection" />  <seealso name="OnPlayerFinishedDownloading" />  <remarks>This callback can also be called by NPC.</remarks>  <returns>  <b><c>0</c></b> - Will prevent other filterscripts from receiving this callback.<br />  <b><c>1</c></b> - Indicates that this callback will be passed to the next filterscript.<br />  It is always called first in filterscripts.  </returns> 
+			<summary>This callback is called when a player connects to the server.</summary>    <seealso name="OnPlayerDisconnect" />  <seealso name="OnIncomingConnection" />  <seealso name="OnPlayerFinishedDownloading" />  <remarks>This callback can also be called by NPC.</remarks>  <returns>  <b><c>0</c></b> - Will prevent other filterscripts from receiving this callback.<br />  <b><c>1</c></b> - Indicates that this callback will be passed to the next filterscript.<br />  It is always called first in filterscripts.  </returns> <p/> <library>sscanf</library>  <remarks>  Called when a player connects.  Actually increments an internal count so that  if a script ends and <c>OnPlayerDisconnect</c> is called then <c>sscanf</c>  still knows that the player is really connected.  Also stores their name  internally.  </remarks> 
 		</member>
 		<member name="M:OnPlayerDeath" syntax="OnPlayerDeath(playerid, killerid, reason)">
 			<attribute name="public"/>
@@ -3953,6 +4172,7 @@
 			<dependency name="PlayerInfo"/>
 			<dependency name="PlayerInfo"/>
 			<dependency name="SendClientMessage"/>
+			<dependency name="SendDeathMessage"/>
 			<dependency name="SetPlayerColor"/>
 			<dependency name="SkillInfo"/>
 			<dependency name="SkillInfo"/>
@@ -3981,20 +4201,17 @@
 		</member>
 		<member name="M:OnPlayerDisconnect" syntax="OnPlayerDisconnect(playerid, reason)">
 			<attribute name="public"/>
-			<stacksize value="3"/>
-			<dependency name="DestroyDynamicObject"/>
-			<dependency name="PlayerInfo"/>
-			<dependency name="SkillInfo"/>
-			<dependency name="SkillInfo"/>
-			<dependency name="player_perk"/>
-			<dependency name="skill_king_charges"/>
+			<stacksize value="5"/>
+			<dependency name="SSCANF_Leave"/>
+			<dependency name="SSCANF_OnPlayerDisconnect"/>
+			<dependency name="SSCANF_gInit"/>
 			<param name="playerid">
 				The ID of the player that disconnected
 			</param>
 			<param name="reason">
 				The reason for the disconnection.  See table below
 			</param>
-			<summary>This callback is called when a player disconnects from the server.</summary>      <seealso name="OnPlayerConnect" />  <seealso name="OnIncomingConnection" />  <seealso name="OnPlayerFinishedDownloading" />  <remarks>This callback can also be called by NPC.</remarks>  <remarks>Some functions might not work correctly when used in this callback because the player is  already disconnected when the callback is called.  This means that you can't get unambiguous information  from functions like <a href="#GetPlayerIp">GetPlayerIp</a> and <a href="#GetPlayerPos">GetPlayerPos</a>.</remarks>  <remarks>  <b>Reasons:</b><br />  <ul>  <li><b><c>0</c></b> - timeout/Crash - the player's connection was lost.  Either their game crashed  or their network had a fault.</li>  <li><b><c>1</c></b> - quit - the player purposefully quit, either using the <b><c>/quit (/q)</c></b>  command or via the pause menu.</li>  <li><b><c>2</c></b> - kick/ban - the player was kicked or banned by the server.</li>  </ul>  </remarks>  <returns>  <b><c>0</c></b> - Will prevent other filterscripts from receiving this callback.<br />  <b><c>1</c></b> - Indicates that this callback will be passed to the next filterscript.<br />  It is always called first in filterscripts.  </returns> 
+			<summary>This callback is called when a player disconnects from the server.</summary>      <seealso name="OnPlayerConnect" />  <seealso name="OnIncomingConnection" />  <seealso name="OnPlayerFinishedDownloading" />  <remarks>This callback can also be called by NPC.</remarks>  <remarks>Some functions might not work correctly when used in this callback because the player is  already disconnected when the callback is called.  This means that you can't get unambiguous information  from functions like <a href="#GetPlayerIp">GetPlayerIp</a> and <a href="#GetPlayerPos">GetPlayerPos</a>.</remarks>  <remarks>  <b>Reasons:</b><br />  <ul>  <li><b><c>0</c></b> - timeout/Crash - the player's connection was lost.  Either their game crashed  or their network had a fault.</li>  <li><b><c>1</c></b> - quit - the player purposefully quit, either using the <b><c>/quit (/q)</c></b>  command or via the pause menu.</li>  <li><b><c>2</c></b> - kick/ban - the player was kicked or banned by the server.</li>  </ul>  </remarks>  <returns>  <b><c>0</c></b> - Will prevent other filterscripts from receiving this callback.<br />  <b><c>1</c></b> - Indicates that this callback will be passed to the next filterscript.<br />  It is always called first in filterscripts.  </returns> <p/> <library>sscanf</library>  <remarks>  Called when a player disconnects, or when a script is ended.  </remarks> 
 		</member>
 		<member name="M:OnPlayerEditAttachedObject" syntax="OnPlayerEditAttachedObject(playerid, response, index, modelid, boneid, fOffsetX, fOffsetY, fOffsetZ, fRotX, fRotY, fRotZ, fScaleX, fScaleY, fScaleZ)">
 			<attribute name="public"/>
@@ -4130,7 +4347,7 @@
 		</member>
 		<member name="M:OnPlayerEnterDynamicCP" syntax="OnPlayerEnterDynamicCP(playerid, checkpointid)">
 			<attribute name="public"/>
-			<stacksize value="40"/>
+			<stacksize value="12"/>
 			<dependency name="ApplyAnimation"/>
 			<dependency name="CPInfo"/>
 			<dependency name="CPInfo"/>
@@ -4145,7 +4362,6 @@
 			<dependency name="cp_player"/>
 			<dependency name="cp_team"/>
 			<dependency name="false"/>
-			<dependency name="format"/>
 			<dependency name="is_active"/>
 			<dependency name="is_carrying_bomb"/>
 			<dependency name="occupied"/>
@@ -4237,7 +4453,6 @@
 			<summary>This callback is called when a player finishes downloading custom models.  For more information  on how to add custom models to your server, see <a href="https://sampforum.blast.hk/showthread.php?tid=644105">the  release thread</a> and <a href="https://sampforum.blast.hk/showthread.php?tid=644123">this tutorial</a>.</summary>      <seealso name="OnPlayerConnect" />  <seealso name="OnPlayerDisconnect" />  <seealso name="OnIncomingConnection" />  <remarks>This callback is called every time a player changes virtual worlds, even if there are no  custom models present in that world.</remarks>  <returns>This callback does not handle returns.</returns> 
 		</member>
 		<member name="M:OnPlayerGiveDamage" syntax="OnPlayerGiveDamage(playerid, damagedid, amount, weaponid, bodypart)">
-			<attribute name="public"/>
 			<stacksize value="1"/>
 			<param name="playerid">
 				The ID of the player that gave damage
@@ -4605,8 +4820,7 @@
 		</member>
 		<member name="M:OnPlayerSpawn" syntax="OnPlayerSpawn(playerid)">
 			<attribute name="public"/>
-			<stacksize value="22"/>
-			<dependency name="operator-(Float:)"/>
+			<stacksize value="23"/>
 			<dependency name="Float:operator=(_:)"/>
 			<dependency name="AttachDynamicObjectToPlayer"/>
 			<dependency name="ClassInfo"/>
@@ -4619,14 +4833,19 @@
 			<dependency name="PlayerInfo"/>
 			<dependency name="PlayerInfo"/>
 			<dependency name="PlayerTextDrawDestroy"/>
+			<dependency name="SetPlayerArmour"/>
 			<dependency name="SetPlayerColor"/>
+			<dependency name="SetPlayerHealth"/>
 			<dependency name="SetPlayerInterior"/>
-			<dependency name="SetPlayerWorldBounds"/>
 			<dependency name="SkillInfo"/>
 			<dependency name="SkillInfo"/>
+			<dependency name="Skill_KingCharges"/>
+			<dependency name="Skill_KingCharges"/>
 			<dependency name="color"/>
 			<dependency name="current_textdraw"/>
 			<dependency name="is_player_spawned"/>
+			<dependency name="perk_armour"/>
+			<dependency name="perk_health"/>
 			<dependency name="perk_weapon_ammo"/>
 			<dependency name="perk_weapons"/>
 			<dependency name="player_perk"/>
@@ -4677,7 +4896,8 @@
 		</member>
 		<member name="M:OnPlayerTakeDamage" syntax="OnPlayerTakeDamage(playerid, issuerid, amount, weaponid, bodypart)">
 			<attribute name="public"/>
-			<stacksize value="45"/>
+			<stacksize value="25"/>
+			<dependency name="operator+(Float:,_:)"/>
 			<dependency name="operator*(Float:,_:)"/>
 			<dependency name="operator-(Float:,Float:)"/>
 			<dependency name="operator+(Float:,Float:)"/>
@@ -4685,21 +4905,18 @@
 			<dependency name="Float:operator=(_:)"/>
 			<dependency name="CreateDynamicObject"/>
 			<dependency name="DestroyDynamicObject"/>
-			<dependency name="GetDynamicObjectPos"/>
 			<dependency name="GetPlayerPos"/>
-			<dependency name="IsValidDynamicObject"/>
 			<dependency name="MoveDynamicObject"/>
 			<dependency name="PlayerInfo"/>
-			<dependency name="SendClientMessage"/>
 			<dependency name="SetPlayerHealth"/>
 			<dependency name="SetTimerEx"/>
 			<dependency name="SkillInfo"/>
 			<dependency name="SkillInfo"/>
+			<dependency name="Skill_KingCharges"/>
 			<dependency name="false"/>
 			<dependency name="floatpower"/>
 			<dependency name="floatround"/>
 			<dependency name="floatsqroot"/>
-			<dependency name="format"/>
 			<dependency name="player_perk"/>
 			<dependency name="skill_king_charges"/>
 			<param name="playerid">
@@ -4743,7 +4960,7 @@
 		</member>
 		<member name="M:OnPlayerWeaponShot" syntax="OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, fX, fY, fZ)">
 			<attribute name="public"/>
-			<stacksize value="19"/>
+			<stacksize value="22"/>
 			<dependency name="operator!=(Float:,_:)"/>
 			<dependency name="operator-(Float:,Float:)"/>
 			<dependency name="operator+(Float:,Float:)"/>
@@ -4751,8 +4968,12 @@
 			<dependency name="operator*(Float:,Float:)"/>
 			<dependency name="Float:operator=(_:)"/>
 			<dependency name="CreateExplosion"/>
+			<dependency name="GetPlayerDrunkLevel"/>
+			<dependency name="GetPlayerLastShotVectors"/>
 			<dependency name="GetPlayerPos"/>
+			<dependency name="GetPlayerVelocity"/>
 			<dependency name="GetVehiclePos"/>
+			<dependency name="GetVehicleVelocity"/>
 			<dependency name="IsVehicleOccupied"/>
 			<dependency name="PlayerInfo"/>
 			<dependency name="PlayerInfo"/>
@@ -4834,6 +5055,14 @@
 				Where the money came from
 			</param>
 			<summary>This callback is called when something in-game like casinos give the player money</summary>        <remarks>Doesn't work</remarks> 
+		</member>
+		<member name="M:OnScriptInit" syntax="OnScriptInit()">
+			<attribute name="public"/>
+			<stacksize value="3"/>
+			<dependency name="SSCANF_OnScriptInit"/>
+			<dependency name="SSCANF_RunInit"/>
+			<dependency name="SSCANF_gInit"/>
+			<library>sscanf</library>  <remarks>  Called for earlier initialisation by YSI.  </remarks> 
 		</member>
 		<member name="M:OnTrailerUpdate" syntax="OnTrailerUpdate(playerid, vehicleid)">
 			<attribute name="public"/>
@@ -5001,58 +5230,11 @@
 		</member>
 		<member name="M:PawnCmd_OnGameModeInit" syntax="PawnCmd_OnGameModeInit()">
 			<attribute name="public"/>
-			<stacksize value="15"/>
-			<dependency name="Float:operator=(_:)"/>
-			<dependency name="AddPlayerClassEx"/>
-			<dependency name="CA_CreateObject"/>
-			<dependency name="CA_Init"/>
-			<dependency name="CPInfo"/>
-			<dependency name="CPInfo"/>
-			<dependency name="ClassInfo"/>
-			<dependency name="ClassInfo"/>
-			<dependency name="CreateDynamicCP"/>
-			<dependency name="CreateDynamicMapIcon"/>
-			<dependency name="CreateObject"/>
-			<dependency name="CreatePickup"/>
-			<dependency name="DisableInteriorEnterExits"/>
-			<dependency name="LimitPlayerMarkerRadius"/>
-			<dependency name="PerkInfo"/>
-			<dependency name="PerkInfo"/>
-			<dependency name="PickupInfo"/>
-			<dependency name="PickupInfo"/>
-			<dependency name="SetGameModeText"/>
-			<dependency name="UsePlayerPedAnims"/>
-			<dependency name="a"/>
-			<dependency name="color"/>
-			<dependency name="cp_bomb_timer"/>
-			<dependency name="cp_defuse_timer"/>
-			<dependency name="cp_mapicon"/>
-			<dependency name="cp_player"/>
-			<dependency name="cp_team"/>
-			<dependency name="cp_x"/>
-			<dependency name="cp_y"/>
-			<dependency name="cp_z"/>
-			<dependency name="false"/>
-			<dependency name="is_active"/>
-			<dependency name="is_picked_up"/>
-			<dependency name="occupied"/>
-			<dependency name="perk_armour"/>
-			<dependency name="perk_health"/>
-			<dependency name="perk_title"/>
-			<dependency name="perk_weapon_ammo"/>
-			<dependency name="perk_weapons"/>
-			<dependency name="picked_up_by_team"/>
-			<dependency name="pickup_object"/>
-			<dependency name="pickup_x"/>
-			<dependency name="pickup_y"/>
-			<dependency name="pickup_z"/>
-			<dependency name="skin"/>
-			<dependency name="strcopy"/>
-			<dependency name="title"/>
-			<dependency name="true"/>
-			<dependency name="x"/>
-			<dependency name="y"/>
-			<dependency name="z"/>
+			<stacksize value="3"/>
+			<dependency name="SSCANF_OnGameModeInit"/>
+			<dependency name="SSCANF_RunInit"/>
+			<dependency name="SSCANF_gInit"/>
+			<library>sscanf</library>  <remarks>  Called when the script starts if it is a gamemode.  This callback is also  called in filterscripts so we don't want to reinitialise the system in that  case.  </remarks> 
 		</member>
 		<member name="M:PlayerTextDrawAlignment" syntax="PlayerTextDrawAlignment(playerid, textid, alignment)">
 			<tagname value="bool"/>
@@ -5131,13 +5313,11 @@
 		</member>
 		<member name="M:RemovePlayerDrunk" syntax="RemovePlayerDrunk(hitid)">
 			<stacksize value="4"/>
-			<dependency name="KillTimer"/>
 			<dependency name="PlayerInfo"/>
 			<dependency name="PlayerInfo"/>
 			<dependency name="SetPlayerDrunkLevel"/>
 			<dependency name="false"/>
 			<dependency name="is_player_drunk"/>
-			<dependency name="player_drunk_timer"/>
 			<param name="hitid">
 			</param>
 		</member>
@@ -5153,6 +5333,367 @@
 			</param>
 			<library>omp_player</library>  <summary>Removes a map icon that was set earlier for a player using <a href="#SetPlayerMapIcon">SetPlayerMapIcon</a>.</summary>      <seealso name="SetPlayerMapIcon" />  <returns>  <b><c>1</c></b>: The function executed successfully.<br />  <b><c>0</c></b>: The function failed to execute.  </returns> 
 		</member>
+		<member name="M:SSCANF_GetClosestString" syntax="SSCANF_GetClosestString(input[], candidates[][], threshold, count)">
+			<stacksize value="6"/>
+			<referrer name="SSCANF_GetClosestValue"/>
+			<dependency name="SSCANF_Levenshtein"/>
+			<dependency name="cellmin"/>
+			<param name="input">
+				<paraminfo> [] </paraminfo>
+				The first string to compare.
+			</param>
+			<param name="candidates">
+				<paraminfo> [][] </paraminfo>
+				A list of other strings to compare against.
+			</param>
+			<param name="threshold">
+				How similar the strings must be to be considered a match.
+			</param>
+			<param name="count">
+				The number of candidates.
+			</param>
+			<library>sscanf</library>          <remarks>  Takes an input string and an array of string possibilities (candidates) and  returns the index of the string closest to the input string.  If no valid  match is found, <c>-1</c> is returned.  Note that this will always return the  closest, even if the closest is not that close; which is why an optional  <c>threshold</c> parameter is available.  When this parameter is provided the  closest match must be closer in Levenshtein distance than the threshold,  otherwise again <c>-1</c> is returned.  </remarks> 
+		</member>
+		<member name="M:SSCANF_GetClosestValue" syntax="SSCANF_GetClosestValue(input[], candidates[][], results[], fail, threshold, count, check)">
+			<stacksize value="8"/>
+			<dependency name="SSCANF_GetClosestString"/>
+			<dependency name="cellmin"/>
+			<param name="input">
+				<paraminfo> [] </paraminfo>
+				The first string to compare.
+			</param>
+			<param name="candidates">
+				<paraminfo> [][] </paraminfo>
+				A list of other strings to compare against.
+			</param>
+			<param name="results">
+				<paraminfo> [] </paraminfo>
+				The values to return when the corresponding candidate (by index) is the closest  match.
+			</param>
+			<param name="fail">
+				The value to return when there is no good match.
+			</param>
+			<param name="threshold">
+				How similar the strings must be to be considered a match.
+			</param>
+			<param name="count">
+				The number of candidates (must match <c>check</c>).
+			</param>
+			<param name="check">
+				The number of results (must match <c>count</c>).
+			</param>
+			<library>sscanf</library>                <remarks>  Similar to <c>SSCANF_GetClosestString</c> in that it searches the  <c>candidates</c> array for the string most closely matching the <c>input</c>  and bounded by <c>threshold</c>.  But instead of returning the index this  function returns the value in the second <c>results</c> array at that index;  and instead of returning <c>-1</c> on failure it returns the value of  <c>fail</c>.  The two arrays must match in size and an <c>assert</c> in the  function checks for this.  </remarks> 
+		</member>
+		<member name="M:SSCANF_GetSimilarString" syntax="SSCANF_GetSimilarString(input[], candidates[][], threshold, count)">
+			<stacksize value="6"/>
+			<referrer name="SSCANF_GetSimilarValue"/>
+			<dependency name="operator&gt;=(Float:,Float:)"/>
+			<dependency name="SSCANF_TextSimilarity"/>
+			<dependency name="cellmin"/>
+			<param name="input">
+				<paraminfo> [] </paraminfo>
+				The first string to compare.
+			</param>
+			<param name="candidates">
+				<paraminfo> [][] </paraminfo>
+				A list of other strings to compare against.
+			</param>
+			<param name="threshold">
+				<paraminfo>Float </paraminfo>
+				How similar the strings must be to be considered a match.
+			</param>
+			<param name="count">
+				The number of candidates.
+			</param>
+			<library>sscanf</library>          <remarks>  Takes an input string and an array of string possibilities (candidates) and  returns the index of the string closest to the input string.  If no valid  match is found, <c>-1</c> is returned.  Note that this will always return the  closest, even if the closest is not that close; which is why an optional  <c>threshold</c> parameter is available.  When this parameter is provided the  closest match must be closer in Levenshtein distance than the threshold,  otherwise again <c>-1</c> is returned.  </remarks> 
+		</member>
+		<member name="M:SSCANF_GetSimilarValue" syntax="SSCANF_GetSimilarValue(input[], candidates[][], results[], fail, threshold, count, check)">
+			<stacksize value="8"/>
+			<referrer name="sscanf_weapon"/>
+			<referrer name="sscanf_vehicle"/>
+			<dependency name="SSCANF_GetSimilarString"/>
+			<dependency name="cellmin"/>
+			<param name="input">
+				<paraminfo> [] </paraminfo>
+				The first string to compare.
+			</param>
+			<param name="candidates">
+				<paraminfo> [][] </paraminfo>
+				A list of other strings to compare against.
+			</param>
+			<param name="results">
+				<paraminfo> [] </paraminfo>
+				The values to return when the corresponding candidate (by index) is the closest  match.
+			</param>
+			<param name="fail">
+				The value to return when there is no good match.
+			</param>
+			<param name="threshold">
+				<paraminfo>Float </paraminfo>
+				How similar the strings must be to be considered a match.
+			</param>
+			<param name="count">
+				The number of candidates (must match <c>check</c>).
+			</param>
+			<param name="check">
+				The number of results (must match <c>count</c>).
+			</param>
+			<library>sscanf</library>                <remarks>  Similar to <c>SSCANF_GetClosestString</c> in that it searches the  <c>candidates</c> array for the string most closely matching the <c>input</c>  and bounded by <c>threshold</c>.  But instead of returning the index this  function returns the value in the second <c>results</c> array at that index;  and instead of returning <c>-1</c> on failure it returns the value of  <c>fail</c>.  The two arrays must match in size and an <c>assert</c> in the  function checks for this.  </remarks> 
+		</member>
+		<member name="M:SSCANF_Init" syntax="SSCANF_Init(players, invalid, len)">
+			<attribute name="native"/>
+			<referrer name="SSCANF_RunInit"/>
+			<param name="players">
+				The maximum players on the server.
+			</param>
+			<param name="invalid">
+				The invalid player ID.
+			</param>
+			<param name="len">
+				<c>MAX_PLAYER_NAME</c>.
+			</param>
+			<library>sscanf</library>        <remarks>  Initialise the plugin with real server information.  </remarks> 
+		</member>
+		<member name="M:SSCANF_IsConnected" syntax="SSCANF_IsConnected(playerid)">
+			<tagname value="bool"/>
+			<attribute name="native"/>
+			<referrer name="SSCANF_RunInit"/>
+			<param name="playerid">
+				The ID of the player.
+			</param>
+			<library>sscanf</library>    <remarks>  Checks if the plugin knows about a given player ID.  Used when modes restart  to re-add players.  </remarks> 
+		</member>
+		<member name="M:SSCANF_Join" syntax="SSCANF_Join(playerid, name[], npc)">
+			<attribute name="native"/>
+			<referrer name="SSCANF_RunInit"/>
+			<referrer name="OnPlayerConnect"/>
+			<param name="playerid">
+				The ID of the player.
+			</param>
+			<param name="name">
+				<paraminfo> [] </paraminfo>
+				The name of the player.
+			</param>
+			<param name="npc">
+				<paraminfo>bool </paraminfo>
+				Is this player an NPC?
+			</param>
+			<library>sscanf</library>        <remarks>  Called when a player joins to inform the plugin of the connection.  </remarks> 
+		</member>
+		<member name="M:SSCANF_Leave" syntax="SSCANF_Leave(playerid)">
+			<attribute name="native"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<param name="playerid">
+				The ID of the player.
+			</param>
+			<library>sscanf</library>    <remarks>  Called when a player leaves to inform the plugin of the disconnection.  </remarks> 
+		</member>
+		<member name="M:SSCANF_Levenshtein" syntax="SSCANF_Levenshtein(string1[], string2[])">
+			<attribute name="native"/>
+			<referrer name="SSCANF_GetClosestString"/>
+			<param name="string1">
+				<paraminfo> [] </paraminfo>
+				The first string to compare.
+			</param>
+			<param name="string2">
+				<paraminfo> [] </paraminfo>
+				The second string to compare.
+			</param>
+			<library>sscanf</library>      <remarks>  Computes the <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">  Levenshtein Distance</a> between two strings.  This is simlar to  <c>strcmp</c> in usage, but is slightly more "fuzzy".  Distances are used to  work out which string is the most similar to another one, though they may not  be identical.  Useful in <c>k</c> callback functions to determine if the  entered string is close to a possible string.  </remarks> 
+		</member>
+		<member name="M:SSCANF_OnCachedInit" syntax="SSCANF_OnCachedInit()">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+			<automaton name="_ALS"/>
+			<referrer name="OnCachedInit"/>
+		</member>
+		<member name="M:SSCANF_OnFilterScriptInit" syntax="SSCANF_OnFilterScriptInit()">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+			<automaton name="_ALS"/>
+			<referrer name="OnFilterScriptInit"/>
+		</member>
+		<member name="M:SSCANF_OnGameModeInit" syntax="SSCANF_OnGameModeInit()">
+			<attribute name="public"/>
+			<stacksize value="15"/>
+			<automaton name="_ALS"/>
+			<referrer name="PawnCmd_OnGameModeInit"/>
+			<dependency name="Float:operator=(_:)"/>
+			<dependency name="AddPlayerClassEx"/>
+			<dependency name="CA_CreateObject"/>
+			<dependency name="CA_Init"/>
+			<dependency name="CPInfo"/>
+			<dependency name="CPInfo"/>
+			<dependency name="ClassInfo"/>
+			<dependency name="ClassInfo"/>
+			<dependency name="CreateDynamicCP"/>
+			<dependency name="CreateDynamicMapIcon"/>
+			<dependency name="CreateObject"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DisableInteriorEnterExits"/>
+			<dependency name="LimitPlayerMarkerRadius"/>
+			<dependency name="PerkInfo"/>
+			<dependency name="PerkInfo"/>
+			<dependency name="PickupInfo"/>
+			<dependency name="PickupInfo"/>
+			<dependency name="SetGameModeText"/>
+			<dependency name="Skill_KingCharges"/>
+			<dependency name="Skill_KingCharges"/>
+			<dependency name="UsePlayerPedAnims"/>
+			<dependency name="a"/>
+			<dependency name="color"/>
+			<dependency name="cp_bomb_timer"/>
+			<dependency name="cp_defuse_timer"/>
+			<dependency name="cp_mapicon"/>
+			<dependency name="cp_player"/>
+			<dependency name="cp_team"/>
+			<dependency name="cp_x"/>
+			<dependency name="cp_y"/>
+			<dependency name="cp_z"/>
+			<dependency name="false"/>
+			<dependency name="is_active"/>
+			<dependency name="is_picked_up"/>
+			<dependency name="occupied"/>
+			<dependency name="perk_armour"/>
+			<dependency name="perk_health"/>
+			<dependency name="perk_title"/>
+			<dependency name="perk_weapon_ammo"/>
+			<dependency name="perk_weapons"/>
+			<dependency name="picked_up_by_team"/>
+			<dependency name="pickup_object"/>
+			<dependency name="pickup_x"/>
+			<dependency name="pickup_y"/>
+			<dependency name="pickup_z"/>
+			<dependency name="skin"/>
+			<dependency name="strcopy"/>
+			<dependency name="title"/>
+			<dependency name="true"/>
+			<dependency name="x"/>
+			<dependency name="y"/>
+			<dependency name="z"/>
+		</member>
+		<member name="M:SSCANF_OnPlayerConnect" syntax="SSCANF_OnPlayerConnect(playerid)">
+			<attribute name="public"/>
+			<stacksize value="6"/>
+			<automaton name="_ALS"/>
+			<referrer name="OnPlayerConnect"/>
+			<dependency name="Float:operator=(_:)"/>
+			<dependency name="CreatePlayerTextDraw"/>
+			<dependency name="GivePlayerMoney"/>
+			<dependency name="PlayerInfo"/>
+			<dependency name="PlayerInfo"/>
+			<dependency name="SetPlayerColor"/>
+			<dependency name="current_textdraw"/>
+			<dependency name="deaths"/>
+			<dependency name="false"/>
+			<dependency name="is_carrying_bomb"/>
+			<dependency name="is_player_spawned"/>
+			<dependency name="kills"/>
+			<dependency name="player_change_team"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:SSCANF_OnPlayerDisconnect" syntax="SSCANF_OnPlayerDisconnect(playerid, reason)">
+			<attribute name="public"/>
+			<stacksize value="3"/>
+			<automaton name="_ALS"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<dependency name="DestroyDynamicObject"/>
+			<dependency name="PlayerInfo"/>
+			<dependency name="SkillInfo"/>
+			<dependency name="SkillInfo"/>
+			<dependency name="player_perk"/>
+			<dependency name="skill_king_charges"/>
+			<param name="playerid">
+			</param>
+			<param name="reason">
+			</param>
+		</member>
+		<member name="M:SSCANF_OnScriptInit" syntax="SSCANF_OnScriptInit()">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+			<automaton name="_ALS"/>
+			<referrer name="OnScriptInit"/>
+		</member>
+		<member name="M:SSCANF_Option" syntax="SSCANF_Option(name[], value)">
+			<stacksize value="1"/>
+			<param name="name">
+				<paraminfo> [] </paraminfo>
+				The sscanf option to get or set.  For example <c>SSCANF_ARGB</c>.
+			</param>
+			<param name="value">
+				<paraminfo> {_,Float} </paraminfo>
+				The optional value to use when setting the option.
+			</param>
+			<library>sscanf</library>      <remarks>  Backwards-compatibility with <c>SSCANF_Option</c>.  Usage:  <code>  SSCANF_Option(SSCANF_QUIET, 1);           <br />  new quiet = SSCANF_Option(SSCANF_QUIET);  </code>  This doesn't actually use a default parameter because a user may want to set  the option to whatever that parameter is.  Instead this is a macro that calls  <c>SSCANF_GetOption__</c> when called with one parameter (just a name), or  instead calls <c>SSCANF_SetOption__</c> when called with two - a name and a  value.  </remarks> 
+		</member>
+		<member name="M:SSCANF_RunInit" syntax="SSCANF_RunInit()">
+			<stacksize value="31"/>
+			<referrer name="OnScriptInit"/>
+			<referrer name="OnFilterScriptInit"/>
+			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="OnCachedInit"/>
+			<dependency name="GetMaxPlayers"/>
+			<dependency name="GetPlayerName"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="IsPlayerNPC"/>
+			<dependency name="SSCANF_Init"/>
+			<dependency name="SSCANF_IsConnected"/>
+			<dependency name="SSCANF_Join"/>
+			<dependency name="SSCANF_gInit"/>
+			<library>sscanf</library> <remarks> Generic initialisation code called from a range of different init publics. </remarks> <!-- <p/> <p/> There's a bug in the old compiler with the pawndoc generation for functions containing <c>state</c>.  This little trick starts an XML comment at the end of the documentation <c>SSCANF_RunInit</c> and immediately closes it again in a dedicated function <c>SSCANF_RunInit0</c>, which is sorted next lexicographically. --> <transition target="_ALS_go"/>
+
+		</member>
+		<member name="M:SSCANF_TextSimilarity" syntax="SSCANF_TextSimilarity(string1[], string2[])">
+			<tagname value="Float"/>
+			<attribute name="native"/>
+			<referrer name="SSCANF_GetSimilarString"/>
+			<param name="string1">
+				<paraminfo> [] </paraminfo>
+				The first string to compare.
+			</param>
+			<param name="string2">
+				<paraminfo> [] </paraminfo>
+				The second string to compare.
+			</param>
+			<library>sscanf</library>      <remarks>  This works out the similarity between two strings.  The Levenshtein distance  often produces results that seem weird to people, for example by that measure  <c>NRG</c> is closer to <c>TUG</c> than <c>NRG-500</c>.  Instead this  function compares all pairs of letters between the two strings to work out  what percentage of each string is in the other string, then multiplies the  results to get the final similarity.  This algorithm produces much more human  sane results, and can handle things like <c>ls police<c> matching  <c>Police Car (LSPD)</c>.  It ignores all punctuation and case as well.  </remarks> 
+		</member>
+		<member name="M:SSCANF_Version" syntax="SSCANF_Version(version[], size)">
+			<stacksize value="1"/>
+			<dependency name="SSCANF_VERSION_BCD"/>
+			<param name="version">
+				<paraminfo> [] </paraminfo>
+				Pass-by-reference return value.
+			</param>
+			<param name="size">
+				The size of the destination array.
+			</param>
+			<library>sscanf</library>      <remarks>  Get the SSCANF plugin version as a string (e.g. <c>"2.11.2"</c>) <em>or</em>  a BCD-encoded value (e.g. <c>0x021102</c>).  This function returns a string  (by reference) when called with parameters, or a number (directly) when not.  </remarks> 
+		</member>
+		<member name="M:SSCANF__" syntax="SSCANF__(file[], line, data[], format[], ...)">
+			<attribute name="native"/>
+			<referrer name="pc_cmd_cjump"/>
+			<param name="file">
+				<paraminfo> [] </paraminfo>
+				The file in which this call is found.
+			</param>
+			<param name="line">
+				The line at which this call is found.
+			</param>
+			<param name="data">
+				<paraminfo> [] </paraminfo>
+				The input string containing the data to parse out.
+			</param>
+			<param name="format">
+				<paraminfo> [] </paraminfo>
+				The format description of what the input data should contain.
+			</param>
+			<param name="...">
+				<paraminfo> {T_WEAPON,Float,_} </paraminfo>
+			</param>
+			<library>sscanf</library>          <remarks>  The current true implementation of <c>sscanf</c> in the plugin.  This is  wrapped by macros to provide <c>sscanf</c> enhanced with filenames and line  numbers so that errors have more information.  The plugin also contains a  native function called <c>sscanf</c> which is only for backwards-  compatibility with older versions of this include.  </remarks> 
+		</member>
 		<member name="M:SendClientMessage" syntax="SendClientMessage(playerid, colour, format[], ...)">
 			<tagname value="bool"/>
 			<attribute name="native"/>
@@ -5161,7 +5702,6 @@
 			<referrer name="OnPlayerPickUpPickup"/>
 			<referrer name="OnPlayerEnterDynamicCP"/>
 			<referrer name="OnPlayerLeaveDynamicCP"/>
-			<referrer name="OnPlayerTakeDamage"/>
 			<param name="playerid">
 				The ID of the player to display the message to
 			</param>
@@ -5194,9 +5734,24 @@
 			</param>
 			<library>omp_core</library>  <summary>Displays a message in chat to all players.  This is a multi-player equivalent of  <a href="#SendClientMessage">SendClientMessage</a>.</summary>      <seealso name="SendClientMessage" />  <seealso name="SendPlayerMessageToAll" />  <remarks>Avoid using format specifiers in your messages without formatting the string that is sent.  It will result in crashes otherwise.</remarks>  <returns>This function always returns <b><c>1</c></b>.</returns> 
 		</member>
+		<member name="M:SendDeathMessage" syntax="SendDeathMessage(killer, killee, weapon)">
+			<tagname value="bool"/>
+			<attribute name="native"/>
+			<referrer name="OnPlayerDeath"/>
+			<param name="killer">
+				The ID of the killer (can be <b><c>INVALID_PLAYER_ID</c></b>)
+			</param>
+			<param name="killee">
+				The ID of the player that died
+			</param>
+			<param name="weapon">
+				The <a href="https://www.open.mp/docs/scripting/resources/weaponids">reason</a>  (not always a weapon)  for the victim's death.  Special icons can also be used (<b><c>ICON_CONNECT</c></b> and <b><c>ICON_DISCONNECT</c></b>)
+			</param>
+			<library>omp_core</library>  <summary>Adds a death to the 'killfeed' on the right-hand side of the screen for all players.</summary>        <seealso name="SendDeathMessageToPlayer" />  <seealso name="OnPlayerDeath" />  <remarks>Death messages can be cleared by using a valid player ID for <paramref name="killee" />  that is not connected.</remarks>  <remarks>To show a death message for just a single player, use <a href="#SendDeathMessageToPlayer">SendDeathMessageToPlayer</a>.  </remarks>  <remarks>You can use NPCs to create your own custom death reasons. </remarks>  <returns>This function always returns <b><c>1</c></b>, even if the function fails to execute.  The  function fails to execute (no death message shown) if <paramref name="killee" /> is invalid.  If  <paramref name="reason" /> is invalid, a generic skull-and-crossbones icon is shown. <paramref name="killer"  /> being invalid (<b><c>INVALID_PLAYER_ID</c></b>) is valid.</returns> 
+		</member>
 		<member name="M:SetGameModeText" syntax="SetGameModeText(format[], ...)">
 			<attribute name="native"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<param name="format">
 				<paraminfo> [] </paraminfo>
 				The gamemode name to display.  May be optionally formatted.
@@ -5281,6 +5836,18 @@
 			</param>
 			<library>omp_textlabel</library> 
 		</member>
+		<member name="M:SetPlayerArmour" syntax="SetPlayerArmour(playerid, armour)">
+			<attribute name="native"/>
+			<referrer name="OnPlayerSpawn"/>
+			<param name="playerid">
+				The ID of the player to set the armour of
+			</param>
+			<param name="armour">
+				<paraminfo>Float </paraminfo>
+				The amount of armour to set, as a percentage (float).  Values larger than <b><c>100</c></b>  are valid, but won't be displayed in the HUD's armour bar
+			</param>
+			<library>omp_player</library>  <summary>Set a player's armor level.</summary>      <seealso name="GetPlayerArmour" />  <seealso name="SetPlayerHealth" />  <seealso name="GetPlayerHealth" />  <remarks>Armour is obtained rounded to integers: set <b><c>50.15</c></b>, but get <b><c>50.0</c></b></remarks>  <remarks>The function's name is armour, not armor (Americanized).</remarks>  <returns>  <b><c>1</c></b>: The function executed successfully.<br />  <b><c>0</c></b>: The function failed to execute.  This means the player specified does not exist.  </returns> 
+		</member>
 		<member name="M:SetPlayerCameraLookAt" syntax="SetPlayerCameraLookAt(playerid, x, y, z, cut)">
 			<tagname value="bool"/>
 			<attribute name="native"/>
@@ -5330,7 +5897,7 @@
 		<member name="M:SetPlayerColor" syntax="SetPlayerColor(playerid, colour)">
 			<tagname value="bool"/>
 			<attribute name="native"/>
-			<referrer name="OnPlayerConnect"/>
+			<referrer name="SSCANF_OnPlayerConnect"/>
 			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerDeath"/>
 			<param name="playerid">
@@ -5371,6 +5938,7 @@
 			<tagname value="bool"/>
 			<attribute name="native"/>
 			<referrer name="SwitchPlayerTeam"/>
+			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerTakeDamage"/>
 			<param name="playerid">
 				The ID of the player to set the health of
@@ -5448,31 +6016,6 @@
 			</param>
 			<library>omp_player</library>  <summary>Set a player's velocity on the x, y and z axes.</summary>          <seealso name="GetPlayerVelocity" />  <seealso name="SetVehicleVelocity" />  <seealso name="GetVehicleVelocity" />  <returns>  <b><c>1</c></b>: The function executed successfully.<br />  <b><c>0</c></b>: The function failed to execute.  This means the player is not connected.  </returns> 
 		</member>
-		<member name="M:SetPlayerWorldBounds" syntax="SetPlayerWorldBounds(playerid, maxX, minX, maxY, minY)">
-			<tagname value="bool"/>
-			<attribute name="native"/>
-			<referrer name="OnPlayerSpawn"/>
-			<param name="playerid">
-				The ID of the player to set the world boundaries of
-			</param>
-			<param name="maxX">
-				<paraminfo>Float </paraminfo>
-				The maximum x coordinate the player can go to
-			</param>
-			<param name="minX">
-				<paraminfo>Float </paraminfo>
-				The minimum x coordinate the player can go to
-			</param>
-			<param name="maxY">
-				<paraminfo>Float </paraminfo>
-				The maximum y coordinate the player can go to
-			</param>
-			<param name="minY">
-				<paraminfo>Float </paraminfo>
-				The minimum y coordinate the player can go to
-			</param>
-			<library>omp_player</library>  <summary>Set the world boundaries for a player.  Players can not go out of the boundaries (they will  be pushed back in).</summary>            <seealso name="GangZoneCreate" />  <remarks>This function does not work if used in <a href="#OnPlayerConnect">OnPlayerConnect</a></remarks>  <remarks>A player's world boundaries can be reset by setting them to <b><c>20000.0</c></b>, <b><c>-20000.0</c></b>,  <b><c>20000.0</c></b>, <b><c>-20000.0</c></b>.  These are the default values.</remarks>  <remarks>This function doesn't work in interiors!</remarks> 
-		</member>
 		<member name="M:SetServerRuleFlags" syntax="SetServerRuleFlags(rule[], flags)">
 			<tagname value="bool"/>
 			<stacksize value="1"/>
@@ -5522,6 +6065,7 @@
 		<member name="M:SetVehicleAngularVelocity" syntax="SetVehicleAngularVelocity(vehicleid, x, y, z)">
 			<tagname value="bool"/>
 			<attribute name="native"/>
+			<referrer name="pc_cmd_cjump"/>
 			<referrer name="OnPlayerWeaponShot"/>
 			<param name="vehicleid">
 				The ID of the vehicle to set the velocity of
@@ -5581,6 +6125,7 @@
 		<member name="M:SetVehicleVelocity" syntax="SetVehicleVelocity(vehicleid, x, y, z)">
 			<tagname value="bool"/>
 			<attribute name="native"/>
+			<referrer name="pc_cmd_cjump"/>
 			<referrer name="OnPlayerWeaponShot"/>
 			<param name="vehicleid">
 				The ID of the vehicle to set the velocity of
@@ -5704,7 +6249,7 @@
 		</member>
 		<member name="M:UsePlayerPedAnims" syntax="UsePlayerPedAnims()">
 			<attribute name="native"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<library>omp_core</library>  <summary>Uses standard player walking animation (animation of the CJ skin) instead of custom animations  for every skin (e.g.  skating for skater skins).</summary>  <seealso name="ApplyAnimation" />  <seealso name="ClearAnimations" />  <remarks>Only works when placed under <a href="#OnGameModeInit">OnGameModeInit</a>.</remarks>  <remarks>Not using this function causes two-handed weapons (not dual-handed - a single weapon that  is held by both hands) to be held in only one hand.</remarks> 
 		</member>
 		<member name="M:VectorSize" syntax="VectorSize(x, y, z)">
@@ -5934,6 +6479,11 @@
 			<stacksize value="1"/>
 			<dependency name="seek_whence"/>
 		</member>
+		<member name="M:_SSCANF_IncludeStates" syntax="_SSCANF_IncludeStates()">
+			<stacksize value="1"/>
+			<automaton name="_ALS"/>
+			<library>sscanf</library>  <remarks>  Common ALS boilerplate to ensure that all the <c>&lt;_ALS : &gt;</c> states  are known to the compiler.  </remarks> 
+		</member>
 		<member name="M:__IsObjectNoCameraCol" syntax="__IsObjectNoCameraCol(objectid)">
 			<tagname value="bool"/>
 			<attribute name="native"/>
@@ -6156,6 +6706,7 @@
 			<referrer name="CA_IsPlayerFacingWater"/>
 			<referrer name="CA_IsPlayerBlocked"/>
 			<referrer name="CA_GetRoomCenter"/>
+			<referrer name="pc_cmd_cjump"/>
 			<referrer name="OnPlayerRequestClass"/>
 			<param name="value">
 				<paraminfo>Float </paraminfo>
@@ -6233,6 +6784,7 @@
 			<referrer name="CA_IsPlayerFacingWater"/>
 			<referrer name="CA_IsPlayerBlocked"/>
 			<referrer name="CA_GetRoomCenter"/>
+			<referrer name="pc_cmd_cjump"/>
 			<referrer name="OnPlayerRequestClass"/>
 			<param name="value">
 				<paraminfo>Float </paraminfo>
@@ -6270,27 +6822,6 @@
 				Second Float (gets subtracted from the first float.)
 			</param>
 			<library>float</library>  <summary>Subtracts one float from another one.  Note that this function has no real use, as one can  simply use the standard operator (-) instead.</summary>      <seealso name="floatadd"/>  <seealso name="floatmul"/>  <seealso name="floatdiv"/>  <returns>The difference of the two given floats.</returns> 
-		</member>
-		<member name="M:format" syntax="format(output[], len, format[], ...)">
-			<attribute name="native"/>
-			<referrer name="OnPlayerEnterDynamicCP"/>
-			<referrer name="OnPlayerTakeDamage"/>
-			<param name="output">
-				<paraminfo> [] </paraminfo>
-				The string to output the result to
-			</param>
-			<param name="len">
-				The maximum length output can contain
-			</param>
-			<param name="format">
-				<paraminfo> [] </paraminfo>
-				The format string
-			</param>
-			<param name="...">
-				<paraminfo> {Float,_} </paraminfo>
-				Indefinite number of arguments of any tag
-			</param>
-			<library>omp_core</library>  <summary>Formats a string to include variables and other strings inside it.</summary>          <seealso name="print" />  <seealso name="printf" />  <remarks>This function doesn't support <a href="#strpack">packed strings</a>.</remarks>  <remarks>  <b>Format Specifiers:</b><br />  <ul>  <li><b><c>%i</c></b> - integer (whole number)</li>  <li><b><c>%d</c></b> - integer (whole number).</li>  <li><b><c>%s</c></b> - string</li>  <li><b><c>%f</c></b> - floating-point number (Float: tag)</li>  <li><b><c>%c</c></b> - ASCII character</li>  <li><b><c>%x</c></b> - hexadecimal number</li>  <li><b><c>%b</c></b> - binary number</li>  <li><b><c>%%</c></b> - literal <b><c>%</c></b></li>  <li><b><c>%q</c></b> - escape a text for SQLite. (Added in <b>0.3.7 R2</b>)</li>  </ul>  </remarks>  <remarks>The values for the placeholders follow in the exact same order as parameters in the call.  For example, <b><c>"I am %i years old"</c></b> - the <b><c>%i</c></b> will be replaced with an Integer  variable, which is the person's age.</remarks>  <remarks>You may optionally put a number between the <b><c>%</c></b> and the letter of the placeholder  code.  This number indicates the field width; if the size of the parameter to print at the position  of the placeholder is smaller than the field width, the field is expanded with spaces.  To cut the  number of decimal places beeing shown of a float, you can add <b><c>.&lt;max number&gt;</c></b> between  the <b><c>%</c></b> and the <b><c>f</c></b>. (example: <b><c>%.2f</c></b>)</remarks> 
 		</member>
 		<member name="M:funcidx" syntax="funcidx(name[])">
 			<attribute name="native"/>
@@ -6365,6 +6896,32 @@
 			<stacksize value="3"/>
 			<dependency name="cellbits"/>
 			<dependency name="charbits"/>
+		</member>
+		<member name="M:pc_cmd_cjump" syntax="pc_cmd_cjump(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="13"/>
+			<dependency name="operator-(Float:,_:)"/>
+			<dependency name="operator+(Float:,_:)"/>
+			<dependency name="operator+(Float:,Float:)"/>
+			<dependency name="operator*(Float:,Float:)"/>
+			<dependency name="Float:operator=(_:)"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="GetVehicleModel"/>
+			<dependency name="GetVehicleVelocity"/>
+			<dependency name="GetVehicleZAngle"/>
+			<dependency name="SSCANF__"/>
+			<dependency name="SetVehicleAngularVelocity"/>
+			<dependency name="SetVehicleVelocity"/>
+			<dependency name="__file"/>
+			<dependency name="__line"/>
+			<dependency name="degrees"/>
+			<dependency name="floatcos"/>
+			<dependency name="floatsin"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
 		</member>
 		<member name="M:pc_cmd_rustler" syntax="pc_cmd_rustler(playerid, params[])">
 			<attribute name="public"/>
@@ -6485,6 +7042,43 @@
 			</param>
 			<library>time</library>  <summary>Sets the date and time with a single value.</summary>  <param name="seconds1970">The number of seconds that have elapsed since 00:00 hours, 1 January  1970.  This particular date, 1 January 1970, is the <em>UNIX system epoch</em>.</param>  <returns>This function always returns 0.</returns>  <remarks>The function <c>getdate</c> returns the number of seconds since 1 January 1970.</remarks> 
 		</member>
+		<member name="M:sscanf" syntax="sscanf(data[], format[], ...)">
+			<stacksize value="1"/>
+			<param name="data">
+				<paraminfo> [] </paraminfo>
+				The input string containing the data to parse out.
+			</param>
+			<param name="format">
+				<paraminfo> [] </paraminfo>
+				The format description of what the input data should contain.
+			</param>
+			<param name="...">
+				<paraminfo> {T_WEAPON,Float,_} </paraminfo>
+			</param>
+			<library>sscanf</library>      <remarks>  The main entry point.  See the readme for vast amounts of information on how  to call this function and all the details on what it does.  This is a macro  that calls <c>SSCANF__</c> and passes the current file and line number as  well for improved error messages.  </remarks> 
+		</member>
+		<member name="M:sscanf_vehicle" syntax="sscanf_vehicle(string[])">
+			<attribute name="public"/>
+			<stacksize value="10"/>
+			<dependency name="SSCANF_GetSimilarValue"/>
+			<dependency name="strval"/>
+			<param name="string">
+				<paraminfo> [] </paraminfo>
+				The current word being parsed out of the <c>sscanf</c> input.
+			</param>
+			<library>sscanf</library>    <remarks>  The default implementation of <c>k&lt;vehicle&gt;</c>.  Finds the closest  vehicle by Levenshtein distance to the input.  </remarks> 
+		</member>
+		<member name="M:sscanf_weapon" syntax="sscanf_weapon(string[])">
+			<attribute name="public"/>
+			<stacksize value="10"/>
+			<dependency name="SSCANF_GetSimilarValue"/>
+			<dependency name="strval"/>
+			<param name="string">
+				<paraminfo> [] </paraminfo>
+				The current word being parsed out of the <c>sscanf</c> input.
+			</param>
+			<library>sscanf</library>    <remarks>  The default implementation of <c>k&lt;weapon&gt;</c>.  Finds the closest  weapon by Levenshtein distance to the input.  </remarks> 
+		</member>
 		<member name="M:strcat" syntax="strcat(dest[], source[], maxlength)">
 			<attribute name="native"/>
 			<referrer name="strcopy"/>
@@ -6524,7 +7118,7 @@
 		</member>
 		<member name="M:strcopy" syntax="strcopy(__dest[], __source[], __maxlength)">
 			<stacksize value="5"/>
-			<referrer name="PawnCmd_OnGameModeInit"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="ForcePerkSelection"/>
 			<dependency name="EOS"/>
 			<dependency name="strcat"/>
@@ -6556,6 +7150,16 @@
 			</param>
 			<library>string</library>  <summary>Compares two strings to see if they are the same.</summary>  <param name="string1">The first string to compare</param>  <param name="string2">The second string to compare</param>  <param name="ignorecase">When set to true, the case doesn't matter - HeLLo is the same as Hello.  When false, they're not the same (optional=<b><c>0</c></b>)</param>  <param name="length">When this length is set, the first x chars will be compared - doing "Hello"  and "Hell No" with a length of 4 will say it's the same string (optional=<b><c>cellmax</c></b>)</param>  <seealso name="strcmp"/>  <remarks>This is a conveniece function that depends on <a href="#strcmp">strcmp</a>.</remarks>  <returns><b><c>true</c></b> if the strings match each other on given length, <b><c>false</c></b>  otherwise.</returns> 
 		</member>
+		<member name="M:strval" syntax="strval(string[])">
+			<attribute name="native"/>
+			<referrer name="sscanf_weapon"/>
+			<referrer name="sscanf_vehicle"/>
+			<param name="string">
+				<paraminfo> [] </paraminfo>
+				The string you want to convert to an integer
+			</param>
+			<library>string</library>  <summary>Convert a string to an integer.</summary>    <seealso name="strcmp"/>  <seealso name="strfind"/>  <seealso name="strtok"/>  <seealso name="strdel"/>  <seealso name="strins"/>  <seealso name="strlen"/>  <seealso name="strmid"/>  <seealso name="strpack"/>  <seealso name="strcat"/>  <returns>The integer value of the string. <b><c>0</c></b> if the string is not numeric.</returns> 
+		</member>
 		<member name="M:tickcount" syntax="tickcount(&amp;granularity)">
 			<attribute name="native"/>
 			<referrer name="delay"/>
@@ -6564,6 +7168,21 @@
 				Upon return, this value contains the number of ticks that the internal  system time will tick per second.  This value therefore indicates the accuracy of the return value  of this function (optional=<b><c>0</c></b>)
 			</param>
 			<library>time</library>  <summary>This function can be used as a replacement for <a href="#GetTickCount">GetTickCount</a>,  as it returns the number of milliseconds since the start-up of the server.</summary>    <returns>The number of milliseconds since start-up of the system.  For a 32-bit cell, this count  overflows after approximately 24 days of continuous operation.</returns> 
+		</member>
+		<member name="M:unformat" syntax="unformat(data[], format[], ...)">
+			<stacksize value="1"/>
+			<param name="data">
+				<paraminfo> [] </paraminfo>
+				The input string containing the data to parse out.
+			</param>
+			<param name="format">
+				<paraminfo> [] </paraminfo>
+				The format description of what the input data should contain.
+			</param>
+			<param name="...">
+				<paraminfo> {T_WEAPON,Float,_} </paraminfo>
+			</param>
+			- include <sscanf2> first.  <library>sscanf</library>      <remarks>  An alternative spelling of <c>sscanf</c>, requested by Kalcor because the  original doesn't match the C specification for the format descriptor.  This  is a macro that calls <c>UNFORMAT__</c> and passes the current file and line  number as well for improved error messages.  </remarks> 
 		</member>
 
 	</members>

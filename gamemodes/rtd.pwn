@@ -2,7 +2,7 @@
 #include <Pawn.CMD>
 #include <ColAndreas>
 #include <streamer>
-#include <YSF>
+#include <sscanf2>
 
 /*
      ___      _
@@ -90,6 +90,8 @@ new PlayerInfo[MAX_PLAYERS][EPlayerInfo];
 enum ESkillInfo {
 	skill_king_charges[5]
 }
+
+new Skill_KingCharges[5][3];
 
 new SkillInfo[MAX_PLAYERS][ESkillInfo];
 
@@ -205,6 +207,12 @@ public OnGameModeInit()
 	PerkInfo[3][perk_weapon_ammo] = { 50, 500, 1 };
 	strcopy(PerkInfo[3][perk_title], "King");
 	
+	Skill_KingCharges[0] = { 1, 0, 0 };
+	Skill_KingCharges[1] = { 1, 0, 1 };
+	Skill_KingCharges[2] = { 0, 0, 1 };
+	Skill_KingCharges[3] = { -1, 0, 1 };
+	Skill_KingCharges[4] = { -1, 0, 0 };
+	
 	// OBJECTS
 	CreateObject(3279,	1228.10315, 353.25989,	18.44100,	0.00000,	0.00000,	157.00000);
 	CreateObject(13638, 1361.86523, 401.67441,	20.85201,	0.00000,	0.00000,	246.53470);
@@ -297,6 +305,24 @@ public SwitchPlayerTeam(playerid)
 	PlayerInfo[playerid][player_change_team] = true;
 	SetPlayerHealth(playerid, 0);
 }
+CMD:cjump(playerid, params[])
+{
+	new vehicleid = GetPlayerVehicleID(playerid);
+	if(GetVehicleModel(vehicleid) == 401)
+	{
+		new Float:ang_v;
+		new Float:lin_v;
+		if(sscanf(params, "ff", ang_v, lin_v)) {
+			ang_v = 0.2;
+			lin_v = 0.25;
+		}
+		new Float:vA, Float:vX, Float:vY, Float:vZ;
+		GetVehicleVelocity(vehicleid, vX, vY, vZ);
+		GetVehicleZAngle(vehicleid, vA);
+		SetVehicleAngularVelocity(vehicleid, floatsin(vA - 90, degrees) * ang_v, floatcos(vA + 90, degrees) * ang_v, 0);
+		SetVehicleVelocity(vehicleid, vX, vY, vZ + lin_v);
+	}
+}
 
 forward DestroyPlayerVehicle(playerid);
 public DestroyPlayerVehicle(playerid) {
@@ -376,7 +402,7 @@ public OnPlayerRequestClass(playerid, classid)
 public OnPlayerSpawn(playerid)
 {
 	SetPlayerInterior(playerid, 0);
-	SetPlayerWorldBounds(playerid, 1455.7026, 1166.9702, 417.8921, 177.7630);
+	// SetPlayerWorldBounds(playerid, 1455.7026, 1166.9702, 417.8921, 177.7630);
 	
 	new classid = GetPlayerTeam(playerid);
 	SetPlayerColor(playerid, ClassInfo[classid][color]);
@@ -385,22 +411,19 @@ public OnPlayerSpawn(playerid)
 	switch(PlayerInfo[playerid][player_perk]) {
 		case 3: {
 			new Float:pX, Float:pY, Float:pZ, Float:pA;
-			new Float:offset = 1.5;
-			SkillInfo[playerid][skill_king_charges][0] = CreateDynamicObject(18693, pX, pY, pZ, 0.0, 0.0, pA);
-			AttachDynamicObjectToPlayer(SkillInfo[playerid][skill_king_charges][0], playerid, offset, 0, 1, 0, 0, 0);
-			SkillInfo[playerid][skill_king_charges][1] = CreateDynamicObject(18693, pX, pY, pZ, 0.0, 0.0, pA);
-			AttachDynamicObjectToPlayer(SkillInfo[playerid][skill_king_charges][1], playerid, offset, 0, 1.5, 0, 0, 0);
-			SkillInfo[playerid][skill_king_charges][2] = CreateDynamicObject(18693, pX, pY, pZ, 0.0, 0.0, pA);
-			AttachDynamicObjectToPlayer(SkillInfo[playerid][skill_king_charges][2], playerid, 0, 0, 2, 0, 0, 0);
-			SkillInfo[playerid][skill_king_charges][3] = CreateDynamicObject(18693, pX, pY, pZ, 0.0, 0.0, pA);
-			AttachDynamicObjectToPlayer(SkillInfo[playerid][skill_king_charges][3], playerid, -offset, 0, 1.5, 0, 0, 0);
-			SkillInfo[playerid][skill_king_charges][4] = CreateDynamicObject(18693, pX, pY, pZ, 0.0, 0.0, pA);
-			AttachDynamicObjectToPlayer(SkillInfo[playerid][skill_king_charges][4], playerid, -offset, 0, 1, 0, 0, 0);
+			new Float:offset = 1;
+			for(new i = 0; i < 5; i++) {
+				
+				SkillInfo[playerid][skill_king_charges][i] = CreateDynamicObject(18693, pX, pY, pZ, 0.0, 0.0, pA);
+				AttachDynamicObjectToPlayer(SkillInfo[playerid][skill_king_charges][i], playerid, Skill_KingCharges[i][0], Skill_KingCharges[i][1], Skill_KingCharges[i][2], 0, 0, 0);
+			}
 		}
 	}
 	
 	new perkid = PlayerInfo[playerid][player_perk];
 	for(new i = 0; i < 3; i++) GivePlayerWeapon(playerid, PerkInfo[perkid][perk_weapons][i], PerkInfo[perkid][perk_weapon_ammo][i]);
+	SetPlayerHealth(playerid, PerkInfo[PlayerInfo[playerid][player_perk]][perk_health]);
+	SetPlayerArmour(playerid, PerkInfo[PlayerInfo[playerid][player_perk]][perk_armour]);
 	
 	
 	PlayerInfo[playerid][is_player_spawned] = true;
@@ -437,6 +460,10 @@ public OnPlayerDeath(playerid, killerid, WEAPON:reason)
     {
         PlayerInfo[killerid][kills] ++;
     }
+
+	if(killerid != INVALID_PLAYER_ID) {
+		SendDeathMessage(killerid,playerid,reason);
+	}
 	return 1;
 }
 
@@ -685,9 +712,6 @@ public OnPlayerPickUpPickup(playerid, pickupid)
 
 public OnPlayerEnterDynamicCP(playerid, checkpointid)
 {
-	new string[28];
-	format(string, sizeof(string), "You've entered checkpoint %d", checkpointid);
-	SendClientMessage(playerid, 0xFFFF0000, string);
 	switch(checkpointid) {
 		case 1..2: {
 			if(CPInfo[checkpointid][occupied]) {
@@ -807,46 +831,48 @@ public OnPlayerStreamOut(playerid, forplayerid)
 
 public OnPlayerTakeDamage(playerid, issuerid, Float:amount, WEAPON:weaponid, bodypart)
 {
-	if(PlayerInfo[issuerid][player_perk] == 1 && bodypart == 9) SetPlayerHealth(playerid, 0);
+	if(issuerid != INVALID_PLAYER_ID) {
+		if(PlayerInfo[issuerid][player_perk] == 1 && bodypart == 9) SetPlayerHealth(playerid, 0);
+	}
 	
 	if(PlayerInfo[playerid][player_perk] == 3 && issuerid != INVALID_PLAYER_ID) {
 		for(new i = 0; i < 5; i++) {
-			if(IsValidDynamicObject(SkillInfo[playerid][skill_king_charges][i])) {
+			if(SkillInfo[playerid][skill_king_charges][i] != -1) {
 				new Float:iX, Float:iY, Float:iZ,
 					Float:oX, Float:oY, Float:oZ;
-				new string[20];
-				format(string, sizeof(string), "King Charge Shot! %d", i);
-				SendClientMessage(playerid, PASTEL_DEEP_GREEN, string);
 				new Float:charge_velocity = 70.0;
 				GetPlayerPos(issuerid, iX, iY, iZ);
-				GetDynamicObjectPos(SkillInfo[playerid][skill_king_charges][i], oX, oY, oZ);
+				GetPlayerPos(playerid, oX, oY, oZ);
+				oX += Skill_KingCharges[i][0];
+				oY += Skill_KingCharges[i][1];
+				oZ += Skill_KingCharges[i][2];
 				DestroyDynamicObject(SkillInfo[playerid][skill_king_charges][i]);
+				SkillInfo[playerid][skill_king_charges][i] = -1;
 				new temp_object = CreateDynamicObject(18693, oX, oY, oZ, 0, 0, 0);
+				new Float:length = floatsqroot(floatpower(iX - oX, 2) + floatpower(iY - oY, 2) + floatpower(iZ - oZ, 2));
 				MoveDynamicObject(temp_object, iX, iY, iZ, charge_velocity, 0, 0, 0);
 				SetTimerEx(
 					"DestroyKingCharge",
-					floatround(floatsqroot(floatpower(iX - oX, 2) + floatpower(iY - oY, 2) + floatpower(iZ - oZ, 2)) / charge_velocity * 1000),
+					floatround(length / charge_velocity * 1000),
 					false,
 					"i",
 					temp_object
 				);
+				break;
 			}
 		}
 	}
 	
-	return 1;
+	return 0;
 }
 
-stock DestroyKingCharge(objectid)
+forward DestroyKingCharge(objectid);
+public DestroyKingCharge(objectid)
 {
 	new Float:oX, Float:oY, Float:oZ;
 	GetDynamicObjectPos(objectid, oX, oY, oZ);
+	DestroyDynamicObject(objectid);
 	CreateExplosion(oX, oY, oZ, 6, 10);
-}
-
-public OnPlayerGiveDamage(playerid, damagedid, Float:amount, WEAPON:weaponid, bodypart)
-{
-	return 1;
 }
 
 public OnPlayerClickPlayer(playerid, clickedplayerid, CLICK_SOURCE:source)
@@ -859,7 +885,10 @@ public OnPlayerWeaponShot(playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hi
 	switch(weaponid) {
 		case WEAPON_SILENCED: {
 			if(fX != 0 || fY != 0 || fZ != 0) {
-				CreateExplosion(fX, fY, fZ, 1, 3);
+				new Float:dX, Float:dY, Float:dZ,
+					Float:oX, Float:oY, Float:oZ;
+				GetPlayerLastShotVectors(playerid, oX, oY, oZ, dX, dY, dZ);
+				CreateExplosion(dX, dY, dZ, 1, 1);
 			}
 			return 0;
 		}
@@ -867,6 +896,7 @@ public OnPlayerWeaponShot(playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hi
 			new Float:hX, Float:hY, Float:hZ,
 				Float:oX, Float:oY, Float:oZ,
 				Float:nX, Float:nY, Float:nZ,
+				Float:vX, Float:vY, Float:vZ,
 				Float:angular_velocity = 1,
 				Float:linear_velocity = 1,
 				Float:player_velocity = 10;
@@ -874,21 +904,23 @@ public OnPlayerWeaponShot(playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hi
 				case BULLET_HIT_TYPE_PLAYER: {
 					GetPlayerPos(playerid, oX, oY, oZ);
 					GetPlayerPos(hitid, hX, hY, hZ);
+					GetPlayerVelocity(hitid, vX, vY, vZ);
 					new Float:dist = floatsqroot(floatpower(hX - oX, 2) + floatpower(hY - oY, 2) + floatpower(hZ - oZ, 2));
 					nX = (hX - oX) / dist;
 					nY = (hY - oY) / dist;
 					nZ = (hZ - oZ) / dist;
-					SetPlayerVelocity(hitid, nX * player_velocity, nY * player_velocity, floatabs(nZ * player_velocity));
+					SetPlayerVelocity(hitid, vX + nX * player_velocity, vY + nY * player_velocity, vZ + floatabs(nZ * player_velocity));
 				}
 				case BULLET_HIT_TYPE_VEHICLE: {
 					if(IsVehicleOccupied(hitid)) {
 						GetPlayerPos(playerid, oX, oY, oZ);
 						GetVehiclePos(hitid, hX, hY, hZ);
+						GetVehicleVelocity(hitid, vX, vY, vZ);
 						new Float:dist = floatsqroot(floatpower(hX - oX, 2) + floatpower(hY - oY, 2) + floatpower(hZ - oZ, 2));
 						nX = (hX - oX) / dist;
 						nY = (hY - oY) / dist;
 						nZ = (hZ - oZ) / dist;
-						SetVehicleVelocity(hitid, nX * linear_velocity, nY * linear_velocity, floatabs(nZ * linear_velocity));
+						SetVehicleVelocity(hitid, vX + nX * linear_velocity, vY + nY * linear_velocity, vZ + floatabs(nZ * linear_velocity));
 						SetVehicleAngularVelocity(hitid, nX * angular_velocity, nY * angular_velocity, nZ * angular_velocity);
 					}
 				}			
@@ -898,8 +930,8 @@ public OnPlayerWeaponShot(playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hi
 		case WEAPON_RIFLE: {
 			if(hittype == BULLET_HIT_TYPE_PLAYER) {
 				PlayerInfo[hitid][is_player_drunk] = true;
+				SetPlayerDrunkLevel(hitid, GetPlayerDrunkLevel(hitid) + 1000);
 				PlayerInfo[hitid][player_drunk_timer] = SetTimerEx("RemovePlayerDrunk", 5000, false, "i", hitid);
-				SetPlayerDrunkLevel(hitid, 50000);
 				return 0;
 			}
 		}
@@ -909,20 +941,9 @@ public OnPlayerWeaponShot(playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hi
 
 stock RemovePlayerDrunk(hitid)
 {
-	KillTimer(PlayerInfo[hitid][player_drunk_timer]);
 	PlayerInfo[hitid][is_player_drunk] = false;
 	SetPlayerDrunkLevel(hitid, 0);
 }
-
-stock DestroyDeagleObject(objectid)
-{
-	new
-    Float:fX, Float:fY, Float:fZ;
-	GetObjectPos(objectid, fX, fY, fZ);
-	DestroyObject(objectid);
-	CreateExplosion(fX, fY, fZ, 0, 5);
-}
-
 
 public OnScriptCash(playerid, amount, source)
 {

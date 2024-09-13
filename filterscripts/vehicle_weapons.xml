@@ -25,10 +25,12 @@
 				<tagname value="bool"/>
 			</member>
 		</member>
-		<member name="T:EPlayerInfo" value="1">
+		<member name="T:EPlayerInfo" value="2">
 			<tagname value="EPlayerInfo"/>
 			<member name="C:player_aim" value="0">
 				<tagname value="bool"/>
+			</member>
+			<member name="C:player_last_damagerid" value="1">
 			</member>
 		</member>
 		<member name="T:EVehicleInfo" value="10">
@@ -1312,6 +1314,9 @@
 		<member name="F:PlayerInfo">
 			<referrer name="OnPlayerConnect"/>
 			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="CreateCustomExplosion"/>
 			<referrer name="LaunchPlayerMissile"/>
 			<referrer name="OnDynamicObjectMoved"/>
 		</member>
@@ -1635,6 +1640,7 @@
 			<referrer name="CA_GetRoomHeight"/>
 			<referrer name="CA_GetRoomCenter"/>
 			<referrer name="OnPlayerKeyStateChange"/>
+			<referrer name="CreateCustomExplosion"/>
 			<referrer name="MoveCheckpointMissile"/>
 			<referrer name="MoveStepMissile"/>
 			<param name="oper1">
@@ -1657,6 +1663,7 @@
 			<referrer name="CA_GetRoomHeight"/>
 			<referrer name="CA_GetRoomCenter"/>
 			<referrer name="OnPlayerKeyStateChange"/>
+			<referrer name="CreateCustomExplosion"/>
 			<referrer name="MoveCheckpointMissile"/>
 			<referrer name="MoveStepMissile"/>
 			<param name="oper1">
@@ -1986,6 +1993,7 @@
 			<tagname value="Float"/>
 			<attribute name="native"/>
 			<referrer name="OnPlayerKeyStateChange"/>
+			<referrer name="CreateCustomExplosion"/>
 			<referrer name="LaunchPlayerMissile"/>
 			<referrer name="MoveCheckpointMissile"/>
 			<referrer name="MoveStepMissile"/>
@@ -2097,6 +2105,7 @@
 			<stacksize value="4"/>
 			<referrer name="CA_RayCastExplode"/>
 			<referrer name="CA_IsPlayerInWater"/>
+			<referrer name="CreateCustomExplosion"/>
 			<dependency name="floatcmp"/>
 			<param name="__oper1">
 				<paraminfo>Float </paraminfo>
@@ -2687,6 +2696,40 @@
 			</param>
 			<library>omp_core</library>  <summary>Calls a public function from the script in which it is used.</summary>        <seealso name="CallRemoteFunction" />  <returns>The value that the <b>only</b> public function returned.</returns>  <remarks>CallLocalFunction crashes the server if it's passing an empty string.</remarks>  <remarks>  Specifier string placeholders:<br />  <ul>  <li><b><c>c</c></b> - a single character</li>  <li><b><c>d</c></b> - an integer (whole) number</li>  <li><b><c>i</c></b> - an integer (whole) number</li>  <li><b><c>x</c></b> - a number in hexadecimal notation</li>  <li><b><c>f</c></b> - a floating point number</li>  <li><b><c>s</c></b> - a string</li>  </ul>  </remarks> 
 		</member>
+		<member name="M:CreateCustomExplosion" syntax="CreateCustomExplosion(playerid, fX, fY, fZ, type, radius)">
+			<attribute name="public"/>
+			<stacksize value="10"/>
+			<referrer name="DestroyDeagleObject"/>
+			<referrer name="DestroyMissile"/>
+			<dependency name="operator-(Float:,Float:)"/>
+			<dependency name="operator+(Float:,Float:)"/>
+			<dependency name="Float:operator=(_:)"/>
+			<dependency name="operator&lt;(Float:,Float:)"/>
+			<dependency name="CreateExplosion"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="PlayerInfo"/>
+			<dependency name="PlayerInfo"/>
+			<dependency name="floatpower"/>
+			<dependency name="floatsqroot"/>
+			<dependency name="player_last_damagerid"/>
+			<param name="playerid">
+			</param>
+			<param name="fX">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fY">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fZ">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="type">
+			</param>
+			<param name="radius">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
 		<member name="M:CreateDynamicObject" syntax="CreateDynamicObject(modelid, x, y, z, rx, ry, rz, worldid, interiorid, playerid, streamdistance, drawdistance, areaid, priority)">
 			<attribute name="native"/>
 			<referrer name="LaunchPlayerMissile"/>
@@ -2729,7 +2772,7 @@
 		</member>
 		<member name="M:CreateExplosion" syntax="CreateExplosion(x, y, z, type, radius)">
 			<attribute name="native"/>
-			<referrer name="DestroyMissile"/>
+			<referrer name="CreateCustomExplosion"/>
 			<param name="x">
 				<paraminfo>Float </paraminfo>
 				The x coordinate of the explosion
@@ -2788,6 +2831,17 @@
 			</param>
 			<library>omp_object</library>  <summary>Creates an object at specified coordinates in the game world.</summary>                  <seealso name="DestroyObject" />  <seealso name="IsValidObject" />  <seealso name="CreatePlayerObject" />  <seealso name="MoveObject" />  <seealso name="SetObjectPos" />  <seealso name="SetObjectRot" />  <seealso name="GetObjectPos" />  <seealso name="GetObjectRot" />  <seealso name="AttachObjectToPlayer" />  <seealso name="SetObjectMaterialText" />  <seealso name="SetObjectMaterial" />  <remarks>  Objects that emit light (lampposts, police lights, bollard lights, neons etc.) that have a greater  rotation than <b><c>16.26</c></b> degrees (or <b><c>-16.26</c></b>) on either the x or y axis will  stop shining.  This effect also applies to light objects attached to other objects, players and vehicles.  If a light object is attached to a car and the car is rotated over <b><c>16.26</c></b> degrees  (like in a rollover), the object will also stop emitting light.  This is a GTA:SA issue and is not  caused by a bug in open.mp.  </remarks>  <remarks>In case the light is attached to another object, one fix for this is to set <b>SyncRotation</b>  to false in <a href="#AttachObjectToObject">AttachObjectToObject</a>.  This will ensure the light  stays at <b><c>0</c></b> rotation.  This would only really work for objects that consist ONLY of  light, so wouldn't work for the police light for example. </remarks>  <remarks>There is a limit of <a href="https://open.mp/docs/scripting/resources/limits"><b><c>1000</c></b>  objects  (<b><c>MAX_OBJECTS</c></b>)</a>.  To circumvent this limit, you can use a  <a href="https://github.com/samp-incognito/samp-streamer-plugin/tree/open.mp">streamer</a></remarks>  <returns>The ID of the object that was created, or <b><c>INVALID_OBJECT_ID</c></b> if the object  limit (<b><c>MAX_OBJECTS</c></b>) was reached.</returns> 
 		</member>
+		<member name="M:DestroyDeagleObject" syntax="DestroyDeagleObject(playerid, objectid)">
+			<attribute name="public"/>
+			<stacksize value="12"/>
+			<dependency name="CreateCustomExplosion"/>
+			<dependency name="DestroyObject"/>
+			<dependency name="GetObjectPos"/>
+			<param name="playerid">
+			</param>
+			<param name="objectid">
+			</param>
+		</member>
 		<member name="M:DestroyDynamicObject" syntax="DestroyDynamicObject(objectid)">
 			<attribute name="native"/>
 			<referrer name="DestroyMissile"/>
@@ -2795,12 +2849,12 @@
 			</param>
 		</member>
 		<member name="M:DestroyMissile" syntax="DestroyMissile(missileid)">
-			<stacksize value="10"/>
+			<stacksize value="12"/>
 			<referrer name="OnDynamicObjectMoved"/>
 			<referrer name="MoveCheckpointMissile"/>
 			<referrer name="MoveStepMissile"/>
 			<dependency name="Float:operator=(_:)"/>
-			<dependency name="CreateExplosion"/>
+			<dependency name="CreateCustomExplosion"/>
 			<dependency name="DestroyDynamicObject"/>
 			<dependency name="GetDynamicObjectPos"/>
 			<dependency name="SendClientMessage"/>
@@ -2816,6 +2870,7 @@
 			<tagname value="bool"/>
 			<attribute name="native"/>
 			<referrer name="CA_DestroyObject_DC"/>
+			<referrer name="DestroyDeagleObject"/>
 			<param name="objectid">
 				The ID of the object to destroy.  Returned by <a href="#CreateObject">CreateObject</a>
 			</param>
@@ -2861,6 +2916,27 @@
 			<param name="z">
 				<paraminfo>Float &amp; </paraminfo>
 			</param>
+		</member>
+		<member name="M:GetObjectPos" syntax="GetObjectPos(objectid, &amp;x, &amp;y, &amp;z)">
+			<tagname value="bool"/>
+			<attribute name="native"/>
+			<referrer name="DestroyDeagleObject"/>
+			<param name="objectid">
+				The ID of the object to get the position of.
+			</param>
+			<param name="x">
+				<paraminfo>Float &amp; </paraminfo>
+				A variable in which to store the x coordinate, passed by reference
+			</param>
+			<param name="y">
+				<paraminfo>Float &amp; </paraminfo>
+				A variable in which to store the y coordinate, passed by reference
+			</param>
+			<param name="z">
+				<paraminfo>Float &amp; </paraminfo>
+				A variable in which to store the z coordinate, passed by reference
+			</param>
+			<library>omp_object</library>  <summary>Get the position of an object.</summary>          <seealso name="SetObjectPos" />  <seealso name="GetObjectRot" />  <seealso name="SetPlayerObjectPos" />  <seealso name="CreateObject" />  <returns>  <b><c>1</c></b>: The function executed successfully.<br />  <b><c>0</c></b>: The function failed to execute.  The specified object does not exist.  </returns> 
 		</member>
 		<member name="M:GetPlayerCameraTargetVehicle" syntax="GetPlayerCameraTargetVehicle(playerid)">
 			<attribute name="native"/>
@@ -2908,6 +2984,7 @@
 			<referrer name="CA_IsPlayerNearWater"/>
 			<referrer name="CA_IsPlayerFacingWater"/>
 			<referrer name="CA_IsPlayerBlocked"/>
+			<referrer name="CreateCustomExplosion"/>
 			<referrer name="LaunchPlayerMissile"/>
 			<referrer name="MoveCheckpointMissile"/>
 			<referrer name="MoveStepMissile"/>
@@ -3040,6 +3117,15 @@
 			<param name="vehicleid">
 			</param>
 			<library>omp_vehicle</library> 
+		</member>
+		<member name="M:IsPlayerConnected" syntax="IsPlayerConnected(playerid)">
+			<tagname value="bool"/>
+			<attribute name="native"/>
+			<referrer name="CreateCustomExplosion"/>
+			<param name="playerid">
+				The ID of the player to check
+			</param>
+			<library>omp_player</library>  <summary>Checks if a player is connected (if an ID is taken by a connected player).</summary>    <seealso name="IsPlayerAdmin" />  <seealso name="OnPlayerConnect" />  <seealso name="OnPlayerDisconnect" />  <remarks>This function can be omitted in a lot of cases.  Many other functions already have some  sort of connection check built in.</remarks>  <returns><b><c>1</c></b> if the player is connected, <b><c>0</c></b> if not.</returns> 
 		</member>
 		<member name="M:IsVehicleHidden" syntax="IsVehicleHidden(vehicleid)">
 			<tagname value="bool"/>
@@ -3490,7 +3576,11 @@
 		</member>
 		<member name="M:OnPlayerDeath" syntax="OnPlayerDeath(playerid, killerid, reason)">
 			<attribute name="public"/>
-			<stacksize value="1"/>
+			<stacksize value="5"/>
+			<dependency name="PlayerInfo"/>
+			<dependency name="PlayerInfo"/>
+			<dependency name="SendDeathMessage"/>
+			<dependency name="player_last_damagerid"/>
 			<param name="playerid">
 				The ID of the player that died
 			</param>
@@ -4084,6 +4174,9 @@
 		<member name="M:OnPlayerSpawn" syntax="OnPlayerSpawn(playerid)">
 			<attribute name="public"/>
 			<stacksize value="1"/>
+			<dependency name="PlayerInfo"/>
+			<dependency name="PlayerInfo"/>
+			<dependency name="player_last_damagerid"/>
 			<param name="playerid">
 				The ID of the player that spawned
 			</param>
@@ -4420,6 +4513,21 @@
 				<paraminfo> {LANDING_GEAR_STATE,Bit,Bitmap,XML,XMLEntry,Group,INI,Language,Style,DB,DBResult,Menu,Text,PlayerText,Text3D,PlayerText3D,File,Float,CUSTOM_TAG_TYPES,_} </paraminfo>
 			</param>
 			<library>omp_player</library>  <summary>This function sends a message to a specific player with a chosen colour in the chat.  The  whole line in the chatbox will be in the set colour unless colour embedding is used (since <b><c>0.3c</c></b>).</summary>        <seealso name="SendClientMessageToAll" />  <seealso name="SendPlayerMessageToPlayer" />  <seealso name="SendPlayerMessageToAll" />  <remarks>If a message is longer than 144 characters, it will not be sent.  Truncation can be used  to prevent this.  Displaying a message on multiple lines will also solve this issue. </remarks>  <remarks>Avoid using the percent sign (or format specifiers) in the actual message text without properly  escaping it (like <b><c>%%</c></b>).  It will result in crashes otherwise. </remarks>  <remarks>You can use colour embedding for multiple colours in the message. </remarks>  <returns>  <b><c>1</c></b>: The function executed successfully.  Success is reported when the string is over  144 characters, but the message won't be sent.<br />  <b><c>0</c></b>: The function failed to execute.  The player is not connected.  </returns> 
+		</member>
+		<member name="M:SendDeathMessage" syntax="SendDeathMessage(killer, killee, weapon)">
+			<tagname value="bool"/>
+			<attribute name="native"/>
+			<referrer name="OnPlayerDeath"/>
+			<param name="killer">
+				The ID of the killer (can be <b><c>INVALID_PLAYER_ID</c></b>)
+			</param>
+			<param name="killee">
+				The ID of the player that died
+			</param>
+			<param name="weapon">
+				The <a href="https://www.open.mp/docs/scripting/resources/weaponids">reason</a>  (not always a weapon)  for the victim's death.  Special icons can also be used (<b><c>ICON_CONNECT</c></b> and <b><c>ICON_DISCONNECT</c></b>)
+			</param>
+			<library>omp_core</library>  <summary>Adds a death to the 'killfeed' on the right-hand side of the screen for all players.</summary>        <seealso name="SendDeathMessageToPlayer" />  <seealso name="OnPlayerDeath" />  <remarks>Death messages can be cleared by using a valid player ID for <paramref name="killee" />  that is not connected.</remarks>  <remarks>To show a death message for just a single player, use <a href="#SendDeathMessageToPlayer">SendDeathMessageToPlayer</a>.  </remarks>  <remarks>You can use NPCs to create your own custom death reasons. </remarks>  <returns>This function always returns <b><c>1</c></b>, even if the function fails to execute.  The  function fails to execute (no death message shown) if <paramref name="killee" /> is invalid.  If  <paramref name="reason" /> is invalid, a generic skull-and-crossbones icon is shown. <paramref name="killer"  /> being invalid (<b><c>INVALID_PLAYER_ID</c></b>) is valid.</returns> 
 		</member>
 		<member name="M:SetObjectPos" syntax="SetObjectPos(objectid, x, y, z)">
 			<tagname value="bool"/>
@@ -5125,6 +5233,7 @@
 			<tagname value="Float"/>
 			<attribute name="native"/>
 			<referrer name="OnPlayerKeyStateChange"/>
+			<referrer name="CreateCustomExplosion"/>
 			<referrer name="MoveCheckpointMissile"/>
 			<referrer name="MoveStepMissile"/>
 			<param name="value">
@@ -5174,6 +5283,7 @@
 			<attribute name="native"/>
 			<referrer name="CA_GetRoomHeight"/>
 			<referrer name="OnPlayerKeyStateChange"/>
+			<referrer name="CreateCustomExplosion"/>
 			<referrer name="MoveCheckpointMissile"/>
 			<referrer name="MoveStepMissile"/>
 			<param name="value">

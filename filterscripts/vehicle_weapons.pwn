@@ -37,6 +37,7 @@
 #define MISSILE_HEIGHT 100
 #define MISSILE_CONTACT 2
 #define MISSILE_STEP 5
+#define MISSILE_EXPLOSION_RADIUS 20.0
 
 #define MAX_STATVEHS 16
 #define STATVEH_EX_ID_OFFSET 400001
@@ -44,7 +45,8 @@
 // PLAYERS INFO
 
 enum EPlayerInfo {
-	bool:player_aim
+	bool:player_aim,
+	player_last_damagerid
 }
 
 new PlayerInfo[MAX_PLAYERS][EPlayerInfo];
@@ -224,11 +226,16 @@ public OnPlayerRequestClass(playerid, classid)
 
 public OnPlayerSpawn(playerid)
 {
+	PlayerInfo[playerid][player_last_damagerid] = INVALID_PLAYER_ID;
 	return 1;
 }
 
 public OnPlayerDeath(playerid, killerid, WEAPON:reason)
 {
+	if(killerid == INVALID_PLAYER_ID && PlayerInfo[playerid][player_last_damagerid] != INVALID_PLAYER_ID)
+	{
+		SendDeathMessage(PlayerInfo[playerid][player_last_damagerid], playerid, 47);
+	}
 	return 1;
 }
 
@@ -352,24 +359,41 @@ public OnPlayerKeyStateChange(playerid, KEY:newkeys, KEY:oldkeys)
 				new r_obj = CreateObject(345, frX, frY, frZ, 0.0, 0.0, 0.0);
 				new Float:r_length = floatsqroot(floatpower(dfrX - frX, 2) + floatpower(dfrY - frY, 2) + floatpower(dfrZ - frZ, 2));
 				// calculate time for destroying object
-				SetTimerEx("DestroyDeagleObject", floatround(l_length / missile_velocity * 1000), false, "i", l_obj);
+				SetTimerEx("DestroyDeagleObject", floatround(l_length / missile_velocity * 1000), false, "ii", playerid, l_obj);
 				// move missile
 				MoveObject(l_obj, dflX, dflY, dflZ, missile_velocity);
-				SetTimerEx("DestroyDeagleObject", floatround(r_length / missile_velocity * 1000), false, "i", r_obj);
+				SetTimerEx("DestroyDeagleObject", floatround(r_length / missile_velocity * 1000), false, "ii", playerid, r_obj);
 				MoveObject(r_obj, dfrX, dfrY, dfrZ, missile_velocity);
-			}
-			
-			case 423: {
-				new aiming_vehicle = GetPlayerCameraTargetVehicle(playerid);
-				if(aiming_vehicle != INVALID_VEHICLE_ID) {
-					new string[28];
-					format(string, sizeof(string), "You're aiming on vehicle %d", aiming_vehicle);
-					SendClientMessage(playerid, PASTEL_ORANGE, string);
-				}
 			}
 		}
 	}
 	return 1;
+}
+
+forward DestroyDeagleObject(playerid, objectid);
+public DestroyDeagleObject(playerid, objectid)
+{
+	new Float:fX, Float:fY, Float:fZ;
+	GetObjectPos(objectid, fX, fY, fZ);
+	DestroyObject(objectid);
+	CreateCustomExplosion(playerid, fX, fY, fZ, 0, MISSILE_EXPLOSION_RADIUS);
+}
+
+forward CreateCustomExplosion(playerid, Float:fX, Float:fY, Float:fZ, type, Float:radius);
+public CreateCustomExplosion(playerid, Float:fX, Float:fY, Float:fZ, type, Float:radius)
+{
+	CreateExplosion(fX, fY, fZ, type, radius);
+	for(new i = 0; i < MAX_PLAYERS; i++)
+	{
+		if(IsPlayerConnected(i))
+		{
+			new Float:pX, Float:pY, Float:pZ;
+			GetPlayerPos(i, pX, pY, pZ);
+			
+			new Float:length = floatsqroot(floatpower(pX - fX, 2) + floatpower(pY - fY, 2) + floatpower(pZ - fZ, 2));
+			if(length < radius) PlayerInfo[i][player_last_damagerid] = playerid;
+		}
+	}
 }
 
 public OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate)
@@ -579,7 +603,6 @@ stock LaunchPlayerMissile(playerid, victimid, type) {
 	dZ = oZ + MISSILE_HEIGHT;
 	new upper_obstacle = CA_RayCastLine(oX, oY, oZ, dX, dY, dZ, tX, tY, tZ);
 	if(upper_obstacle != 0) {
-		SendClientMessage(playerid, PASTEL_DEEP_ORANGE, "Obstacle found");
 		return -1;
 	}
 	
@@ -602,7 +625,6 @@ stock LaunchPlayerMissile(playerid, victimid, type) {
 public OnDynamicObjectMoved(objectid)
 {
 	new missileid = Streamer_GetIntData(STREAMER_TYPE_OBJECT, objectid, E_STREAMER_EXTRA_ID) - MISSILE_EX_ID_OFFSET;
-	SendClientMessage(WMInfo[missileid][wm_playerid], PASTEL_DEEP_ORANGE, "Missile Moved!");
 	if(PlayerInfo[WMInfo[missileid][wm_targetid]][player_aim]) {
 		switch(WMInfo[missileid][wm_type]) {
 			case 1: MoveCheckpointMissile(missileid);
@@ -610,7 +632,6 @@ public OnDynamicObjectMoved(objectid)
 			
 		}
 	} else {
-		SendClientMessage(WMInfo[missileid][wm_playerid], PASTEL_DEEP_ORANGE, "Player is not aimed!");
 		DestroyMissile(missileid);
 	}
 }
@@ -666,8 +687,7 @@ stock DestroyMissile(missileid)
 	GetDynamicObjectPos(WMInfo[missileid][wm_objectid], oX, oY, oZ);
 	WMInfo[missileid][wm_targetid] = -1;
 	DestroyDynamicObject(WMInfo[missileid][wm_objectid]);
-	CreateExplosion(oX, oY, oZ, 6, 20);
-	SendClientMessage(WMInfo[missileid][wm_playerid], PASTEL_DEEP_ORANGE, "Missile Destroyed");
+	CreateCustomExplosion(WMInfo[missileid][wm_playerid], oX, oY, oZ, 6, 20);
 }
 
 stock FindEmptyMissileSlot()
